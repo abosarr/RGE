@@ -1,0 +1,478 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "RGE_USERS_DICT", 
+  "labels": [ { "text": "RGE_User Login" } ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "a57b2fdcb8e3d4396f4642d4178937f30de95871136517e702a027312f90b04c"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 1, 
+    "length": 1
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": false
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "USERS_LEVEL", 
+      "labels": [ { "text": "users dics level" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "USER_LOGIN", 
+            "labels": [ { "text": "login" } ], 
+            "contentType": "alpha", 
+            "start": 2, 
+            "length": 7
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "AUTHEN", 
+          "labels": [ { "text": "authentification Sup" } ], 
+          "recordType": "1", 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "USER_PASS", 
+              "labels": [ { "text": "Mot de passe" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_NAME", 
+              "labels": [ { "text": "Nom er prénom" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "USER_FORMATEUR", 
+              "labels": [ { "text": "login formateur" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "USER_NAME_FORMATEUR", 
+              "labels": [ { "text": "Nom er prénom du formateur" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "USER_CE", 
+              "labels": [ { "text": "login Chef d'équipe" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "USER_NAME_CE", 
+              "labels": [ { "text": "Nom er prénom du CE" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "USER_PHONE", 
+              "labels": [ { "text": "Num Mobile RNU" } ], 
+              "contentType": "numeric", 
+              "length": 9, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_EMAIL", 
+              "labels": [ { "text": "Email" } ], 
+              "contentType": "alpha", 
+              "length": 100
+            }, 
+            {
+              "name": "USER_TYPE", 
+              "labels": [ { "text": "User type" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "USER_TYPE_VS1", 
+                  "labels": [ { "text": "User type" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Cartographe en formation" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Agent cartographe" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Chef d'équipe" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Formateur" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CTIC" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "NBRE_CE", 
+              "labels": [ { "text": "Nombre de chef d'équipe" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "NBRE_ENQ", 
+              "labels": [ { "text": "Nombre d'enquêteurs" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "NBRE_ENQ_VS1", 
+                  "labels": [ { "text": "Nombre d'enquêteurs" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "yes" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "no" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "USER_LASTCONNECT", 
+              "labels": [ { "text": "Dernière connexion" } ], 
+              "contentType": "numeric", 
+              "length": 8, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_STATUS", 
+              "labels": [ { "text": "Statut" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_ZONE", 
+              "labels": [ { "text": "Zone de l'utilisateur" } ], 
+              "contentType": "alpha", 
+              "length": 13
+            }, 
+            {
+              "name": "USER_DEPARTMENT", 
+              "labels": [ { "text": "department" } ], 
+              "contentType": "alpha", 
+              "length": 3
+            }, 
+            {
+              "name": "USER_INFO", 
+              "labels": [ { "text": "Informations supplémentaires" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "INIT_USER", 
+              "labels": [ { "text": "Init_user" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "INIT_USER_VS1", 
+                  "labels": [ { "text": "Init_user" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "yes" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "no" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "SYNC_CONTROLE_COUNT", 
+              "labels": [ { "text": "sync_controle_count" } ], 
+              "contentType": "numeric", 
+              "length": 3, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_NUM_DOSSIER", 
+              "labels": [ { "text": "user_num_dossier" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "WK_LAT", 
+              "labels": [ { "text": "wk_lat" } ], 
+              "contentType": "numeric", 
+              "length": 12, 
+              "decimals": 7, 
+              "decimalMark": true, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "WK_LON", 
+              "labels": [ { "text": "wk_lon" } ], 
+              "contentType": "numeric", 
+              "length": 12, 
+              "decimals": 7, 
+              "decimalMark": true, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "SERVICE_FAIT", 
+              "labels": [ { "text": "attestation de service fait" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "SERVICE_FAIT_VS1", 
+                  "labels": [ { "text": "attestation de service fait" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "LUNCH_AUTHORIZED", 
+              "labels": [ { "text": "lunch_authorized" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "LUNCH_AUTHORIZED_VS1", 
+                  "labels": [ { "text": "lunch_authorized" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "TYPE_REMPLACEMENT", 
+              "labels": [ { "text": "type_remplacement" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "TYPE_REMPLACEMENT_VS1", 
+                  "labels": [ { "text": "type_remplacement" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Pas de changement" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "A intégrer" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Remplaçant" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Remplacé" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Retourner au CTD" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "LOGIN_REMPLACANT", 
+              "labels": [ { "text": "login_remplacant" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "IS_CLOSED", 
+              "labels": [ { "text": "is_closed" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "DATE_INIT", 
+              "labels": [ { "text": "date_init" } ], 
+              "contentType": "numeric", 
+              "length": 8, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "DATE_SERVICE_FAIT", 
+              "labels": [ { "text": "date_service_fait" } ], 
+              "contentType": "numeric", 
+              "length": 8, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_VERSION", 
+              "labels": [ { "text": "user_version" } ], 
+              "contentType": "numeric", 
+              "length": 3, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_OLD_SITUATION", 
+              "labels": [ { "text": "old_situation" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "USER_OLD_SITUATION_VS1", 
+                  "labels": [ { "text": "old_situation" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Pas de changement" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Remplaçant" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "USER_DATE_REMPLACEMENT", 
+              "labels": [ { "text": "Date remplacement" } ], 
+              "contentType": "numeric", 
+              "length": 8, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "USER_RECEIVED_MATERIEL", 
+              "labels": [ { "text": "A reçu du matériel" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "QUITUS_MATERIEL", 
+              "labels": [ { "text": "quitus matériel" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "DATE_QUITUS_MATERIEL", 
+              "labels": [ { "text": "Date quitus matériel" } ], 
+              "contentType": "numeric", 
+              "length": 14, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "RAISON_REFUS_QUITUS", 
+              "labels": [ { "text": "Raison du refus de la délivrance quitus" } ], 
+              "contentType": "alpha", 
+              "length": 100
+            }, 
+            {
+              "name": "USER_NOTE_TEST", 
+              "labels": [ { "text": "Note test" } ], 
+              "contentType": "numeric", 
+              "length": 3, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "IS_CLOTURE_FORMATION", 
+              "labels": [ { "text": "is cloturer la formation" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "IS_CLOTURE_FORMATION_VS1", 
+                  "labels": [ { "text": "is cloturer la formation" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "yes" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "no" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "IS_END_PROFILAGE", 
+              "labels": [ { "text": "is profilage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "IS_END_PROFILAGE_VS1", 
+                  "labels": [ { "text": "is profilage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "yes" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "no" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

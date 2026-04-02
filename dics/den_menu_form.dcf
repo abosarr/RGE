@@ -1,0 +1,147 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Menu enq
+Name=MENU_ENQ_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=E9282A2A9AB5A3CA58CFD9EFF457412FF5A43E63710CB32A49A5B0C5A8D2BE7C
+
+[Level]
+Label=supcom questionnaire
+Name=SUPCOM_QUEST
+
+[IdItems]
+
+[Item]
+Label=Login de l'enquêteur
+Name=ID_ACTOR
+Start=2
+Len=7
+DataType=Alpha
+
+[Record]
+Label=supcomdicsrec
+Name=SUPCOMREC
+RecordTypeValue='1'
+RecordLen=1079
+
+[Item]
+Label=Nom de l'enquêteur
+Name=NOM_ENQUETEUR
+Start=9
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Code du formateur
+Name=CODE_FORMATEUR
+Start=59
+Len=7
+DataType=Alpha
+
+[Item]
+Label=Nom formateur
+Name=NOM_FORMATEUR
+Start=66
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Code CE
+Name=CODE_CE
+Start=116
+Len=7
+DataType=Alpha
+
+[Item]
+Label=Nom CE
+Name=NOM_CE
+Start=123
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Menu principal
+Name=ACTION
+Start=173
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Menu principal
+Name=ACTION_VS1
+Value=0;Choisir une commune
+Value=1;Collecter un ménage
+Value=2;Tableau de bord
+Value=91;Récupération des résultats du test
+Value=92;Formation des équipes
+Value=93;Clôturer la formation
+Value=3;Paramètres d'équipe
+Value=9;Fermer l'application
+
+[ValueSet]
+Label=Menu principal
+Name=ACTION_VS2
+Value=81;Récupération des quartiers et ménages
+Value=0;Choisir une commune
+Value=1;Affectation des quartiers
+Value=2;Tableau de bord
+Value=3;Paramètres d'équipe
+Value=80;Synchronisation avec le serveur
+Value=9;Fermer l'application
+
+[Item]
+Label=check
+Name=CHECK
+Start=175
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Choix quartier
+Name=CHOIX_QUARTIER
+Start=176
+Len=900
+DataType=Alpha
+
+[Item]
+Label=choix_quartier_single
+Name=CHOIX_QUARTIER_SINGLE
+Start=176
+Len=20
+ItemType=SubItem
+DataType=Alpha
+Occurrences=45
+
+[Item]
+Label=view commune
+Name=VIEW_COMMUNE
+Start=1076
+Len=1
+DataType=Numeric
+
+[Item]
+Label=view quartier
+Name=VIEW_QUARTIER
+Start=1077
+Len=1
+DataType=Numeric
+
+[Item]
+Label=view ménage
+Name=VIEW_MENAGE
+Start=1078
+Len=1
+DataType=Numeric
+
+[Item]
+Label=view report
+Name=VIEW_REPORT
+Start=1079
+Len=1
+DataType=Numeric

@@ -1,0 +1,3497 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "RGE_FICHE_QUARTIER_DICT", 
+  "labels": [ { "text": "RGE_FICHE_QUARTIER_DICT" } ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "8302982e6e0fe8e0850baea224a5f595c3a86ad0bb5d3f88a314bcca86d89c196f83c58d8c43cff6f1b0c44383ced012"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 1, 
+    "length": 1
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": false
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "FICHE_QUARTIER_LEVEL", 
+      "labels": [ { "text": "Fiche quartier" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "QRT_CODESUP", 
+            "labels": [ { "text": "login superviseur" } ], 
+            "contentType": "alpha", 
+            "start": 2, 
+            "length": 7
+          }, 
+          {
+            "name": "QRT_ID_DR", 
+            "labels": [ { "text": "Code ZC" } ], 
+            "contentType": "alpha", 
+            "start": 9, 
+            "length": 12
+          }, 
+          {
+            "name": "QRT_ID_LACALITE", 
+            "labels": [ { "text": "Code Localité" } ], 
+            "contentType": "alpha", 
+            "start": 21, 
+            "length": 13
+          }, 
+          {
+            "name": "QRT_ZFC", 
+            "labels": [ { "text": "Zone de forte concentration" } ], 
+            "contentType": "alpha", 
+            "start": 34, 
+            "length": 3
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "QUARTIER_REC", 
+          "labels": [ { "text": "Section A : IDENTIFICATION QUARTIER" } ], 
+          "recordType": "1", 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "QRT_REGION", 
+              "labels": [ { "text": "Region" } ], 
+              "contentType": "alpha", 
+              "length": 2, 
+              "valueSets": [
+                {
+                  "name": "QRT_REGION_VS1", 
+                  "labels": [ { "text": "Region" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "DAKAR" } ], 
+                      "pairs": [ { "value": "01" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ZIGUINCHOR" } ], 
+                      "pairs": [ { "value": "02" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOURBEL" } ], 
+                      "pairs": [ { "value": "03" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAINT-LOUIS" } ], 
+                      "pairs": [ { "value": "04" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAMBACOUNDA" } ], 
+                      "pairs": [ { "value": "05" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAOLACK" } ], 
+                      "pairs": [ { "value": "06" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIES" } ], 
+                      "pairs": [ { "value": "07" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LOUGA" } ], 
+                      "pairs": [ { "value": "08" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FATICK" } ], 
+                      "pairs": [ { "value": "09" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOLDA" } ], 
+                      "pairs": [ { "value": "10" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MATAM" } ], 
+                      "pairs": [ { "value": "11" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAFFRINE" } ], 
+                      "pairs": [ { "value": "12" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEDOUGOU" } ], 
+                      "pairs": [ { "value": "13" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SEDHIOU" } ], 
+                      "pairs": [ { "value": "14" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "QRT_DEPARTEMENT", 
+              "labels": [ { "text": "Departement" } ], 
+              "contentType": "alpha", 
+              "length": 3, 
+              "valueSets": [
+                {
+                  "name": "QRT_DEPARTEMENT_VS1", 
+                  "labels": [ { "text": "Departement" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "MBOUR" } ], 
+                      "pairs": [ { "value": "071" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PIKINE" } ], 
+                      "pairs": [ { "value": "012" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA YORO FOULAH" } ], 
+                      "pairs": [ { "value": "103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BAKEL" } ], 
+                      "pairs": [ { "value": "051" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAMBACOUNDA" } ], 
+                      "pairs": [ { "value": "052" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GOUDIRY" } ], 
+                      "pairs": [ { "value": "053" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAOLACK" } ], 
+                      "pairs": [ { "value": "061" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAKAR" } ], 
+                      "pairs": [ { "value": "011" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LINGUERE" } ], 
+                      "pairs": [ { "value": "082" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PODOR" } ], 
+                      "pairs": [ { "value": "042" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MASSAR" } ], 
+                      "pairs": [ { "value": "015" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIGNONA" } ], 
+                      "pairs": [ { "value": "021" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUNGHEUL" } ], 
+                      "pairs": [ { "value": "123" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUMPENTOUM" } ], 
+                      "pairs": [ { "value": "054" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KANEL" } ], 
+                      "pairs": [ { "value": "112" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ZIGUINCHOR" } ], 
+                      "pairs": [ { "value": "023" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "RANEROU" } ], 
+                      "pairs": [ { "value": "113" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GOUDOMP" } ], 
+                      "pairs": [ { "value": "143" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBACKE" } ], 
+                      "pairs": [ { "value": "033" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LOUGA" } ], 
+                      "pairs": [ { "value": "083" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIORO" } ], 
+                      "pairs": [ { "value": "062" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MALEM HODDAR" } ], 
+                      "pairs": [ { "value": "124" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEBEMER" } ], 
+                      "pairs": [ { "value": "081" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAFFRINE" } ], 
+                      "pairs": [ { "value": "121" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "VELINGARA" } ], 
+                      "pairs": [ { "value": "102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TIVAOUANE" } ], 
+                      "pairs": [ { "value": "073" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEDOUGOU" } ], 
+                      "pairs": [ { "value": "131" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOURBEL" } ], 
+                      "pairs": [ { "value": "032" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOUNKILING" } ], 
+                      "pairs": [ { "value": "142" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOLDA" } ], 
+                      "pairs": [ { "value": "101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MATAM" } ], 
+                      "pairs": [ { "value": "111" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FOUNDIOUGNE" } ], 
+                      "pairs": [ { "value": "092" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUINGUINEO" } ], 
+                      "pairs": [ { "value": "063" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SEDHIOU" } ], 
+                      "pairs": [ { "value": "141" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUEDIAWAYE" } ], 
+                      "pairs": [ { "value": "014" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAGANA" } ], 
+                      "pairs": [ { "value": "041" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "RUFISQUE" } ], 
+                      "pairs": [ { "value": "013" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIES" } ], 
+                      "pairs": [ { "value": "072" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIRKELANE" } ], 
+                      "pairs": [ { "value": "122" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GOSSAS" } ], 
+                      "pairs": [ { "value": "093" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SALEMATA" } ], 
+                      "pairs": [ { "value": "132" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BAMBEY" } ], 
+                      "pairs": [ { "value": "031" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FATICK" } ], 
+                      "pairs": [ { "value": "091" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SARAYA" } ], 
+                      "pairs": [ { "value": "133" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAINT-LOUIS" } ], 
+                      "pairs": [ { "value": "043" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUSSOUYE" } ], 
+                      "pairs": [ { "value": "022" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "QRT_CVA", 
+              "labels": [ { "text": "Com/Ville/Arrondissement" } ], 
+              "contentType": "alpha", 
+              "length": 6, 
+              "valueSets": [
+                {
+                  "name": "QRT_CVA_VS1", 
+                  "labels": [ { "text": "Com/Ville/Arrondissement" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "COM. MBOUR" } ], 
+                      "pairs": [ { "value": "071102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. THIAROYE" } ], 
+                      "pairs": [ { "value": "012301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NIAMING" } ], 
+                      "pairs": [ { "value": "103203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BELE" } ], 
+                      "pairs": [ { "value": "051202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. TAMBACOUNDA" } ], 
+                      "pairs": [ { "value": "052101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GOUDIRY" } ], 
+                      "pairs": [ { "value": "053101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KOULOR" } ], 
+                      "pairs": [ { "value": "053204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KAOLACK" } ], 
+                      "pairs": [ { "value": "061101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DAKAR-PLATEAU" } ], 
+                      "pairs": [ { "value": "011301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. LINGUERE" } ], 
+                      "pairs": [ { "value": "082101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. CAS CAS" } ], 
+                      "pairs": [ { "value": "042201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. JAXAAY" } ], 
+                      "pairs": [ { "value": "015203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. YEUMBEUL NORD" } ], 
+                      "pairs": [ { "value": "015201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KATABA 1" } ], 
+                      "pairs": [ { "value": "021204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. LOUR ESCALE" } ], 
+                      "pairs": [ { "value": "123202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DODJI" } ], 
+                      "pairs": [ { "value": "082202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BAMBA THIALENE" } ], 
+                      "pairs": [ { "value": "054201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. ORKADIERE" } ], 
+                      "pairs": [ { "value": "112201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NIAGUIS" } ], 
+                      "pairs": [ { "value": "023201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. VELINGARA" } ], 
+                      "pairs": [ { "value": "113201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DJIBANAR" } ], 
+                      "pairs": [ { "value": "143201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. JOAL-FADIOUTH" } ], 
+                      "pairs": [ { "value": "071101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDAME" } ], 
+                      "pairs": [ { "value": "033202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KOUTHIABA WOLOF" } ], 
+                      "pairs": [ { "value": "054202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MBEDIENE" } ], 
+                      "pairs": [ { "value": "083203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SAKAL" } ], 
+                      "pairs": [ { "value": "083204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SAGATTA DJOLOF" } ], 
+                      "pairs": [ { "value": "082204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KAEL" } ], 
+                      "pairs": [ { "value": "033201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. WACK NGOUNA" } ], 
+                      "pairs": [ { "value": "062203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DAROU MINAM 2" } ], 
+                      "pairs": [ { "value": "124201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SAGATTA GUETH" } ], 
+                      "pairs": [ { "value": "081203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. GNIBY" } ], 
+                      "pairs": [ { "value": "121201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MISSIRAH" } ], 
+                      "pairs": [ { "value": "052203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. TENDOUCK" } ], 
+                      "pairs": [ { "value": "021202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BONCONTO" } ], 
+                      "pairs": [ { "value": "102201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NIAKHENE" } ], 
+                      "pairs": [ { "value": "073203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDORNA" } ], 
+                      "pairs": [ { "value": "103202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. FONGOLIMBI" } ], 
+                      "pairs": [ { "value": "131202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BANDAFASSI" } ], 
+                      "pairs": [ { "value": "131201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDOULO" } ], 
+                      "pairs": [ { "value": "032202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DIAROUME" } ], 
+                      "pairs": [ { "value": "142203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MAMPATIM" } ], 
+                      "pairs": [ { "value": "101202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. PAOSKOTO" } ], 
+                      "pairs": [ { "value": "062202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SESSENE" } ], 
+                      "pairs": [ { "value": "071202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. AGNAM CIVOL" } ], 
+                      "pairs": [ { "value": "111201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. GAMADJI SARE" } ], 
+                      "pairs": [ { "value": "042204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. IDA MOURIDE" } ], 
+                      "pairs": [ { "value": "123201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. TOUBACOUTA" } ], 
+                      "pairs": [ { "value": "092203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BOYNGUEL BAMBA" } ], 
+                      "pairs": [ { "value": "053202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DIOULACOLON" } ], 
+                      "pairs": [ { "value": "101201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. OUROSSOGUI" } ], 
+                      "pairs": [ { "value": "111102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MEOUANE" } ], 
+                      "pairs": [ { "value": "073201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KEUR MOMAR SARR" } ], 
+                      "pairs": [ { "value": "083202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MISSIRAH WADENE" } ], 
+                      "pairs": [ { "value": "123203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. PIKINE DAGOUDANE" } ], 
+                      "pairs": [ { "value": "012301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DJILOR" } ], 
+                      "pairs": [ { "value": "092201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SAGNA" } ], 
+                      "pairs": [ { "value": "124202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NGUELOU" } ], 
+                      "pairs": [ { "value": "063202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MEDINA SABAKH" } ], 
+                      "pairs": [ { "value": "062201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. FAFACOUROU" } ], 
+                      "pairs": [ { "value": "103201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DIENDE" } ], 
+                      "pairs": [ { "value": "141201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SINDIAN" } ], 
+                      "pairs": [ { "value": "021201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MOUDERY" } ], 
+                      "pairs": [ { "value": "051203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DAROU MOUSTY" } ], 
+                      "pairs": [ { "value": "081201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MALIKA" } ], 
+                      "pairs": [ { "value": "015202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDANDE" } ], 
+                      "pairs": [ { "value": "081202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. THILE BOUBACAR" } ], 
+                      "pairs": [ { "value": "042203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KENIEBA" } ], 
+                      "pairs": [ { "value": "051201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KANEL" } ], 
+                      "pairs": [ { "value": "112101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BONA" } ], 
+                      "pairs": [ { "value": "142202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. FOUNDIOUGNE" } ], 
+                      "pairs": [ { "value": "092101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. ALMADIES" } ], 
+                      "pairs": [ { "value": "011301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. WAKHINANE NIMZATT" } ], 
+                      "pairs": [ { "value": "014301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDIAYE" } ], 
+                      "pairs": [ { "value": "041202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. RUFISQUE EST" } ], 
+                      "pairs": [ { "value": "013301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. POUT" } ], 
+                      "pairs": [ { "value": "072102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MABO" } ], 
+                      "pairs": [ { "value": "122202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SARE COLY SALLE" } ], 
+                      "pairs": [ { "value": "102203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. YANG YANG" } ], 
+                      "pairs": [ { "value": "082203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DJIBABOUYA" } ], 
+                      "pairs": [ { "value": "141202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. PAKOUR" } ], 
+                      "pairs": [ { "value": "102202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. WOURO SIDY" } ], 
+                      "pairs": [ { "value": "112202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. PARCELLES ASSAINIES" } ], 
+                      "pairs": [ { "value": "011301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BARKEDJI" } ], 
+                      "pairs": [ { "value": "082201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. COLOBANE" } ], 
+                      "pairs": [ { "value": "093201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MBANE" } ], 
+                      "pairs": [ { "value": "041201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. LOUGA" } ], 
+                      "pairs": [ { "value": "083101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DAKATELY" } ], 
+                      "pairs": [ { "value": "132201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. THIES SUD" } ], 
+                      "pairs": [ { "value": "072301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BABA GARAGE" } ], 
+                      "pairs": [ { "value": "031201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NGOYE" } ], 
+                      "pairs": [ { "value": "031203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NOTTO" } ], 
+                      "pairs": [ { "value": "072201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. TENGHORI" } ], 
+                      "pairs": [ { "value": "021203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NGOTHIE" } ], 
+                      "pairs": [ { "value": "061203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. FIMELA" } ], 
+                      "pairs": [ { "value": "091202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDIOP" } ], 
+                      "pairs": [ { "value": "091201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MBADAKHOUNE" } ], 
+                      "pairs": [ { "value": "063201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. FISSEL" } ], 
+                      "pairs": [ { "value": "071201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NIAKHAR" } ], 
+                      "pairs": [ { "value": "091203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. LAMBAYE" } ], 
+                      "pairs": [ { "value": "031202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DAR  SALAM" } ], 
+                      "pairs": [ { "value": "132202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. TATTAGUINE" } ], 
+                      "pairs": [ { "value": "091204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NIASSIA" } ], 
+                      "pairs": [ { "value": "023202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BOGHAL" } ], 
+                      "pairs": [ { "value": "142201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DJIREDJI" } ], 
+                      "pairs": [ { "value": "141203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SIMBANDI BRASSOU" } ], 
+                      "pairs": [ { "value": "143203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BEMBOU" } ], 
+                      "pairs": [ { "value": "133201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. TAIF" } ], 
+                      "pairs": [ { "value": "033203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. BALA" } ], 
+                      "pairs": [ { "value": "053201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DIANKE MAKHA" } ], 
+                      "pairs": [ { "value": "053203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KEUR MBOUCKI" } ], 
+                      "pairs": [ { "value": "122201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. PAMBAL" } ], 
+                      "pairs": [ { "value": "073204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SALDE" } ], 
+                      "pairs": [ { "value": "042202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MERINA DAKHAR" } ], 
+                      "pairs": [ { "value": "073202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. TIVAOUANE" } ], 
+                      "pairs": [ { "value": "073102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. RAO" } ], 
+                      "pairs": [ { "value": "043201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SARE BIDJI" } ], 
+                      "pairs": [ { "value": "101203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SANGALKAM" } ], 
+                      "pairs": [ { "value": "013202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BAKEL" } ], 
+                      "pairs": [ { "value": "051101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KATAKEL" } ], 
+                      "pairs": [ { "value": "121202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. COKI" } ], 
+                      "pairs": [ { "value": "083201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SAINT LOUIS" } ], 
+                      "pairs": [ { "value": "043101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SABODALA" } ], 
+                      "pairs": [ { "value": "133202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. OGO" } ], 
+                      "pairs": [ { "value": "111202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KARANTABA" } ], 
+                      "pairs": [ { "value": "143202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. MAKACOLIBANTANG" } ], 
+                      "pairs": [ { "value": "052202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SINDIA" } ], 
+                      "pairs": [ { "value": "071203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDIEDIENG" } ], 
+                      "pairs": [ { "value": "061201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. THIENABA" } ], 
+                      "pairs": [ { "value": "072202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOLDA" } ], 
+                      "pairs": [ { "value": "101101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NIODIOR" } ], 
+                      "pairs": [ { "value": "092202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. OUADIOUR" } ], 
+                      "pairs": [ { "value": "093202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BIGNONA" } ], 
+                      "pairs": [ { "value": "021101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. LOUDIA OUOLOF" } ], 
+                      "pairs": [ { "value": "022202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. THIONCK-ESSYL" } ], 
+                      "pairs": [ { "value": "021102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KEUR MOUSSA" } ], 
+                      "pairs": [ { "value": "072203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MARSASSOUM" } ], 
+                      "pairs": [ { "value": "141102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. ZIGUINCHOR" } ], 
+                      "pairs": [ { "value": "023101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. PODOR" } ], 
+                      "pairs": [ { "value": "042101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. GRAND DAKAR" } ], 
+                      "pairs": [ { "value": "011301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. NDINDY" } ], 
+                      "pairs": [ { "value": "032201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KOUSSANAR" } ], 
+                      "pairs": [ { "value": "052201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. CABROUSSE" } ], 
+                      "pairs": [ { "value": "022201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BOUNKILING" } ], 
+                      "pairs": [ { "value": "142101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MEDINA YORO FOULAH" } ], 
+                      "pairs": [ { "value": "103101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. DIAMNIADIO" } ], 
+                      "pairs": [ { "value": "013201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. KOUMBAL" } ], 
+                      "pairs": [ { "value": "061202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. OUSSOUYE" } ], 
+                      "pairs": [ { "value": "022101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GUINGUINEO" } ], 
+                      "pairs": [ { "value": "063101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOUNGHEUL" } ], 
+                      "pairs": [ { "value": "123101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. RICHARD TOLL" } ], 
+                      "pairs": [ { "value": "041102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GOSSAS" } ], 
+                      "pairs": [ { "value": "093101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. VELINGARA" } ], 
+                      "pairs": [ { "value": "102101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. SAM NOTAIRE" } ], 
+                      "pairs": [ { "value": "014301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIOURBEL" } ], 
+                      "pairs": [ { "value": "032101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BARGNY" } ], 
+                      "pairs": [ { "value": "013101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SALEMATA" } ], 
+                      "pairs": [ { "value": "132101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. FATICK" } ], 
+                      "pairs": [ { "value": "091101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BAMBEY" } ], 
+                      "pairs": [ { "value": "031101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DAHRA" } ], 
+                      "pairs": [ { "value": "082102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KEDOUGOU" } ], 
+                      "pairs": [ { "value": "131101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KAHONE" } ], 
+                      "pairs": [ { "value": "061102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MBACKE" } ], 
+                      "pairs": [ { "value": "033101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NDIOUM" } ], 
+                      "pairs": [ { "value": "042102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NIORO" } ], 
+                      "pairs": [ { "value": "062101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AR. THIES NORD" } ], 
+                      "pairs": [ { "value": "072301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KAFFRINE" } ], 
+                      "pairs": [ { "value": "121101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SOKONE" } ], 
+                      "pairs": [ { "value": "092102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM .MATAM" } ], 
+                      "pairs": [ { "value": "111101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GOUDOMP" } ], 
+                      "pairs": [ { "value": "143101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIOFFIOR" } ], 
+                      "pairs": [ { "value": "091102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOUMPENTOUM" } ], 
+                      "pairs": [ { "value": "054101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MALEM HODDAR" } ], 
+                      "pairs": [ { "value": "124101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM .BIRKELANE" } ], 
+                      "pairs": [ { "value": "122101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SARAYA" } ], 
+                      "pairs": [ { "value": "133101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KEBEMER" } ], 
+                      "pairs": [ { "value": "081101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KHOMBOLE" } ], 
+                      "pairs": [ { "value": "072101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SEDHIOU" } ], 
+                      "pairs": [ { "value": "141101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MEKHE" } ], 
+                      "pairs": [ { "value": "073101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "011" } ], 
+                      "pairs": [ { "value": "032201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. RANEROU" } ], 
+                      "pairs": [ { "value": "113101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SENDOU" } ], 
+                      "pairs": [ { "value": "013106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DAGANA" } ], 
+                      "pairs": [ { "value": "041101" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "QRT_COMMUNE", 
+              "labels": [ { "text": "Commune" } ], 
+              "contentType": "alpha", 
+              "length": 8, 
+              "valueSets": [
+                {
+                  "name": "QRT_COMMUNE_VS1", 
+                  "labels": [ { "text": "Commune" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "COM. MBOUR" } ], 
+                      "pairs": [ { "value": "07110200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBAO" } ], 
+                      "pairs": [ { "value": "01230135" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DINGUIRAYE" } ], 
+                      "pairs": [ { "value": "10320301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM .KIDIRA" } ], 
+                      "pairs": [ { "value": "05120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. TAMBACOUNDA" } ], 
+                      "pairs": [ { "value": "05210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GOUDIRY" } ], 
+                      "pairs": [ { "value": "05310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOTHIARY" } ], 
+                      "pairs": [ { "value": "05320403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KAOLACK" } ], 
+                      "pairs": [ { "value": "06110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA" } ], 
+                      "pairs": [ { "value": "01130113" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. LINGUERE" } ], 
+                      "pairs": [ { "value": "08210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MERY" } ], 
+                      "pairs": [ { "value": "04220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MASSAR SUD" } ], 
+                      "pairs": [ { "value": "01520302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "YEUMBEUL SUD" } ], 
+                      "pairs": [ { "value": "01520102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAFOUNTINE" } ], 
+                      "pairs": [ { "value": "02120402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LOUR ESCALE" } ], 
+                      "pairs": [ { "value": "12320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DODJI" } ], 
+                      "pairs": [ { "value": "08220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MERETO" } ], 
+                      "pairs": [ { "value": "05420103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOKILADJI" } ], 
+                      "pairs": [ { "value": "11220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ADEANE" } ], 
+                      "pairs": [ { "value": "02320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "VELINGARA" } ], 
+                      "pairs": [ { "value": "11320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MANGAROUNGOU SANTO" } ], 
+                      "pairs": [ { "value": "14320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "YARANG BALANTE" } ], 
+                      "pairs": [ { "value": "14320105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJIBANAR" } ], 
+                      "pairs": [ { "value": "14320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. AERE LAO" } ], 
+                      "pairs": [ { "value": "04220104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DOUMGA LAO" } ], 
+                      "pairs": [ { "value": "04220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. JOAL-FADIOUTH" } ], 
+                      "pairs": [ { "value": "07110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBA MOSQUEE" } ], 
+                      "pairs": [ { "value": "03320205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PAYAR" } ], 
+                      "pairs": [ { "value": "05420204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIOMRE" } ], 
+                      "pairs": [ { "value": "08320304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGUEUNE SARR" } ], 
+                      "pairs": [ { "value": "08320402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AFFE DJOLOF" } ], 
+                      "pairs": [ { "value": "08220405" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAEL" } ], 
+                      "pairs": [ { "value": "03320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "WACK NGOUNA" } ], 
+                      "pairs": [ { "value": "06220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIOUM NGAINTH" } ], 
+                      "pairs": [ { "value": "12420102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KANENE NDIOB" } ], 
+                      "pairs": [ { "value": "08120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAHI" } ], 
+                      "pairs": [ { "value": "12120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAKAL" } ], 
+                      "pairs": [ { "value": "08320403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIALACOTO" } ], 
+                      "pairs": [ { "value": "05220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MANGAGOULACK" } ], 
+                      "pairs": [ { "value": "02120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BONCONTO" } ], 
+                      "pairs": [ { "value": "10220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THILMAKHA" } ], 
+                      "pairs": [ { "value": "07320304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIGNARABE" } ], 
+                      "pairs": [ { "value": "10320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIMBOLI" } ], 
+                      "pairs": [ { "value": "13120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NINEFECHA" } ], 
+                      "pairs": [ { "value": "13120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DINDEFELO" } ], 
+                      "pairs": [ { "value": "13120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "YEUMBEUL NORD" } ], 
+                      "pairs": [ { "value": "01520101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOCKY GARE" } ], 
+                      "pairs": [ { "value": "03220204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAROUME" } ], 
+                      "pairs": [ { "value": "14220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIALAMBERE" } ], 
+                      "pairs": [ { "value": "10120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BAGADADJI" } ], 
+                      "pairs": [ { "value": "10120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "POROKHANE" } ], 
+                      "pairs": [ { "value": "06220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGUENIENE" } ], 
+                      "pairs": [ { "value": "07120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AGNAM CIVOL" } ], 
+                      "pairs": [ { "value": "11120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUEDE VILLAGE" } ], 
+                      "pairs": [ { "value": "04220403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FASS THIEKENE" } ], 
+                      "pairs": [ { "value": "12320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBACOUTA" } ], 
+                      "pairs": [ { "value": "09220304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COUMBACARA" } ], 
+                      "pairs": [ { "value": "10120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MAMPATIM" } ], 
+                      "pairs": [ { "value": "10120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA GOUNASS" } ], 
+                      "pairs": [ { "value": "10220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAMAGUENE SICAP-MBAO" } ], 
+                      "pairs": [ { "value": "01230133" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOYNGUEL BAMBA" } ], 
+                      "pairs": [ { "value": "05320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOUROUCO" } ], 
+                      "pairs": [ { "value": "10320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA EL HADJ" } ], 
+                      "pairs": [ { "value": "10120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. OUROSSOGUI" } ], 
+                      "pairs": [ { "value": "11110200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LINKERING" } ], 
+                      "pairs": [ { "value": "10220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIOULOULOU" } ], 
+                      "pairs": [ { "value": "02120404" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BAMBA THIALENE" } ], 
+                      "pairs": [ { "value": "05420101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDRAME ESCALE" } ], 
+                      "pairs": [ { "value": "06220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEOUANE" } ], 
+                      "pairs": [ { "value": "07320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MOMAR SARR" } ], 
+                      "pairs": [ { "value": "08320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEREWANE" } ], 
+                      "pairs": [ { "value": "10320302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MISSIRAH WADENE" } ], 
+                      "pairs": [ { "value": "12320303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUINAW RAIL SUD" } ], 
+                      "pairs": [ { "value": "01230127" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIASSENE" } ], 
+                      "pairs": [ { "value": "09220105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PIKINE NORD" } ], 
+                      "pairs": [ { "value": "01230123" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJIDAH THIAROYE KAO" } ], 
+                      "pairs": [ { "value": "01230125" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAGNA" } ], 
+                      "pairs": [ { "value": "12420202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PANAL OUOLOF" } ], 
+                      "pairs": [ { "value": "06320205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA SABAKH" } ], 
+                      "pairs": [ { "value": "06220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BADION" } ], 
+                      "pairs": [ { "value": "10320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUSSY" } ], 
+                      "pairs": [ { "value": "14120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MISSIRAH" } ], 
+                      "pairs": [ { "value": "05220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOULINTO" } ], 
+                      "pairs": [ { "value": "10320204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OULAMPANE" } ], 
+                      "pairs": [ { "value": "02120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GABOU" } ], 
+                      "pairs": [ { "value": "05120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAM YABAL" } ], 
+                      "pairs": [ { "value": "08120105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MASSAR NORD" } ], 
+                      "pairs": [ { "value": "01520201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIEPPE" } ], 
+                      "pairs": [ { "value": "08120205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FANAYE" } ], 
+                      "pairs": [ { "value": "04220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUMBOURA" } ], 
+                      "pairs": [ { "value": "05120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MALIKA" } ], 
+                      "pairs": [ { "value": "01520202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KANEL" } ], 
+                      "pairs": [ { "value": "11210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PIKINE EST" } ], 
+                      "pairs": [ { "value": "01230122" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIACOUNDA" } ], 
+                      "pairs": [ { "value": "14220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. FOUNDIOUGNE" } ], 
+                      "pairs": [ { "value": "09210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGOR" } ], 
+                      "pairs": [ { "value": "01130132" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "WAKHINANE NIMZATT" } ], 
+                      "pairs": [ { "value": "01430123" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOULEL" } ], 
+                      "pairs": [ { "value": "12120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIANKE SOUF" } ], 
+                      "pairs": [ { "value": "12420201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SYER" } ], 
+                      "pairs": [ { "value": "08320204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGNITH" } ], 
+                      "pairs": [ { "value": "04120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "RUFISQUE EST" } ], 
+                      "pairs": [ { "value": "01330112" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GAMADJI SARE" } ], 
+                      "pairs": [ { "value": "04220402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. POUT" } ], 
+                      "pairs": [ { "value": "07210200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIOGNICK" } ], 
+                      "pairs": [ { "value": "12220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NGUIDILOGNE" } ], 
+                      "pairs": [ { "value": "11120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NEMATABA" } ], 
+                      "pairs": [ { "value": "10220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TESSEKRE FORAGE" } ], 
+                      "pairs": [ { "value": "08220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FANN-POINT E-AMITIE" } ], 
+                      "pairs": [ { "value": "01130115" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MERMOZ-SACRE COEUR" } ], 
+                      "pairs": [ { "value": "01130134" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAMA" } ], 
+                      "pairs": [ { "value": "04120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAN SAMBA" } ], 
+                      "pairs": [ { "value": "14120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA CHERIF" } ], 
+                      "pairs": [ { "value": "10120205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PAKOUR" } ], 
+                      "pairs": [ { "value": "10220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUAKAM" } ], 
+                      "pairs": [ { "value": "01130131" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROU KHOUDOSS" } ], 
+                      "pairs": [ { "value": "07320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDANDE" } ], 
+                      "pairs": [ { "value": "08120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDENDORY" } ], 
+                      "pairs": [ { "value": "11220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIAREME LIMAMOULAYE" } ], 
+                      "pairs": [ { "value": "01430122" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SIMBADI BALANTE" } ], 
+                      "pairs": [ { "value": "14320104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AOURE" } ], 
+                      "pairs": [ { "value": "11220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GRAND YOFF" } ], 
+                      "pairs": [ { "value": "01130141" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROU MOUSTY" } ], 
+                      "pairs": [ { "value": "08120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "RIBOT ESCALE" } ], 
+                      "pairs": [ { "value": "12320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GASSANE" } ], 
+                      "pairs": [ { "value": "08220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COLOBANE" } ], 
+                      "pairs": [ { "value": "09320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MADINA NDIATHBE" } ], 
+                      "pairs": [ { "value": "04220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BELE" } ], 
+                      "pairs": [ { "value": "05120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DEALY" } ], 
+                      "pairs": [ { "value": "08220402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BALLOU" } ], 
+                      "pairs": [ { "value": "05120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOKHOL" } ], 
+                      "pairs": [ { "value": "04120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. LOUGA" } ], 
+                      "pairs": [ { "value": "08310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FAFACOUROU" } ], 
+                      "pairs": [ { "value": "10320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OREFONDE" } ], 
+                      "pairs": [ { "value": "11120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "IDA MOURIDE" } ], 
+                      "pairs": [ { "value": "12320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAMB" } ], 
+                      "pairs": [ { "value": "08220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LABGAR" } ], 
+                      "pairs": [ { "value": "08220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GAGNICK" } ], 
+                      "pairs": [ { "value": "06320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEVOYE" } ], 
+                      "pairs": [ { "value": "13220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIES EST" } ], 
+                      "pairs": [ { "value": "07230121" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "RUFISQUE NORD" } ], 
+                      "pairs": [ { "value": "01330111" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NIANDANE" } ], 
+                      "pairs": [ { "value": "04220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIENDE" } ], 
+                      "pairs": [ { "value": "14120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SOUM" } ], 
+                      "pairs": [ { "value": "09220107" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BABA GARAGE" } ], 
+                      "pairs": [ { "value": "03120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROU MARNANE" } ], 
+                      "pairs": [ { "value": "08120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SINTHIOU FISSA" } ], 
+                      "pairs": [ { "value": "05120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDANGALMA" } ], 
+                      "pairs": [ { "value": "03120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NOTTO" } ], 
+                      "pairs": [ { "value": "07220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAKAR" } ], 
+                      "pairs": [ { "value": "14120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUONCK" } ], 
+                      "pairs": [ { "value": "02120303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUDOUCAR" } ], 
+                      "pairs": [ { "value": "14120105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIEBEL" } ], 
+                      "pairs": [ { "value": "06120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FIMELA" } ], 
+                      "pairs": [ { "value": "09120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIOB" } ], 
+                      "pairs": [ { "value": "09120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBADAKHOUNE" } ], 
+                      "pairs": [ { "value": "06320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FISSEL" } ], 
+                      "pairs": [ { "value": "07120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PATAR" } ], 
+                      "pairs": [ { "value": "09120303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGOGOM" } ], 
+                      "pairs": [ { "value": "03120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUBADJI" } ], 
+                      "pairs": [ { "value": "13220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KHELCOM-BIRAME" } ], 
+                      "pairs": [ { "value": "06320104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TATTAGUINE" } ], 
+                      "pairs": [ { "value": "09120403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIASSIA" } ], 
+                      "pairs": [ { "value": "02320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LOUGRE THIOLY" } ], 
+                      "pairs": [ { "value": "11320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJILOR" } ], 
+                      "pairs": [ { "value": "09220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DINGUIRAYE" } ], 
+                      "pairs": [ { "value": "03120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOKOUL DIAWRIGNE" } ], 
+                      "pairs": [ { "value": "08120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BADEGNE OUOLOF" } ], 
+                      "pairs": [ { "value": "08120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. THILOGNE" } ], 
+                      "pairs": [ { "value": "11120105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BANDAFASSI" } ], 
+                      "pairs": [ { "value": "13120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGUIDILE" } ], 
+                      "pairs": [ { "value": "08320303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TANKON" } ], 
+                      "pairs": [ { "value": "14220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJINACKY" } ], 
+                      "pairs": [ { "value": "02120401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BAMBALI" } ], 
+                      "pairs": [ { "value": "14120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ENAMPORE" } ], 
+                      "pairs": [ { "value": "02320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "INOR" } ], 
+                      "pairs": [ { "value": "14220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOGHAL" } ], 
+                      "pairs": [ { "value": "14220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAMBATI" } ], 
+                      "pairs": [ { "value": "14220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. TANAFF" } ], 
+                      "pairs": [ { "value": "14320305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJINANY" } ], 
+                      "pairs": [ { "value": "14220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJIBIDIONE" } ], 
+                      "pairs": [ { "value": "02120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOUTOUPA CAMARACOUNDA" } ], 
+                      "pairs": [ { "value": "02320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PAROUMBA" } ], 
+                      "pairs": [ { "value": "10220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BEMBOU" } ], 
+                      "pairs": [ { "value": "13320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TENGHORI" } ], 
+                      "pairs": [ { "value": "02120304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SADIO" } ], 
+                      "pairs": [ { "value": "03320301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GANDE" } ], 
+                      "pairs": [ { "value": "08320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJIREDJI" } ], 
+                      "pairs": [ { "value": "14120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBANE" } ], 
+                      "pairs": [ { "value": "04120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SIMBANDI BRASSOU" } ], 
+                      "pairs": [ { "value": "14320302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOMBORONCOTO" } ], 
+                      "pairs": [ { "value": "13120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUASSADOU" } ], 
+                      "pairs": [ { "value": "10220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SAMINE" } ], 
+                      "pairs": [ { "value": "14320107" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GOUMBAYEL" } ], 
+                      "pairs": [ { "value": "05320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOMOTI" } ], 
+                      "pairs": [ { "value": "05320304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TANKANTO ESCALE" } ], 
+                      "pairs": [ { "value": "10120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBA MBELLA" } ], 
+                      "pairs": [ { "value": "12220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BALINGHORE" } ], 
+                      "pairs": [ { "value": "02120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBAR" } ], 
+                      "pairs": [ { "value": "09320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA GOUNASS" } ], 
+                      "pairs": [ { "value": "01430121" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SALY ESCALE" } ], 
+                      "pairs": [ { "value": "12320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIAMONE" } ], 
+                      "pairs": [ { "value": "02120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BAGHERE" } ], 
+                      "pairs": [ { "value": "14320303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PIRE GOUREYE" } ], 
+                      "pairs": [ { "value": "07320404" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TASSETE" } ], 
+                      "pairs": [ { "value": "07220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DABALY" } ], 
+                      "pairs": [ { "value": "06220205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SUELLE" } ], 
+                      "pairs": [ { "value": "02120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAÏF" } ], 
+                      "pairs": [ { "value": "03320302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GALOYA TOUCOULEUR" } ], 
+                      "pairs": [ { "value": "04220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIAKAR" } ], 
+                      "pairs": [ { "value": "03120304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAHENE" } ], 
+                      "pairs": [ { "value": "05420102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MERINA DAKHAR" } ], 
+                      "pairs": [ { "value": "07320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NOTTO GOUYE DIAMA" } ], 
+                      "pairs": [ { "value": "07320403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. TIVAOUANE" } ], 
+                      "pairs": [ { "value": "07310200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DALLA NGABOU" } ], 
+                      "pairs": [ { "value": "03320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GANDON" } ], 
+                      "pairs": [ { "value": "04320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBA FALL" } ], 
+                      "pairs": [ { "value": "03320204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIOUMANE" } ], 
+                      "pairs": [ { "value": "03320105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAIBA NDIAYE" } ], 
+                      "pairs": [ { "value": "07320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LEONA" } ], 
+                      "pairs": [ { "value": "08320401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LORO" } ], 
+                      "pairs": [ { "value": "08120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SARE BIDJI" } ], 
+                      "pairs": [ { "value": "10120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGOYE" } ], 
+                      "pairs": [ { "value": "03120303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAR SALAM" } ], 
+                      "pairs": [ { "value": "13220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDONDOL" } ], 
+                      "pairs": [ { "value": "03120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SANGALKAM" } ], 
+                      "pairs": [ { "value": "01320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BAKEL" } ], 
+                      "pairs": [ { "value": "05110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PEKESSE" } ], 
+                      "pairs": [ { "value": "07320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGOURANE OUOLOF" } ], 
+                      "pairs": [ { "value": "08120305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOKOUL BELBOUCK" } ], 
+                      "pairs": [ { "value": "12120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COKI" } ], 
+                      "pairs": [ { "value": "08320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BALA" } ], 
+                      "pairs": [ { "value": "05320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DEMETTE" } ], 
+                      "pairs": [ { "value": "04220405" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SAINT-LOUIS" } ], 
+                      "pairs": [ { "value": "04310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MISSIRAH SIRIMANA" } ], 
+                      "pairs": [ { "value": "13320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUARKHOH" } ], 
+                      "pairs": [ { "value": "08220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOKIDIAWE" } ], 
+                      "pairs": [ { "value": "11120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ORKADIERE" } ], 
+                      "pairs": [ { "value": "11220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIAMENE PASSE" } ], 
+                      "pairs": [ { "value": "08220404" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CHERIF LO" } ], 
+                      "pairs": [ { "value": "07320401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDORNA" } ], 
+                      "pairs": [ { "value": "10320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUTHIABA WOLOF" } ], 
+                      "pairs": [ { "value": "05420202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIARNY" } ], 
+                      "pairs": [ { "value": "08220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SADATOU" } ], 
+                      "pairs": [ { "value": "05120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KATHIOTTE" } ], 
+                      "pairs": [ { "value": "12120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KANDIAYE" } ], 
+                      "pairs": [ { "value": "10220304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIAGHA" } ], 
+                      "pairs": [ { "value": "14320301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINATOUL SALAM 2" } ], 
+                      "pairs": [ { "value": "12120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR SALOUM DIANE" } ], 
+                      "pairs": [ { "value": "09220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KARANTABA" } ], 
+                      "pairs": [ { "value": "14320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDOGA BABACAR" } ], 
+                      "pairs": [ { "value": "05220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAMAGADIO" } ], 
+                      "pairs": [ { "value": "12120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOUBOUDOU" } ], 
+                      "pairs": [ { "value": "14320304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FAOUNE" } ], 
+                      "pairs": [ { "value": "14220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SABODALA" } ], 
+                      "pairs": [ { "value": "13320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "WOURO SIDY" } ], 
+                      "pairs": [ { "value": "11220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BAMBYLOR" } ], 
+                      "pairs": [ { "value": "01320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOSSONG" } ], 
+                      "pairs": [ { "value": "09220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KANDIA" } ], 
+                      "pairs": [ { "value": "10220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SINTHIOU BAMAMBE-BANADJI" } ], 
+                      "pairs": [ { "value": "11220204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIASS" } ], 
+                      "pairs": [ { "value": "07120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NETTEBOULOU" } ], 
+                      "pairs": [ { "value": "05220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUTHIA GUAYDI" } ], 
+                      "pairs": [ { "value": "05420201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUIRO YERO BOCAR" } ], 
+                      "pairs": [ { "value": "10120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KATABA 1" } ], 
+                      "pairs": [ { "value": "02120403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIAFFATE" } ], 
+                      "pairs": [ { "value": "06120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOAR" } ], 
+                      "pairs": [ { "value": "05320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIENABA" } ], 
+                      "pairs": [ { "value": "07220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BANI ISRAEL" } ], 
+                      "pairs": [ { "value": "05320301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BONA" } ], 
+                      "pairs": [ { "value": "14220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOLDA" } ], 
+                      "pairs": [ { "value": "10110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOULOR" } ], 
+                      "pairs": [ { "value": "05320401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIANNAH BA" } ], 
+                      "pairs": [ { "value": "14120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOULACOLON" } ], 
+                      "pairs": [ { "value": "10120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOLIBANTANG" } ], 
+                      "pairs": [ { "value": "14320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR SAMBA GUEYE" } ], 
+                      "pairs": [ { "value": "09220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDOYENE" } ], 
+                      "pairs": [ { "value": "08120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJIRNDA" } ], 
+                      "pairs": [ { "value": "09220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIAGUIS" } ], 
+                      "pairs": [ { "value": "02320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GOLLERE" } ], 
+                      "pairs": [ { "value": "04220105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DABIA" } ], 
+                      "pairs": [ { "value": "11120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGAYOKHEME" } ], 
+                      "pairs": [ { "value": "09120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBA MERINA" } ], 
+                      "pairs": [ { "value": "08120106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PASS KOTO" } ], 
+                      "pairs": [ { "value": "05420203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUADIOUR" } ], 
+                      "pairs": [ { "value": "09320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MAKACOLIBANTANG" } ], 
+                      "pairs": [ { "value": "05220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BARKEDJI" } ], 
+                      "pairs": [ { "value": "08220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOULAL" } ], 
+                      "pairs": [ { "value": "08220401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MABO" } ], 
+                      "pairs": [ { "value": "12220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROU SALAM" } ], 
+                      "pairs": [ { "value": "06220206" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOKE DIALLOUBE" } ], 
+                      "pairs": [ { "value": "04220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SARE COLY SALLE" } ], 
+                      "pairs": [ { "value": "10220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIANI TOUCOULEUR" } ], 
+                      "pairs": [ { "value": "05220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "RONKH" } ], 
+                      "pairs": [ { "value": "04120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BASSOUL" } ], 
+                      "pairs": [ { "value": "09220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BIGNONA" } ], 
+                      "pairs": [ { "value": "02110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DENDEYE GOUY GUI" } ], 
+                      "pairs": [ { "value": "03320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUKOUT" } ], 
+                      "pairs": [ { "value": "02220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAKATELY" } ], 
+                      "pairs": [ { "value": "13220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. THIONCK-ESSYL" } ], 
+                      "pairs": [ { "value": "02110200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAGATTA GUETH" } ], 
+                      "pairs": [ { "value": "08120303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR SOCE" } ], 
+                      "pairs": [ { "value": "06120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIENDER" } ], 
+                      "pairs": [ { "value": "07220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGANDIOUF" } ], 
+                      "pairs": [ { "value": "07320302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUL" } ], 
+                      "pairs": [ { "value": "07320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBOULA" } ], 
+                      "pairs": [ { "value": "08220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. WALALDE" } ], 
+                      "pairs": [ { "value": "04220107" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MARSASSOUM" } ], 
+                      "pairs": [ { "value": "14110200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SINTHIOU MAMADOU BOUBOU" } ], 
+                      "pairs": [ { "value": "05320204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUDALAYE" } ], 
+                      "pairs": [ { "value": "11320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBADIANE" } ], 
+                      "pairs": [ { "value": "08120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAGATTA DJOLOF" } ], 
+                      "pairs": [ { "value": "08220403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIEL" } ], 
+                      "pairs": [ { "value": "08220104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGUER MALAL" } ], 
+                      "pairs": [ { "value": "08320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "YANG YANG" } ], 
+                      "pairs": [ { "value": "08220304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBOLO BIRANE" } ], 
+                      "pairs": [ { "value": "04220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGHAYE" } ], 
+                      "pairs": [ { "value": "03320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. ZIGUINCHOR" } ], 
+                      "pairs": [ { "value": "02310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIAMENE" } ], 
+                      "pairs": [ { "value": "08320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIOMBY" } ], 
+                      "pairs": [ { "value": "06120303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OGO" } ], 
+                      "pairs": [ { "value": "11120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PETE OUARACK" } ], 
+                      "pairs": [ { "value": "08320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIAKHENE" } ], 
+                      "pairs": [ { "value": "07320303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIENE LAGANE" } ], 
+                      "pairs": [ { "value": "09320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIOLOM FALL" } ], 
+                      "pairs": [ { "value": "08120304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIAYENE PEINDAO" } ], 
+                      "pairs": [ { "value": "04220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIANKE MAKHA" } ], 
+                      "pairs": [ { "value": "05320303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DODEL" } ], 
+                      "pairs": [ { "value": "04220401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOUTOUCOUFARA" } ], 
+                      "pairs": [ { "value": "05320302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BEMET-BIDJINI" } ], 
+                      "pairs": [ { "value": "14120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DARA MBOSS" } ], 
+                      "pairs": [ { "value": "06320204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TIVAOUANE PEULH-NIAGHA" } ], 
+                      "pairs": [ { "value": "01320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAB GAYE" } ], 
+                      "pairs": [ { "value": "08120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KHOSSANTO" } ], 
+                      "pairs": [ { "value": "13320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KARTHIACK" } ], 
+                      "pairs": [ { "value": "02120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBAYENE" } ], 
+                      "pairs": [ { "value": "07320301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KELE GUEYE" } ], 
+                      "pairs": [ { "value": "08320301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBEDIENE" } ], 
+                      "pairs": [ { "value": "08320302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIAKHAR" } ], 
+                      "pairs": [ { "value": "09120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIARERE" } ], 
+                      "pairs": [ { "value": "09120401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FASS NGOM" } ], 
+                      "pairs": [ { "value": "04320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGUELOU" } ], 
+                      "pairs": [ { "value": "06320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NABADJI CIVOL" } ], 
+                      "pairs": [ { "value": "11120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. PODOR" } ], 
+                      "pairs": [ { "value": "04210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BISCUITERIE" } ], 
+                      "pairs": [ { "value": "01130122" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GNIBY" } ], 
+                      "pairs": [ { "value": "12120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDAME" } ], 
+                      "pairs": [ { "value": "05420104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MADINA" } ], 
+                      "pairs": [ { "value": "03320104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAOULE" } ], 
+                      "pairs": [ { "value": "09120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROU MINAME" } ], 
+                      "pairs": [ { "value": "12420101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDINDY" } ], 
+                      "pairs": [ { "value": "03220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SINTHIOU BOCAR ALI" } ], 
+                      "pairs": [ { "value": "05320402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBA TOUL" } ], 
+                      "pairs": [ { "value": "07220204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "REFANE" } ], 
+                      "pairs": [ { "value": "03120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUSSANAR" } ], 
+                      "pairs": [ { "value": "05220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SINTHIANG KOUNDARA" } ], 
+                      "pairs": [ { "value": "10220104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MOUDERY" } ], 
+                      "pairs": [ { "value": "05120303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIARE NDIALGUI" } ], 
+                      "pairs": [ { "value": "09120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SINTHIOU MALEME" } ], 
+                      "pairs": [ { "value": "05220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIEMBERING" } ], 
+                      "pairs": [ { "value": "02220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GAINTHE PATHE" } ], 
+                      "pairs": [ { "value": "12320301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GAWANE" } ], 
+                      "pairs": [ { "value": "03120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIAMALATHIEL" } ], 
+                      "pairs": [ { "value": "14220104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIETTY" } ], 
+                      "pairs": [ { "value": "10120302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GAE" } ], 
+                      "pairs": [ { "value": "04120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COUBALAN" } ], 
+                      "pairs": [ { "value": "02120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BOUNKILING" } ], 
+                      "pairs": [ { "value": "14210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GAINTE KAYE" } ], 
+                      "pairs": [ { "value": "06220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGOHE" } ], 
+                      "pairs": [ { "value": "03220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GATHIARY" } ], 
+                      "pairs": [ { "value": "05120101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MEDINA YORO FOULAH" } ], 
+                      "pairs": [ { "value": "10310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. PATA" } ], 
+                      "pairs": [ { "value": "10320304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PATAR LIA" } ], 
+                      "pairs": [ { "value": "09320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIAMNIADIO" } ], 
+                      "pairs": [ { "value": "01320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAMA KANTA PEULH" } ], 
+                      "pairs": [ { "value": "14120106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MABA DIAKHOU" } ], 
+                      "pairs": [ { "value": "06220301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PAOSKOTO" } ], 
+                      "pairs": [ { "value": "06220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROU SALAM  TYP" } ], 
+                      "pairs": [ { "value": "03320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SINDIAN" } ], 
+                      "pairs": [ { "value": "02120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LOUL SESSENE" } ], 
+                      "pairs": [ { "value": "09120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LATMINGUE" } ], 
+                      "pairs": [ { "value": "06120201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GUEDE CHANTIER" } ], 
+                      "pairs": [ { "value": "04220406" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MLOMP" } ], 
+                      "pairs": [ { "value": "02220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. OUSSOUYE" } ], 
+                      "pairs": [ { "value": "02210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CAMBERENE" } ], 
+                      "pairs": [ { "value": "01130144" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GUINGUINEO" } ], 
+                      "pairs": [ { "value": "06310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOUNGHEUL" } ], 
+                      "pairs": [ { "value": "12310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. RICHARD TOLL" } ], 
+                      "pairs": [ { "value": "04110200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIES OUEST" } ], 
+                      "pairs": [ { "value": "07230122" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIEUPPEUL DERKLE" } ], 
+                      "pairs": [ { "value": "01130126" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "YOFF" } ], 
+                      "pairs": [ { "value": "01130133" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GOSSAS" } ], 
+                      "pairs": [ { "value": "09310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MALEM NIANI" } ], 
+                      "pairs": [ { "value": "05420205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. THIADIAYE" } ], 
+                      "pairs": [ { "value": "07120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DABO" } ], 
+                      "pairs": [ { "value": "10120206" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. VELINGARA" } ], 
+                      "pairs": [ { "value": "10210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GRAND DAKAR" } ], 
+                      "pairs": [ { "value": "01130121" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GOLF SUD" } ], 
+                      "pairs": [ { "value": "01430111" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SALIKEGNE" } ], 
+                      "pairs": [ { "value": "10120105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIOURBEL" } ], 
+                      "pairs": [ { "value": "03210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIAROYE SUR MER" } ], 
+                      "pairs": [ { "value": "01230131" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SAM NOTAIRE" } ], 
+                      "pairs": [ { "value": "01430112" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "RUFISQUE OUEST" } ], 
+                      "pairs": [ { "value": "01330113" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DALIFORT" } ], 
+                      "pairs": [ { "value": "01230124" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SICAP LIBERTE" } ], 
+                      "pairs": [ { "value": "01130125" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PATTE D’OIE" } ], 
+                      "pairs": [ { "value": "01130142" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "JAXAAY-PARCELLES" } ], 
+                      "pairs": [ { "value": "01520301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HANN-BEL AIR" } ], 
+                      "pairs": [ { "value": "01130124" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAKAR-PLATEAU" } ], 
+                      "pairs": [ { "value": "01130112" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BARGNY" } ], 
+                      "pairs": [ { "value": "01310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HLM" } ], 
+                      "pairs": [ { "value": "01130123" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PIKINE OUEST" } ], 
+                      "pairs": [ { "value": "01230121" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MBORO" } ], 
+                      "pairs": [ { "value": "07320104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MADINA WANDIFA" } ], 
+                      "pairs": [ { "value": "14220304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TIVAOUANE-DIACKSAO" } ], 
+                      "pairs": [ { "value": "01230132" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. ROSSO" } ], 
+                      "pairs": [ { "value": "04120205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. ODOBERE" } ], 
+                      "pairs": [ { "value": "11220105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIAROYE GARE" } ], 
+                      "pairs": [ { "value": "01230134" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBA LAPPE" } ], 
+                      "pairs": [ { "value": "03220106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUEULE TAPEE-FASS-COLOBANE" } ], 
+                      "pairs": [ { "value": "01130114" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUROUR" } ], 
+                      "pairs": [ { "value": "06320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MONT ROLLAND" } ], 
+                      "pairs": [ { "value": "07320402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAYEMOR" } ], 
+                      "pairs": [ { "value": "06220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SINDIA" } ], 
+                      "pairs": [ { "value": "07120303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIAGANIAO" } ], 
+                      "pairs": [ { "value": "07120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SALEMATA" } ], 
+                      "pairs": [ { "value": "13210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. FATICK" } ], 
+                      "pairs": [ { "value": "09110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GUEOUL" } ], 
+                      "pairs": [ { "value": "08120206" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BAMBEY" } ], 
+                      "pairs": [ { "value": "03110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PATAR" } ], 
+                      "pairs": [ { "value": "03220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR SAMBA KANE" } ], 
+                      "pairs": [ { "value": "03120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAÏBA NIASSENE" } ], 
+                      "pairs": [ { "value": "06220204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGATHIE NAOUDE" } ], 
+                      "pairs": [ { "value": "06320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LAMBAYE" } ], 
+                      "pairs": [ { "value": "03120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DAHRA" } ], 
+                      "pairs": [ { "value": "08210200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUSSAN" } ], 
+                      "pairs": [ { "value": "05320203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDOULO" } ], 
+                      "pairs": [ { "value": "03220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM .KEDOUGOU" } ], 
+                      "pairs": [ { "value": "13110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBACKE CADIOR" } ], 
+                      "pairs": [ { "value": "08120107" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MADINA FOULBE" } ], 
+                      "pairs": [ { "value": "05120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KAHONE" } ], 
+                      "pairs": [ { "value": "06110200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DANKH SENE" } ], 
+                      "pairs": [ { "value": "03220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIORO ALASSANE TALL" } ], 
+                      "pairs": [ { "value": "09220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SARE YOBA DIEGA" } ], 
+                      "pairs": [ { "value": "10120106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KANDION MANGANA" } ], 
+                      "pairs": [ { "value": "14220204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOURE MBONDE" } ], 
+                      "pairs": [ { "value": "03220205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SEGRE-GATTA" } ], 
+                      "pairs": [ { "value": "12220204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MBOUCKI" } ], 
+                      "pairs": [ { "value": "12220101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MOUSSA" } ], 
+                      "pairs": [ { "value": "07220303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DYA" } ], 
+                      "pairs": [ { "value": "06120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROU NAHIM" } ], 
+                      "pairs": [ { "value": "03320107" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KHELCOM" } ], 
+                      "pairs": [ { "value": "12420103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIEBENE GANDIOLE" } ], 
+                      "pairs": [ { "value": "04320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIAGO" } ], 
+                      "pairs": [ { "value": "06320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MAKA YOP" } ], 
+                      "pairs": [ { "value": "12320302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR BAKA" } ], 
+                      "pairs": [ { "value": "06120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGAYENE" } ], 
+                      "pairs": [ { "value": "06220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAIBA MOUTOUPHA" } ], 
+                      "pairs": [ { "value": "03220105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIARE" } ], 
+                      "pairs": [ { "value": "06120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUINAW RAIL NORD" } ], 
+                      "pairs": [ { "value": "01230126" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SEBIKOTANE" } ], 
+                      "pairs": [ { "value": "01320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. M’BACKE" } ], 
+                      "pairs": [ { "value": "03310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NDIOUM" } ], 
+                      "pairs": [ { "value": "04210200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. BODE LAO" } ], 
+                      "pairs": [ { "value": "04220404" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MBOUMBA" } ], 
+                      "pairs": [ { "value": "04220106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NIORO" } ], 
+                      "pairs": [ { "value": "06210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KAYAR" } ], 
+                      "pairs": [ { "value": "07220304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. OUAOUNDE" } ], 
+                      "pairs": [ { "value": "11220106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SEMME" } ], 
+                      "pairs": [ { "value": "11220107" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBEULEUP" } ], 
+                      "pairs": [ { "value": "12220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAMAL" } ], 
+                      "pairs": [ { "value": "12220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NDOFFANE" } ], 
+                      "pairs": [ { "value": "06120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIOBENE SAMBA LAMO" } ], 
+                      "pairs": [ { "value": "12420104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FANDENE" } ], 
+                      "pairs": [ { "value": "07220302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUET ARDO" } ], 
+                      "pairs": [ { "value": "08320104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DEMBANCANE" } ], 
+                      "pairs": [ { "value": "11220104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NGOUNDIANE" } ], 
+                      "pairs": [ { "value": "07220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIEDIENG" } ], 
+                      "pairs": [ { "value": "06120103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIAGANE BARKA" } ], 
+                      "pairs": [ { "value": "09220103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBELLACADIAO" } ], 
+                      "pairs": [ { "value": "09120102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "THIES NORD" } ], 
+                      "pairs": [ { "value": "07230111" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIAKHAO" } ], 
+                      "pairs": [ { "value": "09120105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIAOUBE-KABENDOU" } ], 
+                      "pairs": [ { "value": "10220305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NDOMBO SANDJIRY" } ], 
+                      "pairs": [ { "value": "04120104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NGUEKHOKH" } ], 
+                      "pairs": [ { "value": "07120304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NGAPAROU" } ], 
+                      "pairs": [ { "value": "07120305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KARANG POSTE" } ], 
+                      "pairs": [ { "value": "09220305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KAFFRINE" } ], 
+                      "pairs": [ { "value": "12110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GANDIAYE" } ], 
+                      "pairs": [ { "value": "06120304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SOKONE" } ], 
+                      "pairs": [ { "value": "09210200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SIBASSOR" } ], 
+                      "pairs": [ { "value": "06120305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM .MATAM" } ], 
+                      "pairs": [ { "value": "11110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MISSIRAH" } ], 
+                      "pairs": [ { "value": "03320202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOUBA MBOUL" } ], 
+                      "pairs": [ { "value": "03320106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIEGOUNE" } ], 
+                      "pairs": [ { "value": "02120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DOUGUE" } ], 
+                      "pairs": [ { "value": "05320201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MEDINA BAFFE" } ], 
+                      "pairs": [ { "value": "13320101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SESSENE" } ], 
+                      "pairs": [ { "value": "07120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NDIEYENE SIRAKH" } ], 
+                      "pairs": [ { "value": "07220201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR NGALGOU" } ], 
+                      "pairs": [ { "value": "03220104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NGANDA" } ], 
+                      "pairs": [ { "value": "12120205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. GOUDOMP" } ], 
+                      "pairs": [ { "value": "14310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIONEWAR" } ], 
+                      "pairs": [ { "value": "09220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIOFFIOR" } ], 
+                      "pairs": [ { "value": "09110200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DIOUROUP" } ], 
+                      "pairs": [ { "value": "09120402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. ROSS-BETHIO" } ], 
+                      "pairs": [ { "value": "04120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJIBABOUYA" } ], 
+                      "pairs": [ { "value": "14120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PALMARIN FACAO" } ], 
+                      "pairs": [ { "value": "09120203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJILASSE" } ], 
+                      "pairs": [ { "value": "09120204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAOUR" } ], 
+                      "pairs": [ { "value": "14320102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SANTHIABA MANJACK" } ], 
+                      "pairs": [ { "value": "02220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KEUR MANDONGO" } ], 
+                      "pairs": [ { "value": "06220304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PAMBAL" } ], 
+                      "pairs": [ { "value": "07320405" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIANAH MALARY" } ], 
+                      "pairs": [ { "value": "14120107" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ETHIOLO" } ], 
+                      "pairs": [ { "value": "13220202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOUMPENTOUM" } ], 
+                      "pairs": [ { "value": "05410100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MLOMP" } ], 
+                      "pairs": [ { "value": "02120205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. FASS" } ], 
+                      "pairs": [ { "value": "06320105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SOMONE" } ], 
+                      "pairs": [ { "value": "07120308" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. PASSY" } ], 
+                      "pairs": [ { "value": "09220106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MALEM HODDAR" } ], 
+                      "pairs": [ { "value": "12410100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM .BIRKELANE" } ], 
+                      "pairs": [ { "value": "12210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MALICOUNDA" } ], 
+                      "pairs": [ { "value": "07120301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NIAMING" } ], 
+                      "pairs": [ { "value": "10320303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SANDIARA" } ], 
+                      "pairs": [ { "value": "07120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FONGOLIMBI" } ], 
+                      "pairs": [ { "value": "13120202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SARAYA" } ], 
+                      "pairs": [ { "value": "13310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GADE ESCALE" } ], 
+                      "pairs": [ { "value": "03220102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MBAM" } ], 
+                      "pairs": [ { "value": "09220104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KEBEMER" } ], 
+                      "pairs": [ { "value": "08110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAIBA TIECKENE" } ], 
+                      "pairs": [ { "value": "03320108" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MPAL" } ], 
+                      "pairs": [ { "value": "04320104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KHOMBOLE" } ], 
+                      "pairs": [ { "value": "07210100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. HAMADY HOUNARE" } ], 
+                      "pairs": [ { "value": "11220203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. PETE" } ], 
+                      "pairs": [ { "value": "04220204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SEDHIOU" } ], 
+                      "pairs": [ { "value": "14110100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MEKHE" } ], 
+                      "pairs": [ { "value": "07310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIATTACOUNDA" } ], 
+                      "pairs": [ { "value": "14320106" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. POPENGUINE" } ], 
+                      "pairs": [ { "value": "07120306" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PARCELLES ASSAINIES" } ], 
+                      "pairs": [ { "value": "01130143" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "YENE" } ], 
+                      "pairs": [ { "value": "01320103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DIAWARA" } ], 
+                      "pairs": [ { "value": "05120304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KOUNKANE" } ], 
+                      "pairs": [ { "value": "10220306" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. KEUR MADIABEL" } ], 
+                      "pairs": [ { "value": "06220305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GOREE" } ], 
+                      "pairs": [ { "value": "01130111" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NDIAGNE" } ], 
+                      "pairs": [ { "value": "08320105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MBOSS" } ], 
+                      "pairs": [ { "value": "06320206" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. MBEULEUKHE" } ], 
+                      "pairs": [ { "value": "08220305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. NDIAMACOUTA" } ], 
+                      "pairs": [ { "value": "14220105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. RANEROU" } ], 
+                      "pairs": [ { "value": "11310100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SENDOU" } ], 
+                      "pairs": [ { "value": "01310600" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. SALY PORTUDAL" } ], 
+                      "pairs": [ { "value": "07120307" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COM. DAGANA" } ], 
+                      "pairs": [ { "value": "04110100" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "QRT_DATE", 
+              "labels": [ { "text": "Date" } ], 
+              "contentType": "alpha", 
+              "length": 10
+            }, 
+            {
+              "name": "QRT_JOUR", 
+              "labels": [ { "text": "Jour" } ], 
+              "contentType": "numeric", 
+              "subitem": true, 
+              "subitemOffset": 0, 
+              "length": 2, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "QRT_MOIS", 
+              "labels": [ { "text": "Mois" } ], 
+              "contentType": "numeric", 
+              "subitem": true, 
+              "subitemOffset": 3, 
+              "length": 2, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "QRT_ANNEE", 
+              "labels": [ { "text": "Année" } ], 
+              "contentType": "numeric", 
+              "subitem": true, 
+              "subitemOffset": 6, 
+              "length": 4, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "QRT_NOM_AR", 
+              "labels": [ { "text": "Agent carthographe" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "QRT_CODE_AR", 
+              "labels": [ { "text": "Code de l'agent cartographe" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "QRT_NOM_CE", 
+              "labels": [ { "text": "Nom et prénom chef d'équipe" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "QRT_CODE_CE", 
+              "labels": [ { "text": "Code du chef d'équipe" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "QRT_NOM_SUP", 
+              "labels": [ { "text": "Nom et prénom superviseur" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "QRT_CODE_SUP", 
+              "labels": [ { "text": "Code superviseur" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "QRT_NOM_LOC", 
+              "labels": [ { "text": "Nom loc" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "QRT_LON", 
+              "labels": [ { "text": "longitude" } ], 
+              "contentType": "numeric", 
+              "length": 12, 
+              "decimals": 6, 
+              "decimalMark": true, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "QRT_LAT", 
+              "labels": [ { "text": "latitude" } ], 
+              "contentType": "numeric", 
+              "length": 12, 
+              "decimals": 6, 
+              "decimalMark": true, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "QRT_STATUT", 
+              "labels": [ { "text": "statut fiche logistque" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "QRT_STATUT_VS1", 
+                  "labels": [ { "text": "statut fiche logistque" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Non entamé" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Partiel" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "COMPLET" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Supprimé" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "QRT_B02", 
+              "labels": [ { "text": "B02. Types de zone" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "QRT_B02_VS1", 
+                  "labels": [ { "text": "B02. Types de zone" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Normale" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Marché" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Village artisanat" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Centre commercial" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Immeuble" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Garage routière" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Garage clando" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Garage charretier/calèche" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Garage Jakarman" } ], 
+                      "pairs": [ { "value": "8" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Site horticole" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autres zones à préciser" } ], 
+                      "pairs": [ { "value": "99" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

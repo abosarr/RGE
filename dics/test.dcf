@@ -1,0 +1,1363 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "RGE_TEST_DICT", 
+  "labels": [ { "text": "RGE_TEST de sélection" } ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "77caccbf50637ecf42ee794350b2c86f2e7b30dd51edf25c05bb37169c64ae2d"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 1, 
+    "length": 1
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": true
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "SUPCOM_QUEST", 
+      "labels": [ { "text": "supcom questionnaire" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "TLOGIN_ENQUETEUR", 
+            "labels": [ { "text": "Login de l'enquêteur" } ], 
+            "contentType": "alpha", 
+            "start": 2, 
+            "length": 7
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "SUPCOMREC", 
+          "labels": [ { "text": "supcomdicsrec" } ], 
+          "recordType": "1", 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "TNOM_ENQUETEUR", 
+              "labels": [ { "text": "Nom de l'enquêteur" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "QDATE_DEBUT", 
+              "labels": [ { "text": "Date début du test" } ], 
+              "contentType": "numeric", 
+              "length": 8, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "QDATE_FIN", 
+              "labels": [ { "text": "Date fin de test" } ], 
+              "contentType": "numeric", 
+              "length": 8, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "QHEURE_DEBUT", 
+              "labels": [ { "text": "Heure de début" } ], 
+              "contentType": "alpha", 
+              "length": 10
+            }, 
+            {
+              "name": "QHEURE_FIN", 
+              "labels": [ { "text": "Heure de fin" } ], 
+              "contentType": "alpha", 
+              "length": 10
+            }, 
+            {
+              "name": "QSTATUT_TEST", 
+              "labels": [ { "text": "Statut test" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "QSTATUT_TEST_VS1", 
+                  "labels": [ { "text": "Statut test" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "En cours" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Terminé" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "QNOTE", 
+              "labels": [ { "text": "Note" } ], 
+              "contentType": "numeric", 
+              "length": 3, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "QFINISH_TEST", 
+              "labels": [ { "text": "Finish test" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "QTIMESTAMP_START", 
+              "labels": [ { "text": "timestamp start" } ], 
+              "contentType": "numeric", 
+              "length": 14, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "QTIMESTAMP_END", 
+              "labels": [ { "text": "timestamp end" } ], 
+              "contentType": "numeric", 
+              "length": 14, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "QRAPPEL", 
+              "labels": [ { "text": "Rappel time" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "Q1", 
+              "labels": [ { "text": "Q1 –Dans le cadre de cette enquête, qui assure la coordination  des opérations de collecte au niveau région ?" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "Q1_VS1", 
+                  "labels": [ { "text": "Q1 –Dans le cadre de cette enquête, qui assure la coordination  des opérations de collecte au niveau région ?" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Superviseurs" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Chef d’équipe" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CTD" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CSRSD" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CTIC" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CRDGPSN" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q2", 
+              "labels": [ { "text": "Q2 –  Dans le cadre cette enquête, qui assure la coordination des opérations de collecte au niveau département" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "Q2_VS1", 
+                  "labels": [ { "text": "Q2 –  Dans le cadre cette enquête, qui assure la coordination des opérations de collecte au niveau département" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Superviseurs" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Chef d’équipe" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CTD" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Agent enquêteur" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CRDGPSN" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CTIC" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q3", 
+              "labels": [ { "text": "Q3-- Qui assure principalement l’élaboration du  planning de convocation des ménages, la définition des points de collecte et la mobilisation des ménages à enquêter dans  chaque zone ciblée ?" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q3_VS1", 
+                  "labels": [ { "text": "Q3-- Qui assure principalement l’élaboration du  planning de convocation des ménages, la définition des points de collecte et la mobilisation des ménages à enquêter dans  chaque zone ciblée ?" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Agent enquêteur" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Superviseurs" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CTD" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CTIC" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Chef d’équipe" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Operateur social" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q4", 
+              "labels": [ { "text": "Q4 – Le contrôle qualité des données est à la charge" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q4_VS1", 
+                  "labels": [ { "text": "Q4 – Le contrôle qualité des données est à la charge" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "du CSRSD" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "du CTIC" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "du Superviseurs" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "du Chef d’équipe" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "de l’Agent enquêteur" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q5", 
+              "labels": [ { "text": "Q5 – Le chef d’équipe doit assurer la gestion rationnelle et prudente des déplacements du véhicule et du carburant" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q5_VS1", 
+                  "labels": [ { "text": "Q5 – Le chef d’équipe doit assurer la gestion rationnelle et prudente des déplacements du véhicule et du carburant" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q6", 
+              "labels": [ { "text": "Q6–Le chef d’équipe doit effectuer le contrôle qualité des données collectées ses agents en ré-administrant une partie du questionnaire à un échantillon de ménages" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q6_VS1", 
+                  "labels": [ { "text": "Q6–Le chef d’équipe doit effectuer le contrôle qualité des données collectées ses agents en ré-administrant une partie du questionnaire à un échantillon de ménages" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q7", 
+              "labels": [ { "text": "Q7– Pour cette enquête, il existe:" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q7_VS1", 
+                  "labels": [ { "text": "Q7– Pour cette enquête, il existe:" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Deux outils de collecte" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Quatre outils de collecte" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Trois questionnaires à administrer" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Aucune de ses réponses" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q8", 
+              "labels": [ { "text": "Q8 – Pour l’administration du questionnaire, les informations sur la  CNI et les pièces d’état civil sont d’une importance capitale et doivent être vérifiées minutieusement." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q8_VS1", 
+                  "labels": [ { "text": "Q8 – Pour l’administration du questionnaire, les informations sur la  CNI et les pièces d’état civil sont d’une importance capitale et doivent être vérifiées minutieusement." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q9A", 
+              "labels": [ { "text": "a) Autres parents du chef de ménage ou de son (ses) épouse(s)" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q9A_VS1", 
+                  "labels": [ { "text": "a) Autres parents du chef de ménage ou de son (ses) épouse(s)" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "N° 1" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 2" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 3" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 4" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 5" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q9B", 
+              "labels": [ { "text": "b) Personnes sans lien de parenté avec le chef de ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q9B_VS1", 
+                  "labels": [ { "text": "b) Personnes sans lien de parenté avec le chef de ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "N° 1" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 2" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 3" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 4" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 5" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q9C", 
+              "labels": [ { "text": "c) Enfants du Chef de Ménage dont la mère ne réside pas dans le Ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q9C_VS1", 
+                  "labels": [ { "text": "c) Enfants du Chef de Ménage dont la mère ne réside pas dans le Ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "N° 1" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 2" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 3" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 4" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 5" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q9D", 
+              "labels": [ { "text": "d) Chef de Ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q9D_VS1", 
+                  "labels": [ { "text": "d) Chef de Ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "N° 1" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 2" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 3" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 4" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 5" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q9E", 
+              "labels": [ { "text": "e) Epouse(s) du chef de ménage suivie(s) de ses enfant(s) du plus âgé(s) au plus jeune" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q9E_VS1", 
+                  "labels": [ { "text": "e) Epouse(s) du chef de ménage suivie(s) de ses enfant(s) du plus âgé(s) au plus jeune" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "N° 1" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 2" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 3" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 4" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "N° 5" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q10", 
+              "labels": [ { "text": "Q10–Cette question « Quelle est le principal combustible qu'utilise votre ménage pour la cuisson ?» est une question à réponses multiples ?" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q10_VS1", 
+                  "labels": [ { "text": "Q10–Cette question « Quelle est le principal combustible qu'utilise votre ménage pour la cuisson ?» est une question à réponses multiples ?" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q11", 
+              "labels": [ { "text": "Q11 – Cette question  « Quelle est la principale source d'éclairage qu'utilise votre ménage ?» est une question à réponse unique ?" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q11_VS1", 
+                  "labels": [ { "text": "Q11 – Cette question  « Quelle est la principale source d'éclairage qu'utilise votre ménage ?» est une question à réponse unique ?" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q12", 
+              "labels": [ { "text": "Q12 – Un bien d’équipement  momentanément en panne est considéré comme un bien d’équipement du ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q12_VS1", 
+                  "labels": [ { "text": "Q12 – Un bien d’équipement  momentanément en panne est considéré comme un bien d’équipement du ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q13", 
+              "labels": [ { "text": "Q13–Dans le cas où un ménage s’est déplacé vers un autre département, l’enquêteur doit" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q13_VS1", 
+                  "labels": [ { "text": "Q13–Dans le cas où un ménage s’est déplacé vers un autre département, l’enquêteur doit" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Choisir un ménage de remplacement ;" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Tirer de façon aléatoire un ménage de remplacement ;" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Appeler son chef d’équipe afin que ce dernier remonte l’information à son superviseur;" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Continuer l’administration des autres ménages sélectionnés." } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Aucune de ces réponses." } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q14", 
+              "labels": [ { "text": "Q14–Si le répondant répond seulement une partie du questionnaire alors celui-ci est enregistré comme que" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q14_VS1", 
+                  "labels": [ { "text": "Q14–Si le répondant répond seulement une partie du questionnaire alors celui-ci est enregistré comme que" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "questionnaire complet." } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "questionnaire partiel." } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "questionnaire vide." } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "questionnaire ni complet ni partiel." } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Aucune de ces réponses." } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q15", 
+              "labels": [ { "text": "Q15– L'enquête que va menait les agents enquêteurs est :" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q15_VS1", 
+                  "labels": [ { "text": "Q15– L'enquête que va menait les agents enquêteurs est :" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Passive" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Active" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Active et passive" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q16", 
+              "labels": [ { "text": "Q16–Le contrôle de qualité des données sera fait par le chef d’équipe grâce à une enquête active" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q16_VS1", 
+                  "labels": [ { "text": "Q16–Le contrôle de qualité des données sera fait par le chef d’équipe grâce à une enquête active" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q17", 
+              "labels": [ { "text": "Q17- La variable CNI est-elle obligatoirement renseignée dans l’application de collecte pour les plus de 15 ans" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q17_VS1", 
+                  "labels": [ { "text": "Q17- La variable CNI est-elle obligatoirement renseignée dans l’application de collecte pour les plus de 15 ans" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q18", 
+              "labels": [ { "text": "Q18–  La question relative au niveau d'instruction concerne :" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q18_VS1", 
+                  "labels": [ { "text": "Q18–  La question relative au niveau d'instruction concerne :" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Les membres non instruits." } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Les membres du ménage qui ont déjà fréquentés l’école." } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Les membres du ménage âgés d'au moins 3 ans" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Les membres du ménage âgés d'au moins 3 ans et qui fréquentent actuellement l’école." } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Les enfants qui ont fait l’école." } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Aucune de ces réponses." } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q19", 
+              "labels": [ { "text": "Q19- L'enquêteur doit déduire la variable « sexe »  en fonction  du nom de la personne" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q19_VS1", 
+                  "labels": [ { "text": "Q19- L'enquêteur doit déduire la variable « sexe »  en fonction  du nom de la personne" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Vrai" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faux" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q20", 
+              "labels": [ { "text": "Q20-  Un ménage est défini comme étant :" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q20_VS1", 
+                  "labels": [ { "text": "Q20-  Un ménage est défini comme étant :" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Un groupe de personnes qui ont ou qui n’ont pas de liens de parenté; qui vivent ensemble dans la même unité d'habitation; qui reconnaissent un homme comme le chef de ménage; qui partagent les mêmes conditions de vie; et qui sont considérés comme une seule" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Une personne ou un groupe de personnes qui a/ont ou qui n’a/ont pas de liens de parenté; qui vit seul(e)/vivent ensemble dans la même unité d'habitation; qui reconnaissent un homme ou une femme adulte comme le chef de ménage; qui partagent les mêmes condi" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Une personne ou un groupe de personnes qui vit seul(e)/vivent ensemble dans la même unité d'habitation; qui reconnaissent un homme ou une femme adulte comme le chef de ménage; qui partagent les mêmes conditions de vie; et qui sont considérés comme une seu" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q21", 
+              "labels": [ { "text": "Q21-Les ménages à enquêter pour le Registre National Unique (RNU) sont les ménages" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q21_VS1", 
+                  "labels": [ { "text": "Q21-Les ménages à enquêter pour le Registre National Unique (RNU) sont les ménages" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Potentiellement bénéficiaires du Programme National de Bourses de Sécurité familiale (PNBSF)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "les ménages bénéficiaires du Programme National de Bourses de Sécurité familiale (PNBSF)" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q22", 
+              "labels": [ { "text": "Q22-Les ménages potentiellement bénéficiaires du PNBSF sont" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q22_VS1", 
+                  "labels": [ { "text": "Q22-Les ménages potentiellement bénéficiaires du PNBSF sont" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Les ménages ayant des personnes présentant des handicaps" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Les ménages ayant des personnes âgées" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Les ménages ayant des enfants scolarisables" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Les ménages pauvres" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q23", 
+              "labels": [ { "text": "Q23-Le quota de bénéficiaires du PNBSF de la commune dans le quota du département dépend" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q23_VS1", 
+                  "labels": [ { "text": "Q23-Le quota de bénéficiaires du PNBSF de la commune dans le quota du département dépend" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Du niveau de pauvreté de la commune" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "De la taille de la population de la commune seulement" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "De la proportion des enfants, des personnes âgées et de la taille de la commune" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q24", 
+              "labels": [ { "text": "Q24-Pour le programme de bourses de sécurité familiale, l’unité de ciblage est :" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q24_VS1", 
+                  "labels": [ { "text": "Q24-Pour le programme de bourses de sécurité familiale, l’unité de ciblage est :" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Le répondant du ménage" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Le chef de ménage" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Le ménage" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q25", 
+              "labels": [ { "text": "Q25-Pour l’enquête sur le RNU, le code enquêteur est unique et est lié" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q25_VS1", 
+                  "labels": [ { "text": "Q25-Pour l’enquête sur le RNU, le code enquêteur est unique et est lié" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Au quartier ou village" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "A la commune" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Au département" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "A la Région." } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q26", 
+              "labels": [ { "text": "Q26-Le numéro  séquentiel de la concession est lié :" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q26_VS1", 
+                  "labels": [ { "text": "Q26-Le numéro  séquentiel de la concession est lié :" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Au quartier ou village" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "A la commune" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Au département" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "A la Région" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q27", 
+              "labels": [ { "text": "Q27-Cette enquête est une enquête passive et en aucun cas un enquêteur ne doit aller  enquêter un chef de ménage chez lui." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q27_VS1", 
+                  "labels": [ { "text": "Q27-Cette enquête est une enquête passive et en aucun cas un enquêteur ne doit aller  enquêter un chef de ménage chez lui." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q28", 
+              "labels": [ { "text": "Q28-Avant de contacter un ménage on doit confirmer les données liées à la région, département, arrondissement et commune" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q28_VS1", 
+                  "labels": [ { "text": "Q28-Avant de contacter un ménage on doit confirmer les données liées à la région, département, arrondissement et commune" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q29", 
+              "labels": [ { "text": "Q29-Un chef de concession ne doit pas être un chef de ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q29_VS1", 
+                  "labels": [ { "text": "Q29-Un chef de concession ne doit pas être un chef de ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q30", 
+              "labels": [ { "text": "Q30-Le nombre de personne possible à enregistrer par ménage ne doit pas dépasser 20 pour cette enquête" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q30_VS1", 
+                  "labels": [ { "text": "Q30-Le nombre de personne possible à enregistrer par ménage ne doit pas dépasser 20 pour cette enquête" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q31", 
+              "labels": [ { "text": "Q31-Si un enquêteur pense que le chef de ménage qu’il enquête ne devrait pas bénéficier de la bourse, il doit le signaler à son chef d’équipe et arrêter l’interview" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q31_VS1", 
+                  "labels": [ { "text": "Q31-Si un enquêteur pense que le chef de ménage qu’il enquête ne devrait pas bénéficier de la bourse, il doit le signaler à son chef d’équipe et arrêter l’interview" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q32", 
+              "labels": [ { "text": "Q32-Un enquêteur peut saisir un ménage qui n’est pas dans les listes du ciblage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q32_VS1", 
+                  "labels": [ { "text": "Q32-Un enquêteur peut saisir un ménage qui n’est pas dans les listes du ciblage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q33", 
+              "labels": [ { "text": "Q33-Pour cette enquête, le répondant du ménage est le chef de ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q33_VS1", 
+                  "labels": [ { "text": "Q33-Pour cette enquête, le répondant du ménage est le chef de ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q34", 
+              "labels": [ { "text": "Q34-Si le père du chef de ménage vit dans le ménage, alors dans sa partie lien de parenté on doit mettre « fils »" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q34_VS1", 
+                  "labels": [ { "text": "Q34-Si le père du chef de ménage vit dans le ménage, alors dans sa partie lien de parenté on doit mettre « fils »" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q35", 
+              "labels": [ { "text": "Q35-Pour toutes les variables du questionnaire les modalités doivent être lues par l’enquêteur" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q35_VS1", 
+                  "labels": [ { "text": "Q35-Pour toutes les variables du questionnaire les modalités doivent être lues par l’enquêteur" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q36", 
+              "labels": [ { "text": "Q36-Le gestionnaire d'une aide sociale d'un ménage est est toujours le chef de ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q36_VS1", 
+                  "labels": [ { "text": "Q36-Le gestionnaire d'une aide sociale d'un ménage est est toujours le chef de ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q37", 
+              "labels": [ { "text": "Q37-Le gestionnaire d'une aide sociale d'un ménage est toujours le répondant du ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q37_VS1", 
+                  "labels": [ { "text": "Q37-Le gestionnaire d'une aide sociale d'un ménage est toujours le répondant du ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q38", 
+              "labels": [ { "text": "Q38-La section éducation concerne uniquement les personnes âgées de 6 ans ou plus" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q38_VS1", 
+                  "labels": [ { "text": "Q38-La section éducation concerne uniquement les personnes âgées de 6 ans ou plus" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q39", 
+              "labels": [ { "text": "Q39-Le numéro de carte d’identité ne concerne que les adultes" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q39_VS1", 
+                  "labels": [ { "text": "Q39-Le numéro de carte d’identité ne concerne que les adultes" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "Q40", 
+              "labels": [ { "text": "Q40-Un moyen de production est utilisé par le ménage dans le but de produire des biens et services destinés destinés à se procurer uniquement des revenus" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "Q40_VS1", 
+                  "labels": [ { "text": "Q40-Un moyen de production est utilisé par le ménage dans le but de produire des biens et services destinés destinés à se procurer uniquement des revenus" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Oui" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Non" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

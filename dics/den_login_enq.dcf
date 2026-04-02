@@ -1,0 +1,77 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Authentification enqueteur
+Name=LOGIN_ENQ_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=3B5DC865F2BE8D70FF266F6ADBB381D3ED1CD455BF237CE9F5BE92048CB0C582
+
+[Level]
+Label=Authentification enqueteur
+Name=AUTHENTIFICATION_ENQ_LEVEL
+
+[IdItems]
+
+[Item]
+Label=login
+Name=LOGIN_ENQ
+Start=2
+Len=7
+DataType=Alpha
+
+[Record]
+Label=authentification Sup
+Name=AUTHEN
+RecordTypeValue='1'
+RecordLen=10
+
+[Item]
+Label=ddd
+Name=DDD
+Start=9
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=ddd
+Name=DDD_VS1
+Value=1;Valider
+Value=2;Annuler et reprendre la saisie
+Value=3;Fermer
+
+[Item]
+Label=Validation
+Name=OK
+Start=10
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Validation
+Name=OK_VS1
+Value=1;Valider
+Value=2;Annuler et reprendre la saisie
+Value=3;Fermer
+
+[Record]
+Label=Confirmation
+Name=CONFIRMATION
+RecordTypeValue='2'
+RecordLen=17
+
+[Item]
+Label=Confirmer le login
+Name=CONFIRMER_LE_LOGIN
+Start=9
+Len=5
+DataType=Numeric
+
+[Item]
+Label=Code secret
+Name=CODE_SECRET
+Start=14
+Len=4
+DataType=Numeric

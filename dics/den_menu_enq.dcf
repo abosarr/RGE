@@ -1,0 +1,257 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "MENU_ENQ_DICT", 
+  "labels": [ { "text": "Menu enq" } ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "e9282a2a9ab5a3ca58cfd9eff457412ff5a43e63710cb32a49a5b0c5a8d2be7c"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 1, 
+    "length": 1
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": true
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "SUPCOM_QUEST", 
+      "labels": [ { "text": "supcom questionnaire" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "ID_ACTOR", 
+            "labels": [ { "text": "Login de l'enquêteur" } ], 
+            "contentType": "alpha", 
+            "start": 2, 
+            "length": 7
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "SUPCOMREC", 
+          "labels": [ { "text": "supcomdicsrec" } ], 
+          "recordType": "1", 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "NOM_ENQUETEUR", 
+              "labels": [ { "text": "Nom de l'enquêteur" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "CODE_FORMATEUR", 
+              "labels": [ { "text": "Code du formateur" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "NOM_FORMATEUR", 
+              "labels": [ { "text": "Nom formateur" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "CODE_CE", 
+              "labels": [ { "text": "Code CE" } ], 
+              "contentType": "alpha", 
+              "length": 7
+            }, 
+            {
+              "name": "NOM_CE", 
+              "labels": [ { "text": "Nom CE" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "ACTION", 
+              "labels": [ { "text": "Menu principal" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "ACTION_VS1", 
+                  "labels": [ { "text": "Menu principal" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Récupération des données de base pour la formation" } ], 
+                      "pairs": [ { "value": "95" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Choisir un DR" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Collecter" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Tableau de bord" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faire le test de selection" } ], 
+                      "pairs": [ { "value": "90" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Synchronisation du test pour correction" } ], 
+                      "pairs": [ { "value": "91" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Fermer l'application" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }, 
+                {
+                  "name": "ACTION_VS2", 
+                  "labels": [ { "text": "Menu principal" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Récupération des données de base pour la collecte" } ], 
+                      "pairs": [ { "value": "81" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Choisir un DR" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Collecter" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Tableau de bord" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Changement de tablette pour un enquêteur" } ], 
+                      "pairs": [ { "value": "82" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Synchronisation avec le chef d'équipe" } ], 
+                      "pairs": [ { "value": "80" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Fermer l'application" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }, 
+                {
+                  "name": "ACTION_VS3", 
+                  "labels": [ { "text": "Menu principal" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Récupération des données de base pour la formation" } ], 
+                      "pairs": [ { "value": "95" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Choisir un DR" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Collecter" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Tableau de bord" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Synchronisation vers le serveur (formation)" } ], 
+                      "pairs": [ { "value": "92" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Faire le test de selection" } ], 
+                      "pairs": [ { "value": "90" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Synchronisation du test pour correction" } ], 
+                      "pairs": [ { "value": "91" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Fermer l'application" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "CHOIX_CONS", 
+              "labels": [ { "text": "Choix concessions" } ], 
+              "contentType": "alpha", 
+              "length": 740
+            }, 
+            {
+              "name": "CHOIX_CONS_SINGLE", 
+              "labels": [ { "text": "choix cons single" } ], 
+              "occurrences": {
+                "maximum": 20
+              }, 
+              "contentType": "alpha", 
+              "subitem": true, 
+              "subitemOffset": 0, 
+              "length": 37
+            }, 
+            {
+              "name": "CHECK", 
+              "labels": [ { "text": "check" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "VIEW_COMMUNE", 
+              "labels": [ { "text": "view commune" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "VIEW_QUARTIER", 
+              "labels": [ { "text": "view quartier" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "VIEW_MENAGE", 
+              "labels": [ { "text": "view ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "VIEW_CONCESSION", 
+              "labels": [ { "text": "view concession" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "VIEW_LOCALITE", 
+              "labels": [ { "text": "view locality" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
