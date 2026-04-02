@@ -1,0 +1,81 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "DEN_CONS", 
+  "label": "den_cons", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../dics/FICHE_EDIFICE_DICT.dcf", 
+      "parent": "den_cons.fmf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../dics/users.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../dics/FICHE_QUARTIER_DICT.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../dics/FICHE_UNITE_DICT.dcf"
+    }
+  ], 
+  "forms": [
+    "den_cons.fmf"
+  ], 
+  "questionText": [
+    "den_cons.ent.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "den_cons.ent.apc"
+    }
+  ], 
+  "messages": [
+    "den_cons.ent.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": true, 
+    "autoAdvanceOnSelection": false, 
+    "caseTree": "on", 
+    "centerForms": true, 
+    "createListing": true, 
+    "createLog": true, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": false, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": true
+    }, 
+    "showEndCaseMessage": false, 
+    "showOnlyDiscreteValuesInComboBoxes": false, 
+    "showFieldLabels": true, 
+    "showErrorMessageNumbers": true, 
+    "showQuestionText": true, 
+    "showRefusals": true, 
+    "verify": {
+      "frequency": 1, 
+      "start": 1
+    }, 
+    "htmlDialogs": true, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

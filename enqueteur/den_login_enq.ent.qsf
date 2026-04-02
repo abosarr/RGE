@@ -1,0 +1,37 @@
+﻿---
+fileType: Question Text
+version: CSPro 8.0
+languages:
+  - name: EN
+    label: English
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: LOGIN_ENQ_DICT.LOGIN_ENQ
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align: center;"><img src=".\Resources\Images\logo.png" style="width: 100%;"><br></p><p style="text-align: center;"><font color="#0000ff" face="Courier New"><span style="font-size: 36px;"><b>Cartographie RGE</b></span></font></p><p style="text-align: center;"><font color="#295218"><span style="font-size: 36px; font-family: &quot;Courier New&quot;;"><b>~~app_name~~</b></span></font></p><p style="text-align: center;"><span style="font-size: 12px;">﻿</span><br></p><hr><p></p><p style="text-align: center;"><span style="font-family: &quot;Courier New&quot;;"><font color="#9c9c94">Version :&nbsp;</font></span><span style="font-family: &quot;Courier New&quot;;">~~versiong~~</span></p><p style="text-align: center;"><span style="font-family: &quot;Courier New&quot;;"><font color="#9c9c94">Copyrigth :&nbsp;</font>ANSD<font color="#9c9c94">&nbsp;</font></span><span style="font-family: &quot;Courier New&quot;;">~~published~~</span><font color="#9c9c94" style="font-family: &quot;Courier New&quot;;">| Utilisateur :&nbsp;</font><span style="font-family: &quot;Courier New&quot;;">~~nom_enq_ini~~</span></p><p style="text-align: center;"><span style="font-family: &quot;Courier New&quot;; color: rgb(255, 0, 0);">Entrer votre login</span></p>
+        helpText:
+          EN: |
+            <p>- Version 022 :</p><p></p><p>Correction de I14 ask if I13=1 or I13_BIS=1;</p><p>- Version 030 :</p><p>Correction de&nbsp;REPONDANT : Numéro d'ordre du répondant. Le champs n'affichait pas la liste des potentiels répondants pour les version antérieure.</p><p>Si&nbsp;I14=Daara traditionnel sauter I15 Niveau d'instruction</p><p></p>
+...

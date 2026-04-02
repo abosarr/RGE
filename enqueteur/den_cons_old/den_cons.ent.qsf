@@ -1,0 +1,143 @@
+﻿---
+fileType: Question Text
+version: CSPro 8.0
+languages:
+  - name: EN
+    label: English
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: CARTO_FICHE_CONS_DICT.CONS_STATUT_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>statut&nbsp;</b>de la concession ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_NOM_CC
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer le&nbsp;<b>prénom</b>&nbsp;et le&nbsp;<b>nom&nbsp;</b>du chef de la concession.&nbsp;</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_ADRESSE_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer&nbsp;<b>l'adresse&nbsp;</b>de la concession.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_TYPE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>type d'habitat</b>&nbsp;de la concession ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_AUTRE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Précisez autre type d'habitat.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_PARCELLE_CONSTRUCTION
+    conditions:
+      - questionText:
+          EN: |
+            <p>La parcelle/concession est-elle en construction ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_NATURE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez choisir la&nbsp;<b>nature&nbsp;</b>de l'infrastructure à renseigner.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_LIBELLE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez choisir le&nbsp;<b>libellé&nbsp;</b>de l'infrasctructure à renseigner.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_STATUT_INF
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>statut&nbsp;</b>de l'infrastructure ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_DESIGNATION_INF
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quelle est la&nbsp;<b>désignation&nbsp;</b>de l'infrastructure ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_EXISTENCE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Cette infrastructure habrite-elle de&nbsp;<b>ménages </b>?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_EXISTENCE_CONFIRM
+    conditions:
+      - questionText:
+          EN: |
+            <p>Confirmez-vous que l'infrastructure indiqué n'habrite plus de ménage ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_OBSERVATIONS
+    conditions:
+      - questionText:
+          EN: |
+            
+  - name: CARTO_FICHE_CONS_DICT.CONS_NBR_HABITATION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Donnez le&nbsp;<b>nombre d'habitations</b>&nbsp;dans la concession.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_OBSERVATIONS_MEN
+    conditions:
+      - questionText:
+          EN: |
+            <p><span lang="FR" style="font-size:12.0pt;line-height:
+            107%;font-family:&quot;Tahoma&quot;,sans-serif;mso-fareast-font-family:Calibri;
+            mso-fareast-theme-font:minor-latin;mso-ansi-language:FR;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA">Est-ce que l’infrastructure abrite un
+            <b>ménage</b>&nbsp;?</span></p>
+  - name: FICHE_CONS_DICT.CONS_ADRESSE_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer&nbsp;<b>l'adresse&nbsp;</b>de la concession.</p>
+  - name: FICHE_CONS_DICT.CONS_AUTRE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Précisez autre type d'habitat.</p>
+  - name: FICHE_CONS_DICT.CONS_NBR_HABITATION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Donnez le&nbsp;<b>nombre d'habitations</b>&nbsp;dans la concession.</p>
+  - name: FICHE_CONS_DICT.CONS_NOM_CC
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer le&nbsp;<b>prénom</b>&nbsp;et le&nbsp;<b>nom&nbsp;</b>du chef de la concession.&nbsp;</p><p><p></p></p>
+  - name: FICHE_CONS_DICT.CONS_PARCELLE_CONSTRUCTION
+    conditions:
+      - questionText:
+          EN: |
+            <p>La parcelle/concession est-elle en construction ?</p>
+  - name: FICHE_CONS_DICT.CONS_STATUT_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>statut&nbsp;</b>de la concession ?</p>
+  - name: FICHE_CONS_DICT.CONS_TYPE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>type d'habitat</b>&nbsp;de la concession ?</p>
+...

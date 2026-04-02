@@ -1,0 +1,37 @@
+﻿---
+fileType: Question Text
+version: CSPro 8.0
+languages:
+  - name: EN
+    label: English
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: MENU_ENQ_DICT.ACTION
+    conditions:
+      - questionText:
+          EN: |
+            <p><img src=".\Resources\Images\logo.png" style="width: 100%;"><br></p><p style="text-align: center;"><b style="color: rgb(0, 0, 255); font-family: &quot;Courier New&quot;; font-size: 36px;">Cartographie RGE</b><b style="color: rgb(41, 82, 24); font-family: &quot;Courier New&quot;; font-size: 36px;"></b></p><p style="text-align: right;">&nbsp; &nbsp;&nbsp;<span style="font-family: &quot;Courier New&quot;;">Bienvenue,</span><b><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;;">&nbsp;~~nom_enq_ini~~</span></font></b></p><p style="text-align: right;"><b><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;; font-size: 14px;">~~tel_enq_ini~~</span></font></b><span style="font-size: 24px; font-family: &quot;Courier New&quot;;"><b><font color="#0000ff"><br></font></b></span></p><p style="text-align: center;"><span style="font-size: 24px; font-family: &quot;Courier New&quot;;"><b><font color="#295218">~~app_name~~</font></b></span></p><p style="text-align: center;"><span style="font-size: 24px; font-family: &quot;Courier New&quot;;"><b><font color="#0000ff"><br></font></b></span></p><div style="text-align: center;"><b style="text-align: left;"><span style="text-align: center; font-family: &quot;Courier New&quot;;"><font color="#9c9c94">DR :&nbsp;</font></span><span style="text-align: center; font-family: &quot;Courier New&quot;; font-size: 18px;"><font color="#630000">~~dr_work~~</font></span></b></div><div style="text-align: center;"><br></div><p></p><p></p><p></p>
+  - name: ""
+    conditions:
+      - {}
+...

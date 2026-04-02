@@ -1,0 +1,15 @@
+﻿[Run Information]
+Version=CSPro 8.0
+AppType=Entry
+
+[Files]
+Application=.\den_unite.ent
+InputData=.\data.csdb
+Paradata=.\den_unite.cslog
+
+[ExternalFiles]
+RGE_FICHE_EDIFICE_DICT=.\edif.csdb
+RGE_USERS_DICT=.\user.csdb
+
+[UserFiles]
+fileTowrite=

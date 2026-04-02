@@ -1,0 +1,16 @@
+﻿[Run Information]
+Version=CSPro 7.7
+AppType=Entry
+Description=RGE Agent cartographe
+
+[DataEntryInit]
+StartMode=Add
+
+[Files]
+Application=.\den_login_enq.ent
+Paradata=.\den_login_enq.cslog
+
+[ExternalFiles]
+
+[UserFiles]
+fileTowrite=

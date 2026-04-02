@@ -1,0 +1,18 @@
+﻿[Run Information]
+Version=CSPro 8.0
+AppType=Entry
+
+[Files]
+Application=.\den_menu_enq.ent
+InputData=.\data.csdb
+Paradata=.\den_menu_enq.cslog
+
+[ExternalFiles]
+CARTO_TEST_DICT=.\test.csdb
+CARTO_USERS_DICT=.\user.csdb
+FICHE_CONS_DICT=.\cons.csdb
+FICHE_MEN_DICT=.\men.csdb
+FICHE_QUARTIER_DICT=.\qrt.csdb
+
+[UserFiles]
+fileTowrite=

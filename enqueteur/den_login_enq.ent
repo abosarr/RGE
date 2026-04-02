@@ -1,0 +1,109 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "DEN_LOGIN_ENQ", 
+  "label": "DEN_LOGIN_ENQ", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../dics/den_login_enq.dcf", 
+      "parent": "den_login_enq.fmf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../dics/FICHE_QUARTIER_DICT.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../dics/users.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../dics/FICHE_EDIFICE_DICT.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../dics/FICHE_UNITE_DICT.dcf"
+    }
+  ], 
+  "forms": [
+    "den_login_enq.fmf"
+  ], 
+  "questionText": [
+    "den_login_enq.ent.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "den_login_enq.ent.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../libs/library_sync.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../libs/library_function.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../libs/manual_quest.apc"
+    }
+  ], 
+  "messages": [
+    "den_login_enq.ent.mgf"
+  ], 
+  "resources": [
+    "Resources", 
+    "../reports"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": false, 
+    "autoAdvanceOnSelection": false, 
+    "caseTree": "desktopOnly", 
+    "centerForms": false, 
+    "createListing": false, 
+    "createLog": false, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": false, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": false
+    }, 
+    "showEndCaseMessage": false, 
+    "showOnlyDiscreteValuesInComboBoxes": true, 
+    "showFieldLabels": true, 
+    "showErrorMessageNumbers": false, 
+    "showQuestionText": true, 
+    "showRefusals": true, 
+    "verify": {
+      "frequency": 1, 
+      "start": 1
+    }, 
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "all", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false, 
+      "deviceStateIntervalMinutes": 5
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

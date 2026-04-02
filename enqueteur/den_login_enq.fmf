@@ -1,0 +1,57 @@
+﻿[FormFile]
+Version=CSPro 8.0
+Name=LOGIN_ENQ_FF
+Label=den_login_enq
+DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+FieldEntryFont=0018 0000 0000 0000 0600 0000 0000 0000 0000 0000 0000 0000 0000 Courier New
+Type=SystemControlled
+  
+[Dictionaries]
+File=..\dics\den_login_enq.dcf
+  
+[Form]
+Name=FORM000
+Label=authentification Sup
+QuestionTextHeight=530
+Level=1
+Size=395,76
+  
+Item=LOGIN_ENQ
+Item=DDD
+  
+[EndForm]
+  
+[Level]
+Name=AUTHENTIFICATION_ENQ_LEVEL
+Label=Authentification superviseur
+  
+[Group]
+Required=Yes
+Name=IDS0_FORM
+Label=authentification Sup
+Form=1
+Max=1
+  
+[Field]
+Name=LOGIN_ENQ
+Position=104,27,203,47
+Item=LOGIN_ENQ,LOGIN_ENQ_DICT
+UpperCase=Yes
+DataCaptureType=TextBox
+Form=1
+  
+  
+[Field]
+Name=DDD
+Position=355,31,370,51
+Item=DDD,LOGIN_ENQ_DICT
+Protected=Yes
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=296,32,320,48
+Text=ddd
+ 
+[EndGroup]
+  

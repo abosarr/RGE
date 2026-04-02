@@ -1,0 +1,21 @@
+﻿Application     C:\Users\DAME\Documents\GitHub\app_RNU\enqueteur\MenForm.ent
+Type            ENTRY
+Input Data      <<CSPro DB>> C:\Users\DAME\Documents\GitHub\app_RNU\enqueteur\test.csdb
+External        RNU_ECHANTILLON_DICT=<<CSPro DB>> C:\Users\DAME\Documents\GitHub\app_RNU\enqueteur\xx.csdb
+External        RNU_USERS_DICT=<<CSPro DB>> C:\Users\DAME\Documents\GitHub\app_RNU\enqueteur\rr.csdb
+<File>          fileversion=
+
+Date            Sep 05, 2024
+Start Time      19:57:00
+End Time        19:57:03
+
+
+User unnumbered messages:
+
+    Line        Freq    %    Message Text                                                                          Denom
+    ----        ----  -----  ------------                                                                          -----
+     120           1      -  Impossible de charger la base contenant l'échantillon des ménages.                        -
+
+
+CSPro Executor Normal End
+------------------------------------------------------------------------------------------------------------------------

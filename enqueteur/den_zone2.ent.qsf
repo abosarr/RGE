@@ -1,0 +1,130 @@
+﻿---
+fileType: Question Text
+version: CSPro 8.0
+languages:
+  - name: EN
+    label: English
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: FICHE_ZONE_DICT2_DICT.A1Z
+    conditions:
+      - questionText:
+          EN: |
+            <font face="Times New Roman"><span style="font-size: 14px;"><b>A1. Prénoms et nom de l'agent cartographe</b></span></font>
+  - name: FICHE_ZONE_DICT2_DICT.A2Z
+    conditions:
+      - questionText:
+          EN: |
+            <p><font face="Times New Roman"><span style="font-size: 14px;"><b>Point GPS: </b></span></font></p><p><font face="Times New Roman"><span style="font-size: 14px;"><b>A2. Saisir la Longitude</b></span></font></p><p></p><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A3Z
+    conditions:
+      - questionText:
+          EN: |
+            <p><b><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">Point GPS :&nbsp;</span></b></p><p><b><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">A3&nbsp;: Saisir la Latitude</span></b></p><p></p><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A4Z
+    conditions:
+      - questionText:
+          EN: |
+            <p class="MsoNormal" style="margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+            margin-left:0cm"><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;"><span style="font-family: &quot;Times New Roman&quot;; font-size: 16px;"><b>A4. Quelle est la Région ?</b></span><b><o:p></o:p></b></span></p><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A5Z
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;"><b>A5. Quel est le Département ?</b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A6Z
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;; font-size: 16px;"><b>A6. Quelle est la Commune ?</b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A7Z
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-family: &quot;Times New Roman&quot;;">A7. Quelle est la Zone de recensement ?</span></b><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A8Z
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;"><b>A8. Quel est le Village / Quartier / Hameau ?</b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A8AZ
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;"><b>A8A. Quel est le Numéro de concession / Infrastructure ou équipement ?</b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.A9Z
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;"><b>A9. Quel est le Milieu de résidence ?</b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B01Z
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;"><b>B01. La Zone est-elle de forte concentration d'unités et associations ?</b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B02Z
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B02. Quelles sont les types de Zone de forte concentration d'unités et associations ?</b><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B03BZ
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"><b>B03B. Prénom du délégue ou responsable s'il vous plait ?</b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B03CZ
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;">B03C. N</span></b><b style="font-family: &quot;Times New Roman&quot;;">om du délégue ou responsable s'il vous plait ?</b><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B04Z
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;">B04. Numéro de téléphone de&nbsp;</span></b><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B03BZ~~&nbsp;</span><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B03CZ~~ ?</span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.AJOUT_DELRES
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;"><b><font color="#9c00ff">Voudriez-vous ajouter un autre délégué ou responsable ?</font></b></span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B05BZ
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B05B. Prénom de l'</b><font face="Times New Roman"><b>unité économique et association</b></font><b style="font-family: &quot;Times New Roman&quot;;">&nbsp;s'il vous plait ?</b><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B05CZ
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B05C. Nom de l'</b><font face="Times New Roman"><b>unité économique et association</b></font><b style="font-family: &quot;Times New Roman&quot;;">&nbsp;s'il vous plait ?</b><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.B06Z
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B06.&nbsp;</b><b><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;">Numéro de téléphone de&nbsp;</span></b><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B05BZ~~&nbsp;</span><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B05CZ~~ ?</span><p></p>
+  - name: FICHE_ZONE_DICT2_DICT.AJOUT_UEA
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#9c00ff"><span style="font-family: &quot;Times New Roman&quot;;"><b>Voudriez-vous ajouter une autre unité économique ou association ?</b></span></font><p></p>
+...

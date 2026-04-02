@@ -1,0 +1,253 @@
+﻿---
+fileType: Question Text
+version: CSPro 8.0
+languages:
+  - name: EN
+    label: English
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: RGE_FICHE_EDIFICE_DICT.A1
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;; font-size: 14px;"><span style="font-size: 16px;">A1. Prénoms et nom de l'agent cartographe</span></b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A2
+    conditions:
+      - questionText:
+          EN: |
+            <p><font face="Times New Roman"><span style="font-size: 16px;"><b>Point GPS:</b></span></font></p><p><font face="Times New Roman"><span style="font-size: 16px;"><b>A2. Saisir la Longitude</b></span></font></p><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A3
+    conditions:
+      - questionText:
+          EN: |
+            <p><b><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">Point GPS :&nbsp;</span></b></p><p><b><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">A3&nbsp;: Saisir la Latitude</span></b></p><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A4
+    conditions:
+      - questionText:
+          EN: |
+            <p><b style="font-family: &quot;Times New Roman&quot;;">A6. Quelle est la Commune ?</b></p><p><b style="font-family: &quot;Times New Roman&quot;;">CODE</b><p></p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A5
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">A5. Quel est le Département ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A6
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">A6. Quelle est la Commune ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A7
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-family: &quot;Times New Roman&quot;;">A7. Quelle est la Zone de recensement ?</span></b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A8
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">A8. Quel est le Village / Quartier / Hameau ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.A9
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">A9. Milieu de résidence&nbsp;</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B01
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B01. La Zone est-elle de forte concentration d'unités et associations ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B02
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B02. Quelles sont les types de Zone de forte concentration d'unités et associations ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B02_AUTRE
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">Autres types de Zone de forte concentration d'unités et associations</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B03B
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B03B. Prénom du délégue ou responsable s'il vous plait ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B03C
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;">B03C. N</span></b><b style="font-family: &quot;Times New Roman&quot;;">om du délégue ou responsable s'il vous plait ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B04
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;"><span style="font-size: 11pt;">B04. Numéro de téléphone de</span>&nbsp;</span></b><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B03B~~&nbsp;</span><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B03C~~ ?</span><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.AJOUT_DELRES
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;"><font color="#ff00ff">Voudriez-vous ajouter un délégué ou responsable ?</font></b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B05
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;">B05. Quel est le nombre d'unités économiques ou associations ?</span><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B05A
+    conditions:
+      - questionText:
+          EN: |
+            Numero d'ordre<p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B05B
+    conditions:
+      - questionText:
+          EN: |
+            <b style="font-family: &quot;Times New Roman&quot;;">B05B. Prénom&nbsp; ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B05C
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;">B05C. N</span></b><b style="font-family: &quot;Times New Roman&quot;;">om ?</b><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.B06
+    conditions:
+      - questionText:
+          EN: |
+            <b><span style="font-size: 9pt; font-family: Arial, &quot;sans-serif&quot;;"><span style="font-size: 11pt;"><font color="#ff00ff">B06. Numéro de téléphone de</font></span>&nbsp;</span></b><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B05B~~&nbsp;</span><span style="color: rgb(0, 0, 255); font-weight: 700;">~~B05C~~ ?</span><p></p>
+  - name: RGE_FICHE_EDIFICE_DICT.AJOUT_UEASS
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-family: &quot;Times New Roman&quot;;"><b><font color="#ff00ff">Voudriez-vous ajouter une unité économiques ou associations ?</font></b></span><p></p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_ADRESSE_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer&nbsp;<b>l'adresse&nbsp;</b>de la concession.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_AUTRE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Précisez autre type d'habitat.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_DESIGNATION_INF
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quelle est la&nbsp;<b>désignation&nbsp;</b>de l'infrastructure ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_EXISTENCE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Cette infrastructure habrite-elle de&nbsp;<b>ménages </b>?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_EXISTENCE_CONFIRM
+    conditions:
+      - questionText:
+          EN: |
+            <p>Confirmez-vous que l'infrastructure indiqué n'habrite plus de ménage ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_LIBELLE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez choisir le&nbsp;<b>libellé&nbsp;</b>de l'infrasctructure à renseigner.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_NATURE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez choisir la&nbsp;<b>nature&nbsp;</b>de l'infrastructure à renseigner.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_NBR_HABITATION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Donnez le&nbsp;<b>nombre d'habitations</b>&nbsp;dans la concession.</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_NOM_CC
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer le&nbsp;<b>prénom</b>&nbsp;et le&nbsp;<b>nom&nbsp;</b>du chef de la concession.&nbsp;</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_OBSERVATIONS
+    conditions:
+      - questionText:
+          EN: |
+            
+  - name: CARTO_FICHE_CONS_DICT.CONS_OBSERVATIONS_MEN
+    conditions:
+      - questionText:
+          EN: |
+            <p><span lang="FR" style="font-size:12.0pt;line-height:
+            107%;font-family:&quot;Tahoma&quot;,sans-serif;mso-fareast-font-family:Calibri;
+            mso-fareast-theme-font:minor-latin;mso-ansi-language:FR;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA">Est-ce que l’infrastructure abrite un
+            <b>ménage</b>&nbsp;?</span></p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_PARCELLE_CONSTRUCTION
+    conditions:
+      - questionText:
+          EN: |
+            <p>La parcelle/concession est-elle en construction ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_STATUT_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>statut&nbsp;</b>de la concession ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_STATUT_INF
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>statut&nbsp;</b>de l'infrastructure ?</p>
+  - name: CARTO_FICHE_CONS_DICT.CONS_TYPE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>type d'habitat</b>&nbsp;de la concession ?</p>
+  - name: FICHE_CONS_DICT.CONS_ADRESSE_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer&nbsp;<b>l'adresse&nbsp;</b>de la concession.</p>
+  - name: FICHE_CONS_DICT.CONS_AUTRE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Précisez autre type d'habitat.</p>
+  - name: FICHE_CONS_DICT.CONS_NBR_HABITATION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Donnez le&nbsp;<b>nombre d'habitations</b>&nbsp;dans la concession.</p>
+  - name: FICHE_CONS_DICT.CONS_NOM_CC
+    conditions:
+      - questionText:
+          EN: |
+            <p>Veuillez indiquer le&nbsp;<b>prénom</b>&nbsp;et le&nbsp;<b>nom&nbsp;</b>du chef de la concession.&nbsp;</p><p><p></p></p>
+  - name: FICHE_CONS_DICT.CONS_PARCELLE_CONSTRUCTION
+    conditions:
+      - questionText:
+          EN: |
+            <p>La parcelle/concession est-elle en construction ?</p>
+  - name: FICHE_CONS_DICT.CONS_STATUT_CONCESSION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>statut&nbsp;</b>de la concession ?</p>
+  - name: FICHE_CONS_DICT.CONS_TYPE_HABITAT
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quel est le&nbsp;<b>type d'habitat</b>&nbsp;de la concession ?</p>
+...
