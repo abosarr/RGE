@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cotisations — Association Nasroune minaal laahi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EF;
+    --card:#FFFFFF;
+    --ink:#1E3A2E;
+    --ink-soft:#4F6B5A;
+    --hairline:#DCD5C4;
+    --gold:#A9812F;
+    --gold-soft:#F0E6CC;
+    --green:#2F7A4F;
+    --green-soft:#E6F1EA;
+    --red:#A23E34;
+    --red-soft:#F5E7E4;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px;}
+
+  .masthead{
+    display:flex;align-items:center;justify-content:center;
+    padding-bottom:20px;margin-bottom:24px;
+    border-bottom:2px solid var(--ink);
+    text-align:center;
+  }
+  .masthead h1{
+    font-family:'Fraunces',serif;
+    font-size:20px;font-weight:600;letter-spacing:-0.01em;
+    margin:2px 0 0;line-height:1.35;
+  }
+  .masthead .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 4px;
+  }
+
+  .tabs{display:flex;gap:6px;margin-bottom:28px;}
+  .tab{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    padding:10px 16px;border:1px solid var(--hairline);
+    background:var(--card);color:var(--ink-soft);
+    border-radius:8px 8px 0 0;cursor:pointer;
+    border-bottom:none;position:relative;top:1px;
+  }
+  .tab.active{
+    color:var(--ink);background:var(--paper);
+    border-color:var(--ink);border-bottom:1px solid var(--paper);
+    font-weight:600;
+  }
+  .panel{display:none;}
+  .panel.active{display:block;}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    padding:32px;
+    box-shadow:0 1px 2px rgba(30,58,46,0.05);
+  }
+  .card + .card{margin-top:16px;}
+  .doc-title{
+    font-family:'Fraunces',serif;font-size:19px;font-weight:600;
+    margin:0 0 4px;
+  }
+  .doc-sub{
+    font-size:13.5px;color:var(--ink-soft);margin:0 0 28px;line-height:1.5;
+  }
+
+  label{
+    display:block;font-size:12px;font-weight:600;letter-spacing:.02em;
+    color:var(--ink-soft);margin-bottom:6px;margin-top:20px;
+  }
+  label:first-of-type{margin-top:0;}
+  input[type=text],input[type=tel],input[type=number]{
+    width:100%;padding:11px 13px;border:1px solid var(--hairline);
+    border-radius:8px;font-family:'Inter',sans-serif;font-size:14.5px;
+    background:#FCFBF8;color:var(--ink);
+  }
+  input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold);}
+  .hint{font-size:11.5px;color:#8A8371;margin-top:5px;}
+
+  .amount-row{display:flex;align-items:center;gap:10px;}
+  .amount-row input{flex:1;}
+  .amount-suffix{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .amount-quick{display:flex;gap:8px;margin-top:8px;}
+  .qbtn{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;
+    border:1px solid var(--hairline);background:var(--card);color:var(--ink-soft);
+    border-radius:20px;padding:6px 14px;cursor:pointer;
+  }
+  .qbtn.active{border-color:var(--green);background:var(--green-soft);color:var(--green);font-weight:600;}
+
+  .submit-row{margin-top:28px;}
+  .btn-primary{
+    width:100%;padding:14px;border:none;border-radius:9px;
+    background:var(--ink);color:#F6F4EF;font-family:'Inter',sans-serif;
+    font-weight:600;font-size:14.5px;cursor:pointer;
+    transition:background .15s;
+  }
+  .btn-primary:hover{background:#12261D;}
+  .btn-primary:disabled{background:#B9C4BD;cursor:not-allowed;}
+  .error-msg{
+    color:var(--red);font-size:12.5px;margin-top:10px;display:none;
+  }
+
+  .confirm{text-align:center;padding:20px 0 4px;}
+  .confirm .stamp{
+    width:64px;height:64px;border-radius:50%;
+    border:2.5px solid var(--green);color:var(--green);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 18px;font-size:28px;
+  }
+  .confirm h2{font-family:'Fraunces',serif;font-size:20px;margin:0 0 8px;}
+  .confirm p{color:var(--ink-soft);font-size:13.5px;line-height:1.6;margin:0 0 22px;}
+  .receipt{
+    text-align:left;background:#FCFBF8;border:1px solid var(--hairline);
+    border-radius:10px;padding:16px 18px;font-size:13px;margin-bottom:22px;
+  }
+  .receipt div{display:flex;justify-content:space-between;padding:5px 0;
+    border-bottom:1px solid #EFEBE1;}
+  .receipt div:last-child{border-bottom:none;}
+  .receipt .k{color:var(--ink-soft);}
+  .receipt .v{font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+
+  .gate{max-width:340px;margin:60px auto 0;text-align:center;}
+  .gate .card{padding:28px;}
+  .gate p{font-size:13px;color:var(--ink-soft);margin-top:6px;}
+  .stat-row{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+  .stat{
+    flex:1;min-width:140px;background:var(--card);border:1px solid var(--hairline);
+    border-radius:12px;padding:16px 18px;
+  }
+  .stat .n{font-family:'Fraunces',serif;font-size:24px;font-weight:600;}
+  .stat .l{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+  .toolbar{display:flex;gap:10px;margin-bottom:14px;}
+  .search{
+    flex:1;padding:10px 13px;border:1px solid var(--hairline);border-radius:8px;
+    font-family:'Inter',sans-serif;font-size:13.5px;background:var(--card);
+  }
+  .btn-export{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.03em;
+    background:var(--gold-soft);color:#6B5322;border:1px solid var(--gold);
+    border-radius:8px;padding:0 16px;cursor:pointer;font-weight:600;
+  }
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  thead th{
+    text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);
+    padding:8px 10px;border-bottom:1.5px solid var(--ink);
+  }
+  tbody td{padding:10px;border-bottom:1px solid #EFEBE1;vertical-align:middle;}
+  tbody tr:hover{background:#FCFBF8;}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  .empty{text-align:center;padding:50px 10px;color:var(--ink-soft);font-size:13.5px;}
+  .refresh-note{font-size:11.5px;color:#8A8371;margin-bottom:12px;}
+  @media (max-width:520px){
+    .wrap{padding:20px 14px 60px;}
+    .card{padding:22px 18px;}
+    .masthead h1{font-size:17px;}
+    thead th:nth-child(3),tbody td:nth-child(3){display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <p class="eyebrow">Association Nasroune minaal laahi</p>
+      <h1>Cotisations pour l'édification de la mosquée<br>Cité ICS Sant Yalla</h1>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="form">Formulaire</div>
+    <div class="tab" data-tab="dash">Espace responsable</div>
+  </div>
+
+  <!-- FORM PANEL -->
+  <div class="panel active" id="panel-form">
+    <div id="form-card" class="card">
+      <p class="doc-title">Versement de la cotisation</p>
+      <p class="doc-sub">Merci de renseigner les informations du ménage et le montant versé pour la cotisation en faveur de la construction de la mosquée.</p>
+
+      <label for="chef">Nom du chef de ménage</label>
+      <input type="text" id="chef" placeholder="Prénom et nom" autocomplete="name" />
+
+      <label for="quartier">Quartier / Adresse</label>
+      <input type="text" id="quartier" placeholder="Ex : Cité ICS, Rue 12..." />
+
+      <label for="tel">Téléphone</label>
+      <input type="tel" id="tel" placeholder="Ex : 77 123 45 67" />
+
+      <label for="montant">Montant versé</label>
+      <div class="amount-row">
+        <input type="number" id="montant" min="0" step="500" value="5000" />
+        <span class="amount-suffix">F CFA</span>
+      </div>
+      <div class="amount-quick">
+        <button type="button" class="qbtn active" data-amt="5000">5 000</button>
+        <button type="button" class="qbtn" data-amt="10000">10 000</button>
+        <button type="button" class="qbtn" data-amt="15000">15 000</button>
+      </div>
+      <div class="hint">Cotisation de base : 5 000 F CFA par ménage. Montant modifiable en cas de versement différent.</div>
+
+      <label for="note">Remarque (facultatif)</label>
+      <input type="text" id="note" placeholder="Ex : mois de versement, précision..." />
+
+      <div class="submit-row">
+        <button class="btn-primary" id="submit-btn">Confirmer et envoyer</button>
+        <p class="error-msg" id="error-msg"></p>
+      </div>
+    </div>
+
+    <div class="card confirm" id="confirm-card" style="display:none;">
+      <div class="stamp">✓</div>
+      <h2>Versement enregistré</h2>
+      <p>Merci. Votre cotisation a bien été transmise aux responsables de l'association.</p>
+      <div class="receipt" id="receipt"></div>
+      <button class="btn-primary" id="new-entry-btn" style="background:var(--gold-soft);color:#6B5322;">Nouveau versement</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD PANEL -->
+  <div class="panel" id="panel-dash">
+
+    <div class="gate" id="dash-gate">
+      <div class="card">
+        <p class="doc-title" style="margin-bottom:2px;">Espace responsable</p>
+        <p>Entrez le code d'accès pour consulter les cotisations.</p>
+        <input type="text" class="search" id="pin-input" placeholder="Code d'accès" style="margin-top:16px;text-align:center;letter-spacing:.1em;" />
+        <button class="btn-primary" id="pin-submit" style="margin-top:12px;">Accéder</button>
+        <p class="error-msg" id="pin-error"></p>
+      </div>
+    </div>
+
+    <div id="dash-content" style="display:none;">
+      <div class="stat-row">
+        <div class="stat"><div class="n" id="stat-total">0</div><div class="l">Versements</div></div>
+        <div class="stat"><div class="n" id="stat-menages">0</div><div class="l">Ménages distincts</div></div>
+        <div class="stat"><div class="n" id="stat-montant" style="color:var(--green);">0</div><div class="l">Total collecté (F CFA)</div></div>
+      </div>
+      <div class="toolbar">
+        <input type="text" class="search" id="search-input" placeholder="Rechercher par nom, quartier ou téléphone…" />
+        <button class="btn-export" id="export-btn">Exporter CSV</button>
+        <button class="btn-export" id="refresh-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Actualiser</button>
+      </div>
+      <p class="refresh-note">Chaque versement est enregistré comme une ligne distincte (un ménage peut cotiser plusieurs fois).</p>
+      <div class="card" style="padding:0;overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Reçu</th><th>Chef de ménage</th><th>Quartier</th><th>Téléphone</th><th>Montant</th><th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+        <div class="empty" id="empty-state" style="display:none;">Aucun versement enregistré pour le moment.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ---------- CONFIG ----------
+// 1) Collez ici l'URL de votre déploiement Google Apps Script (voir DEPLOIEMENT.md).
+// 2) Changez ce code avant de partager le lien avec les responsables (doit être identique à SECRET dans Code.gs).
+const API_URL = "https://script.google.com/macros/s/AKfycbxb_urWuNctewN6YF2bDDcHY4aObazJZe9eLzs6JH7GD9uS1RzIGs4NJ7hjFq9COkpI/exec";
+const ADMIN_CODE = "MOSQUEE2026";
+
+// ---------- TABS ----------
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.tab).classList.add('active');
+    if(t.dataset.tab==='dash' && document.getElementById('dash-content').style.display!=='none'){
+      loadSubmissions();
+    }
+  });
+});
+
+// ---------- MONTANT RAPIDE ----------
+document.querySelectorAll('.qbtn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.qbtn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('montant').value = btn.dataset.amt;
+  });
+});
+document.getElementById('montant').addEventListener('input', ()=>{
+  const v = document.getElementById('montant').value;
+  document.querySelectorAll('.qbtn').forEach(b=> b.classList.toggle('active', b.dataset.amt === v));
+});
+
+// ---------- SUBMIT ----------
+function showError(msg){
+  const el = document.getElementById('error-msg');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+function clearError(){
+  document.getElementById('error-msg').style.display='none';
+}
+
+document.getElementById('submit-btn').addEventListener('click', async ()=>{
+  clearError();
+  const chef = document.getElementById('chef').value.trim();
+  const quartier = document.getElementById('quartier').value.trim();
+  const tel = document.getElementById('tel').value.trim();
+  const montant = parseInt(document.getElementById('montant').value, 10);
+  const note = document.getElementById('note').value.trim();
+
+  if(!chef || !quartier || !tel){
+    showError('Merci de renseigner tous les champs obligatoires.');
+    return;
+  }
+  if(!montant || montant <= 0){
+    showError('Merci de renseigner un montant valide.');
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true; btn.textContent = 'Envoi en cours…';
+
+  const record = {
+    chef, quartier, telephone: tel, montant, note,
+    date: new Date().toISOString()
+  };
+
+  try{
+    if(API_URL === "COLLEZ_ICI_VOTRE_URL_WEBAPP"){
+      throw new Error("API_URL non configurée");
+    }
+    await fetch(API_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(record)
+    });
+    showConfirmation(record);
+  }catch(err){
+    showError("L'enregistrement a échoué. Vérifiez votre connexion et réessayez.");
+    btn.disabled = false; btn.textContent = 'Confirmer et envoyer';
+  }
+});
+
+function showConfirmation(record){
+  document.getElementById('form-card').style.display = 'none';
+  const card = document.getElementById('confirm-card');
+  card.style.display = 'block';
+  const d = new Date(record.date);
+  document.getElementById('receipt').innerHTML = `
+    <div><span class="k">Chef de ménage</span><span class="v">${escapeHtml(record.chef)}</span></div>
+    <div><span class="k">Quartier</span><span class="v">${escapeHtml(record.quartier)}</span></div>
+    <div><span class="k">Montant</span><span class="v">${record.montant.toLocaleString('fr-FR')} F CFA</span></div>
+    <div><span class="k">Date</span><span class="v">${d.toLocaleDateString('fr-FR')} ${d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}</span></div>
+  `;
+}
+document.getElementById('new-entry-btn').addEventListener('click', ()=>{
+  document.getElementById('confirm-card').style.display='none';
+  document.getElementById('form-card').style.display='block';
+  document.getElementById('chef').value='';
+  document.getElementById('quartier').value='';
+  document.getElementById('tel').value='';
+  document.getElementById('montant').value='5000';
+  document.getElementById('note').value='';
+  document.querySelectorAll('.qbtn').forEach(b=> b.classList.toggle('active', b.dataset.amt === '5000'));
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = false; btn.textContent = 'Confirmer et envoyer';
+  clearError();
+});
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// ---------- DASHBOARD GATE ----------
+document.getElementById('pin-submit').addEventListener('click', checkPin);
+document.getElementById('pin-input').addEventListener('keydown', e=>{ if(e.key==='Enter') checkPin(); });
+function checkPin(){
+  const val = document.getElementById('pin-input').value.trim();
+  if(val === ADMIN_CODE){
+    document.getElementById('dash-gate').style.display='none';
+    document.getElementById('dash-content').style.display='block';
+    loadSubmissions();
+  }else{
+    document.getElementById('pin-error').textContent = 'Code incorrect.';
+    document.getElementById('pin-error').style.display='block';
+  }
+}
+
+// ---------- DASHBOARD DATA ----------
+let allRecords = [];
+
+async function loadSubmissions(){
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '<tr><td colspan="6" class="empty">Chargement…</td></tr>';
+  try{
+    const resp = await fetch(API_URL + '?code=' + encodeURIComponent(ADMIN_CODE));
+    const records = await resp.json();
+    if(records && records.error){
+      tbody.innerHTML = '<tr><td colspan="6" class="empty">Accès refusé par le serveur.</td></tr>';
+      return;
+    }
+    records.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    allRecords = records;
+    renderTable(records);
+    renderStats(records);
+  }catch(err){
+    tbody.innerHTML = '<tr><td colspan="6" class="empty">Erreur de chargement des données.</td></tr>';
+  }
+}
+
+function renderStats(records){
+  document.getElementById('stat-total').textContent = records.length;
+  const menages = new Set(records.map(r=> (r.telephone||'').trim()));
+  document.getElementById('stat-menages').textContent = menages.size;
+  const total = records.reduce((s,r)=> s + (parseInt(r.montant,10)||0), 0);
+  document.getElementById('stat-montant').textContent = total.toLocaleString('fr-FR');
+}
+
+function renderTable(records){
+  const tbody = document.getElementById('table-body');
+  const empty = document.getElementById('empty-state');
+  if(records.length===0){
+    tbody.innerHTML='';
+    empty.style.display='block';
+    return;
+  }
+  empty.style.display='none';
+  tbody.innerHTML = records.map((r, i)=>{
+    const d = new Date(r.date);
+    return `<tr>
+      <td class="mono">R-${String(records.length - i).padStart(4,'0')}</td>
+      <td>${escapeHtml(r.chef)}</td>
+      <td>${escapeHtml(r.quartier)}</td>
+      <td class="mono">${escapeHtml(r.telephone)}</td>
+      <td class="mono">${(parseInt(r.montant,10)||0).toLocaleString('fr-FR')}</td>
+      <td class="mono">${d.toLocaleDateString('fr-FR')}</td>
+    </tr>`;
+  }).join('');
+}
+
+document.getElementById('search-input').addEventListener('input', e=>{
+  const q = e.target.value.toLowerCase().trim();
+  if(!q){ renderTable(allRecords); return; }
+  const filtered = allRecords.filter(r =>
+    r.chef.toLowerCase().includes(q) ||
+    r.quartier.toLowerCase().includes(q) ||
+    r.telephone.toLowerCase().includes(q)
+  );
+  renderTable(filtered);
+});
+
+document.getElementById('refresh-btn').addEventListener('click', loadSubmissions);
+
+document.getElementById('export-btn').addEventListener('click', ()=>{
+  if(allRecords.length===0) return;
+  const headers = ['Chef de menage','Quartier','Telephone','Montant','Note','Date'];
+  const rows = allRecords.map(r=>{
+    const d = new Date(r.date);
+    const dateStr = d.toLocaleDateString('fr-FR') + ' ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+    return [r.chef, r.quartier, r.telephone, r.montant, r.note||'', dateStr]
+      .map(v => `"${String(v).replace(/"/g,'""')}"`).join(',');
+  });
+  const csv = headers.join(',') + '\n' + rows.join('\n');
+  const blob = new Blob(["\ufeff"+csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'cotisations_mosquee_' + new Date().toISOString().slice(0,10) + '.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+</script>
+</body>
+</html>
