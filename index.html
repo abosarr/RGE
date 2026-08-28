@@ -202,7 +202,8 @@
       position:absolute;left:0;top:0;width:100%;border:none;box-shadow:none;
     }
     body.printing-receipt #new-entry-btn,
-    body.printing-receipt #print-receipt-btn{display:none;}
+    body.printing-receipt #print-receipt-btn,
+    body.printing-receipt #whatsapp-receipt-btn{display:none;}
 
     body.printing-table *{visibility:hidden;}
     body.printing-table #dash-content,
@@ -223,7 +224,59 @@
       font-family:'Fraunces',serif;font-size:18px;margin:0;
     }
     body.printing-table .print-title p{font-size:11px;color:#333;margin:4px 0 0;}
+
+    body.printing-fiche *{visibility:hidden;}
+    body.printing-fiche #fiche-printable,
+    body.printing-fiche #fiche-printable *{visibility:visible;}
+    body.printing-fiche #fiche-printable{
+      position:absolute;left:0;top:0;width:100%;padding:0;border:none;box-shadow:none;
+    }
   }
+
+  .fiche-doc{
+    position:relative;overflow:hidden;
+    border:1.5px solid var(--ink);border-radius:16px;
+    padding:36px 34px 30px;
+  }
+  .fiche-doc::before{
+    content:"";position:absolute;inset:0;border:1px solid var(--hairline);
+    margin:6px;border-radius:11px;pointer-events:none;
+  }
+  .fiche-ref{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;
+    color:var(--ink-soft);text-align:right;margin:0 0 14px;text-transform:uppercase;
+  }
+  .fiche-header{text-align:center;border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:18px;}
+  .fiche-header img.logo{width:72px;height:72px;object-fit:contain;margin:0 auto 12px;display:block;}
+  .fiche-header .eyebrow2{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 4px;}
+  .fiche-header .title2{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin:0;}
+  .fiche-header .sub2{font-size:12px;color:var(--ink-soft);margin:4px 0 0;}
+  .fiche-badge{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+    letter-spacing:.03em;padding:6px 14px;border-radius:20px;margin:0 0 20px;
+  }
+  .fiche-badge.ok{background:var(--green-soft);color:var(--green);border:1px solid var(--green);}
+  .fiche-badge.pending{background:var(--gold-soft);color:#6B5322;border:1px solid var(--gold);}
+  .fiche-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px;}
+  .fiche-table thead th{
+    text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);
+    padding:8px 10px;border-bottom:1.5px solid var(--ink);
+  }
+  .fiche-table tbody td{padding:9px 10px;border-bottom:1px solid #EFEBE1;}
+  .fiche-table tbody tr:nth-child(even){background:#FBFAF6;}
+  .fiche-total{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--green-soft);border:1px solid var(--green);border-radius:10px;
+    padding:14px 18px;margin-top:4px;
+  }
+  .fiche-total .lbl{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--ink);}
+  .fiche-total .val{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700;color:var(--green);}
+  .fiche-signatures{display:flex;gap:24px;margin-top:34px;}
+  .sig-box{flex:1;text-align:center;}
+  .sig-line{border-bottom:1px solid var(--ink-soft);height:44px;}
+  .sig-box p{font-size:11px;color:var(--ink-soft);margin:8px 0 0;}
+  .fiche-footnote{font-size:11px;color:var(--ink-soft);margin-top:24px;text-align:center;}
 </style>
 </head>
 <body>
@@ -314,7 +367,8 @@
       <div class="receipt" id="receipt"></div>
       <div class="toolbar">
         <button class="btn-primary" id="new-entry-btn" style="background:var(--gold-soft);color:#6B5322;flex:1;">Nouveau versement</button>
-        <button class="btn-export" id="print-receipt-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Imprimer le reçu</button>
+        <button class="btn-export" id="print-receipt-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Imprimer</button>
+        <a class="btn-export" id="whatsapp-receipt-btn" href="#" target="_blank" rel="noopener" style="background:#25D366;color:#fff;border-color:#25D366;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">Envoyer par WhatsApp</a>
       </div>
     </div>
   </div>
@@ -349,17 +403,27 @@
         <button class="btn-export" id="print-table-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Imprimer</button>
         <button class="btn-export" id="refresh-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Actualiser</button>
       </div>
-      <p class="refresh-note">Chaque ligne correspond à un ménage (tous ses versements sont cumulés).</p>
+      <p class="refresh-note">Chaque ligne correspond à un ménage (tous ses versements sont cumulés). Cliquez sur « Fiche » pour imprimer ou envoyer son reçu complet par WhatsApp.</p>
       <div class="card" style="padding:0;overflow-x:auto;">
         <table>
           <thead>
             <tr>
-              <th>Code</th><th>Chef de ménage</th><th>Quartier</th><th>Téléphone</th><th>Versements</th><th>Total ménage</th><th>Dernier versement</th>
+              <th>Code</th><th>Chef de ménage</th><th>Quartier</th><th>Téléphone</th><th>Versements</th><th>Total ménage</th><th>Dernier versement</th><th></th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
         </table>
         <div class="empty" id="empty-state" style="display:none;">Aucun versement enregistré pour le moment.</div>
+      </div>
+    </div>
+
+    <!-- FICHE INDIVIDUELLE (imprimable + WhatsApp), un seul ménage -->
+    <div id="fiche-detail" style="display:none;">
+      <button class="btn-export" id="fiche-back-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);margin-bottom:14px;">← Retour au tableau</button>
+      <div class="card" id="fiche-printable"></div>
+      <div class="toolbar" style="margin-top:14px;">
+        <button class="btn-primary" id="fiche-print-btn" style="flex:1;">Imprimer la fiche</button>
+        <a class="btn-export" id="fiche-whatsapp-btn" href="#" target="_blank" rel="noopener" style="background:#25D366;color:#fff;border-color:#25D366;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">Envoyer par WhatsApp</a>
       </div>
     </div>
   </div>
@@ -477,6 +541,20 @@ function showConfirmation(record){
     <div><span class="k">Montant</span><span class="v">${record.montant.toLocaleString('fr-FR')} F CFA</span></div>
     <div><span class="k">Date</span><span class="v">${d.toLocaleDateString('fr-FR')} ${d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}</span></div>
   `;
+
+  const digits = normalizePhone(record.telephone);
+  const waBtn = document.getElementById('whatsapp-receipt-btn');
+  if(digits){
+    const waText = encodeURIComponent(
+      `Bonjour ${record.chef}, reçu de votre cotisation à l'Association Nasroune minaal laahi (édification de la mosquée, Cité ICS Sant Yalla).\n` +
+      `Quartier : ${record.quartier}\nMois : ${record.note||'—'}\nMontant : ${record.montant.toLocaleString('fr-FR')} F CFA\n` +
+      `Date : ${d.toLocaleDateString('fr-FR')} ${d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}\nQu'Allah vous récompense.`
+    );
+    waBtn.href = `https://wa.me/221${digits}?text=${waText}`;
+    waBtn.style.display = 'inline-flex';
+  }else{
+    waBtn.style.display = 'none';
+  }
 }
 document.getElementById('print-receipt-btn').addEventListener('click', ()=>{
   document.body.classList.add('printing-receipt');
@@ -600,9 +678,100 @@ function renderTable(groups){
       <td class="mono">${g.count}</td>
       <td class="mono" style="font-weight:600;color:var(--green);">${g.total.toLocaleString('fr-FR')}</td>
       <td class="mono">${d.toLocaleDateString('fr-FR')}</td>
+      <td><button class="btn-export dash-fiche-btn" data-code="${g.code}" style="padding:6px 12px;font-size:12px;background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Fiche</button></td>
     </tr>`;
   }).join('');
+  tbody.querySelectorAll('.dash-fiche-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const g = dashGroups.find(x=> x.code === btn.dataset.code);
+      if(g) openFiche(g);
+    });
+  });
 }
+
+// ---------- FICHE INDIVIDUELLE (impression + WhatsApp) ----------
+const COTISATION_BASE = 5000; // seuil de référence pour le statut "à jour"
+
+function openFiche(g){
+  document.getElementById('dash-content').style.display='none';
+  document.getElementById('fiche-detail').style.display='block';
+  document.getElementById('fiche-printable').innerHTML = buildFicheHtml(g);
+
+  const digits = normalizePhone(g.telephone);
+  const waText = encodeURIComponent(
+    `Bonjour ${g.chef}, voici le récapitulatif de votre cotisation à l'Association Nasroune minaal laahi ` +
+    `(édification de la mosquée, Cité ICS Sant Yalla).\nQuartier : ${g.quartier}\nTotal cotisé : ${g.total.toLocaleString('fr-FR')} F CFA ` +
+    `en ${g.count} versement${g.count>1?'s':''}.\nQu'Allah vous récompense.`
+  );
+  const waBtn = document.getElementById('fiche-whatsapp-btn');
+  if(digits){
+    waBtn.href = `https://wa.me/221${digits}?text=${waText}`;
+    waBtn.style.display = 'inline-flex';
+  }else{
+    waBtn.style.display = 'none';
+  }
+}
+
+function buildFicheHtml(g){
+  const payments = [...g.payments].reverse(); // ordre chronologique croissant
+  const isOk = g.total >= COTISATION_BASE;
+  const remaining = COTISATION_BASE - g.total;
+  const rows = payments.map((p,i)=>{
+    const d = new Date(p.date);
+    return `<tr>
+      <td class="mono">${i+1}</td>
+      <td class="mono">${d.toLocaleDateString('fr-FR')}</td>
+      <td class="mono">${(parseInt(p.montant,10)||0).toLocaleString('fr-FR')} F CFA</td>
+      <td>${escapeHtml(p.note||'—')}</td>
+    </tr>`;
+  }).join('');
+  return `
+    <div class="fiche-doc">
+      <p class="fiche-ref">Fiche N° ${g.code} · Émise le ${new Date().toLocaleDateString('fr-FR')}</p>
+      <div class="fiche-header">
+        <img class="logo" src="${LOGO_DATA}" alt="Logo de l'association" />
+        <p class="eyebrow2">Association Nasroune minaal laahi</p>
+        <p class="title2">Fiche individuelle de cotisation</p>
+        <p class="sub2">Édification de la mosquée — Cité ICS Sant Yalla</p>
+        <p style="direction:rtl;font-size:14px;color:var(--green);font-weight:600;margin:6px 0 0;">الحمد لله</p>
+      </div>
+      <div style="text-align:center;">
+        <span class="fiche-badge ${isOk?'ok':'pending'}">${isOk ? '✓ Cotisation à jour' : `En attente · reste ${remaining.toLocaleString('fr-FR')} F CFA`}</span>
+      </div>
+      <div class="receipt" style="margin-bottom:20px;">
+        <div><span class="k">Chef de ménage</span><span class="v">${escapeHtml(g.chef)}</span></div>
+        <div><span class="k">Quartier</span><span class="v">${escapeHtml(g.quartier)}</span></div>
+        <div><span class="k">Téléphone</span><span class="v">${escapeHtml(g.telephone)}</span></div>
+        <div><span class="k">Nombre de versements</span><span class="v">${g.count}</span></div>
+      </div>
+      <table class="fiche-table">
+        <thead><tr><th>#</th><th>Date</th><th>Montant</th><th>Mois</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <div class="fiche-total">
+        <span class="lbl">Total cotisé</span>
+        <span class="val">${g.total.toLocaleString('fr-FR')} F CFA</span>
+      </div>
+      <div class="fiche-signatures">
+        <div class="sig-box"><div class="sig-line"></div><p>Signature du chef de ménage</p></div>
+        <div class="sig-box"><div class="sig-line"></div><p>Signature du responsable association</p></div>
+      </div>
+      <p class="fiche-footnote">Fiche générée le ${new Date().toLocaleDateString('fr-FR')} — Association Nasroune minaal laahi, Cité ICS Sant Yalla.</p>
+    </div>
+  `;
+}
+
+document.getElementById('fiche-back-btn').addEventListener('click', ()=>{
+  document.getElementById('fiche-detail').style.display='none';
+  document.getElementById('dash-content').style.display='block';
+});
+document.getElementById('fiche-print-btn').addEventListener('click', ()=>{
+  document.body.classList.add('printing-fiche');
+  window.print();
+});
+window.addEventListener('afterprint', ()=>{
+  document.body.classList.remove('printing-fiche');
+});
 
 document.getElementById('search-input').addEventListener('input', e=>{
   const q = e.target.value.toLowerCase().trim();
