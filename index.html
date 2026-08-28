@@ -307,8 +307,17 @@
       <label for="chef">Nom du chef de ménage</label>
       <input type="text" id="chef" placeholder="Prénom et nom" autocomplete="name" />
 
-      <label for="quartier">Quartier / Adresse</label>
-      <input type="text" id="quartier" placeholder="Ex : Cité ICS, Rue 12..." />
+      <label for="quartier">Cité / Quartier</label>
+      <select id="quartier">
+        <option value="">— Sélectionner la cité —</option>
+        <option value="ICS Sant Yalla">ICS Sant Yalla</option>
+        <option value="Adila 1">Adila 1</option>
+        <option value="Adila 2">Adila 2</option>
+        <option value="Agir Immo">Agir Immo</option>
+        <option value="Demba Ndiaye">Demba Ndiaye</option>
+        <option value="Autre">Autre cité</option>
+      </select>
+      <input type="text" id="quartier-autre" placeholder="Précisez le nom de la cité" style="display:none;margin-top:8px;" />
 
       <label for="tel">Téléphone</label>
       <input type="tel" id="tel" placeholder="Ex : 77 123 45 67" />
@@ -381,12 +390,12 @@
         <button class="btn-export" id="export-btn">Exporter CSV</button>
         <button class="btn-export" id="refresh-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Actualiser</button>
       </div>
-      <p class="refresh-note">Chaque versement est enregistré comme une ligne distincte (un ménage peut cotiser plusieurs fois).</p>
+      <p class="refresh-note">Chaque ligne correspond à un ménage (tous ses versements sont cumulés). Cliquez sur « Voir la fiche » pour le détail complet et l'impression.</p>
       <div class="card" style="padding:0;overflow-x:auto;">
         <table>
           <thead>
             <tr>
-              <th>Reçu</th><th>Chef de ménage</th><th>Quartier</th><th>Téléphone</th><th>Montant</th><th>Total ménage</th><th>Date</th>
+              <th>Code</th><th>Chef de ménage</th><th>Quartier</th><th>Téléphone</th><th>Versements</th><th>Total ménage</th><th>Dernier versement</th><th></th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
@@ -499,10 +508,18 @@ function clearError(){
   document.getElementById('error-msg').style.display='none';
 }
 
+document.getElementById('quartier').addEventListener('change', e=>{
+  const autreInput = document.getElementById('quartier-autre');
+  autreInput.style.display = (e.target.value === 'Autre') ? 'block' : 'none';
+  if(e.target.value !== 'Autre') autreInput.value = '';
+});
+
 document.getElementById('submit-btn').addEventListener('click', async ()=>{
   clearError();
   const chef = document.getElementById('chef').value.trim();
-  const quartier = document.getElementById('quartier').value.trim();
+  const quartierSel = document.getElementById('quartier').value.trim();
+  const quartierAutre = document.getElementById('quartier-autre').value.trim();
+  const quartier = quartierSel === 'Autre' ? quartierAutre : quartierSel;
   const tel = document.getElementById('tel').value.trim();
   const montant = parseInt(document.getElementById('montant').value, 10);
   const note = document.getElementById('note').value.trim();
@@ -563,6 +580,8 @@ document.getElementById('new-entry-btn').addEventListener('click', ()=>{
   document.getElementById('form-card').style.display='block';
   document.getElementById('chef').value='';
   document.getElementById('quartier').value='';
+  document.getElementById('quartier-autre').value='';
+  document.getElementById('quartier-autre').style.display='none';
   document.getElementById('tel').value='';
   document.getElementById('montant').value='5000';
   document.getElementById('note').value='';
@@ -649,62 +668,75 @@ async function fetchRecords(){
 
 async function loadSubmissions(){
   const tbody = document.getElementById('table-body');
-  tbody.innerHTML = '<tr><td colspan="7" class="empty">Chargement…</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="8" class="empty">Chargement…</td></tr>';
   const records = await fetchRecords();
   if(records===null){
-    tbody.innerHTML = '<tr><td colspan="7" class="empty">Erreur de chargement des données.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="8" class="empty">Erreur de chargement des données.</td></tr>';
     return;
   }
-  renderTable(records);
-  renderStats(records);
+  dashGroups = groupByMenage(records);
+  renderTable(dashGroups);
+  renderStats(records, dashGroups);
 }
 
-function renderStats(records){
+function renderStats(records, groups){
   document.getElementById('stat-total').textContent = records.length;
-  const menages = new Set(records.map(r=> (r.telephone||'').trim()));
-  document.getElementById('stat-menages').textContent = menages.size;
+  document.getElementById('stat-menages').textContent = groups.length;
   const total = records.reduce((s,r)=> s + (parseInt(r.montant,10)||0), 0);
   document.getElementById('stat-montant').textContent = total.toLocaleString('fr-FR');
 }
 
-function renderTable(records){
+let dashGroups = [];
+
+function renderTable(groups){
   const tbody = document.getElementById('table-body');
   const empty = document.getElementById('empty-state');
-  if(records.length===0){
+  if(groups.length===0){
     tbody.innerHTML='';
     empty.style.display='block';
     return;
   }
   empty.style.display='none';
-  // Total cumulé par ménage, calculé sur l'ensemble des versements (pas seulement ceux affichés/filtrés)
-  const totals = new Map();
-  allRecords.forEach(r=>{
-    const key = (r.telephone||'').trim() || ('sans-telephone-' + (r.chef||'').trim().toLowerCase());
-    totals.set(key, (totals.get(key)||0) + (parseInt(r.montant,10)||0));
-  });
-  tbody.innerHTML = records.map((r, i)=>{
-    const d = new Date(r.date);
-    const key = (r.telephone||'').trim() || ('sans-telephone-' + (r.chef||'').trim().toLowerCase());
-    const menageTotal = totals.get(key) || 0;
+  tbody.innerHTML = groups.map(g=>{
+    const d = new Date(g.lastDate);
     return `<tr>
-      <td class="mono">R-${String(records.length - i).padStart(4,'0')}</td>
-      <td>${escapeHtml(r.chef)}</td>
-      <td>${escapeHtml(r.quartier)}</td>
-      <td class="mono">${escapeHtml(r.telephone)}</td>
-      <td class="mono">${(parseInt(r.montant,10)||0).toLocaleString('fr-FR')}</td>
-      <td class="mono" style="font-weight:600;color:var(--green);">${menageTotal.toLocaleString('fr-FR')}</td>
+      <td class="mono">${g.code}</td>
+      <td>${escapeHtml(g.chef)}</td>
+      <td>${escapeHtml(g.quartier)}</td>
+      <td class="mono">${escapeHtml(g.telephone)}</td>
+      <td class="mono">${g.count}</td>
+      <td class="mono" style="font-weight:600;color:var(--green);">${g.total.toLocaleString('fr-FR')}</td>
       <td class="mono">${d.toLocaleDateString('fr-FR')}</td>
+      <td><button class="btn-secondary dash-fiche-btn" data-code="${g.code}" style="padding:6px 12px;font-size:12px;">Voir la fiche</button></td>
     </tr>`;
   }).join('');
+  tbody.querySelectorAll('.dash-fiche-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const g = dashGroups.find(x=> x.code === btn.dataset.code);
+      if(g) goToFicheFromDash(g);
+    });
+  });
+}
+
+function goToFicheFromDash(g){
+  document.querySelectorAll('.tab').forEach(t=> t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=> p.classList.remove('active'));
+  document.querySelector('.tab[data-tab="fiches"]').classList.add('active');
+  document.getElementById('panel-fiches').classList.add('active');
+  if(!adminUnlocked){ return; }
+  document.getElementById('fiches-content').style.display='none';
+  fichesGroups = dashGroups;
+  openFiche(g);
 }
 
 document.getElementById('search-input').addEventListener('input', e=>{
   const q = e.target.value.toLowerCase().trim();
-  if(!q){ renderTable(allRecords); return; }
-  const filtered = allRecords.filter(r =>
-    r.chef.toLowerCase().includes(q) ||
-    r.quartier.toLowerCase().includes(q) ||
-    r.telephone.toLowerCase().includes(q)
+  if(!q){ renderTable(dashGroups); return; }
+  const filtered = dashGroups.filter(g =>
+    (g.chef||'').toLowerCase().includes(q) ||
+    (g.quartier||'').toLowerCase().includes(q) ||
+    (g.telephone||'').toLowerCase().includes(q) ||
+    g.code.toLowerCase().includes(q)
   );
   renderTable(filtered);
 });
@@ -713,18 +745,18 @@ document.getElementById('refresh-btn').addEventListener('click', loadSubmissions
 
 document.getElementById('export-btn').addEventListener('click', ()=>{
   if(allRecords.length===0) return;
-  const totals = new Map();
-  allRecords.forEach(r=>{
-    const key = (r.telephone||'').trim() || ('sans-telephone-' + (r.chef||'').trim().toLowerCase());
-    totals.set(key, (totals.get(key)||0) + (parseInt(r.montant,10)||0));
-  });
-  const headers = ['Chef de menage','Quartier','Telephone','Montant','Total menage','Note','Date'];
+  const groups = groupByMenage(allRecords);
+  const codeByKey = new Map(groups.map(g=> [g.key, g.code]));
+  const totalByKey = new Map(groups.map(g=> [g.key, g.total]));
+  const headers = ['Code menage','Chef de menage','Quartier','Telephone','Montant','Total menage','Mois de cotisation','Date'];
   const rows = allRecords.map(r=>{
     const d = new Date(r.date);
     const dateStr = d.toLocaleDateString('fr-FR') + ' ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
-    const key = (r.telephone||'').trim() || ('sans-telephone-' + (r.chef||'').trim().toLowerCase());
-    const menageTotal = totals.get(key) || 0;
-    return [r.chef, r.quartier, r.telephone, r.montant, menageTotal, r.note||'', dateStr]
+    const norm = normalizePhone(r.telephone);
+    const key = norm || ('sans-telephone-' + (r.chef||'').trim().toLowerCase());
+    const code = codeByKey.get(key) || '';
+    const menageTotal = totalByKey.get(key) || 0;
+    return [code, r.chef, r.quartier, r.telephone, r.montant, menageTotal, r.note||'', dateStr]
       .map(v => `"${String(v).replace(/"/g,'""')}"`).join(',');
   });
   const csv = headers.join(',') + '\n' + rows.join('\n');
@@ -757,20 +789,39 @@ async function loadFiches(){
   applyFichesFiltersAndSort();
 }
 
+function normalizePhone(tel){
+  let digits = String(tel||'').replace(/\D/g,'');
+  if(digits.startsWith('221')) digits = digits.slice(3);
+  digits = digits.replace(/^0+/,'');
+  return digits;
+}
+
 function groupByMenage(records){
   // records est déjà trié du plus récent au plus ancien
   const map = new Map();
   records.forEach(r=>{
-    const key = (r.telephone||'').trim() || ('sans-telephone-' + (r.chef||'').trim().toLowerCase());
+    const norm = normalizePhone(r.telephone);
+    const key = norm || ('sans-telephone-' + (r.chef||'').trim().toLowerCase());
     if(!map.has(key)){
-      map.set(key, { chef:r.chef, quartier:r.quartier, telephone:r.telephone, total:0, count:0, payments:[] });
+      map.set(key, { key, chef:r.chef, quartier:r.quartier, telephone:r.telephone, total:0, count:0, payments:[] });
     }
     const g = map.get(key);
     g.total += (parseInt(r.montant,10)||0);
     g.count += 1;
     g.payments.push(r);
   });
-  return Array.from(map.values()).sort((a,b)=> b.total - a.total);
+  const groups = Array.from(map.values());
+  // payments[] est dans l'ordre du plus récent au plus ancien (hérité de records) :
+  // payments[0] = versement le plus récent, dernier élément = premier versement (date d'inscription).
+  groups.forEach(g=>{
+    g.firstDate = g.payments[g.payments.length-1].date;
+    g.lastDate = g.payments[0].date;
+  });
+  // Code stable par ménage, attribué selon l'ordre chronologique d'inscription (1er versement),
+  // pour que le code d'un ménage ne change jamais d'un chargement à l'autre.
+  const byRegistration = [...groups].sort((a,b)=> new Date(a.firstDate) - new Date(b.firstDate));
+  byRegistration.forEach((g,i)=>{ g.code = 'M-' + String(i+1).padStart(3,'0'); });
+  return groups.sort((a,b)=> b.total - a.total);
 }
 
 function renderFichesStats(records, groups){
@@ -789,19 +840,13 @@ function populateQuartierFilter(groups){
   if(quartiers.includes(current)) sel.value = current;
 }
 
-function ficheRefNumber(g){
-  const digits = (g.telephone||'').replace(/\D/g,'');
-  const short = digits ? digits.slice(-6) : (g.chef||'XXXXXX').replace(/\s/g,'').slice(0,6).toUpperCase();
-  return 'ICS-' + short + '-' + String(g.count).padStart(2,'0');
-}
-
 function applyFichesFiltersAndSort(){
   const q = document.getElementById('fiches-search-input').value.toLowerCase().trim();
   const quartier = document.getElementById('fiches-quartier-filter').value;
   const sortMode = document.getElementById('fiches-sort').value;
 
   let filtered = fichesGroups.filter(g=>
-    (!q || (g.chef||'').toLowerCase().includes(q) || (g.quartier||'').toLowerCase().includes(q) || (g.telephone||'').toLowerCase().includes(q)) &&
+    (!q || (g.chef||'').toLowerCase().includes(q) || (g.quartier||'').toLowerCase().includes(q) || (g.telephone||'').toLowerCase().includes(q) || (g.code||'').toLowerCase().includes(q)) &&
     (!quartier || (g.quartier||'').trim() === quartier)
   );
 
@@ -831,7 +876,7 @@ function paintFichesList(groups){
     <div class="menage-card">
       <div>
         <div class="m-name"><span class="status-dot ${isOk?'ok':'pending'}"></span>${escapeHtml(g.chef)}</div>
-        <div class="m-sub">${escapeHtml(g.quartier)} · ${escapeHtml(g.telephone)}</div>
+        <div class="m-sub">${g.code} · ${escapeHtml(g.quartier)} · ${escapeHtml(g.telephone)}</div>
       </div>
       <div style="text-align:right;">
         <div class="m-total">${g.total.toLocaleString('fr-FR')} F CFA</div>
@@ -879,7 +924,7 @@ function buildFicheHtml(g){
   }).join('');
   return `
     <div class="fiche-doc">
-      <p class="fiche-ref">N° ${ficheRefNumber(g)} · Émise le ${new Date().toLocaleDateString('fr-FR')}</p>
+      <p class="fiche-ref">Fiche N° ${g.code} · Émise le ${new Date().toLocaleDateString('fr-FR')}</p>
       <div class="fiche-header">
         <img class="logo" src="${LOGO_DATA}" alt="Logo de l'association" />
         <p class="eyebrow2">Association Nasroune minaal laahi</p>
