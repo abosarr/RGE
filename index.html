@@ -40,17 +40,17 @@
     text-align:center;
   }
   .masthead img.logo{
-    width:56px;height:56px;object-fit:contain;flex-shrink:0;
+    width:64px;height:64px;object-fit:contain;flex-shrink:0;
   }
   .masthead h1{
     font-family:'Fraunces',serif;
-    font-size:20px;font-weight:600;letter-spacing:-0.01em;
-    margin:2px 0 0;line-height:1.35;
+    font-size:26px;font-weight:700;letter-spacing:-0.01em;
+    margin:0;line-height:1.2;color:var(--ink);
   }
   .masthead .eyebrow{
     font-family:'IBM Plex Mono',monospace;
-    font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--gold);margin:0 0 4px;
+    font-size:12px;letter-spacing:.03em;
+    color:var(--ink-soft);margin:6px 0 0;
   }
   .masthead .arabic{
     font-size:15px;color:var(--green);margin:6px 0 0;font-weight:600;
@@ -88,6 +88,10 @@
   }
   .doc-sub{
     font-size:13.5px;color:var(--ink-soft);margin:0 0 28px;line-height:1.5;
+  }
+  .info-box{
+    background:var(--green-soft);border:1px solid var(--green);border-radius:10px;
+    padding:16px 18px;margin:0 0 26px;font-size:13px;line-height:1.55;color:var(--ink);
   }
 
   label{
@@ -188,7 +192,7 @@
   @media (max-width:520px){
     .wrap{padding:20px 14px 60px;}
     .card{padding:22px 18px;}
-    .masthead h1{font-size:17px;}
+    .masthead h1{font-size:20px;}
     thead th:nth-child(3),tbody td:nth-child(3){display:none;}
     thead th:nth-child(4),tbody td:nth-child(4){display:none;}
   }
@@ -202,8 +206,7 @@
       position:absolute;left:0;top:0;width:100%;border:none;box-shadow:none;
     }
     body.printing-receipt #new-entry-btn,
-    body.printing-receipt #print-receipt-btn,
-    body.printing-receipt #whatsapp-receipt-btn{display:none;}
+    body.printing-receipt #print-receipt-btn{display:none;}
 
     body.printing-table *{visibility:hidden;}
     body.printing-table #dash-content,
@@ -216,12 +219,12 @@
     body.printing-table .print-title{
       display:block;text-align:center;margin-bottom:14px;
     }
-    body.printing-table .print-title .eyebrow{
-      font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;
-      text-transform:uppercase;color:#000;margin:0 0 4px;
+    body.printing-table .print-title .print-subtitle{
+      font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;
+      text-transform:uppercase;color:#333;margin:4px 0 0;
     }
     body.printing-table .print-title h2{
-      font-family:'Fraunces',serif;font-size:18px;margin:0;
+      font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#000;margin:0;
     }
     body.printing-table .print-title p{font-size:11px;color:#333;margin:4px 0 0;}
 
@@ -248,8 +251,8 @@
   }
   .fiche-header{text-align:center;border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:18px;}
   .fiche-header img.logo{width:72px;height:72px;object-fit:contain;margin:0 auto 12px;display:block;}
-  .fiche-header .eyebrow2{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 4px;}
-  .fiche-header .title2{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin:0;}
+  .fiche-header .eyebrow2{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--ink);margin:0 0 4px;}
+  .fiche-header .title2{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0;}
   .fiche-header .sub2{font-size:12px;color:var(--ink-soft);margin:4px 0 0;}
   .fiche-badge{
     display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
@@ -276,6 +279,17 @@
   .sig-box{flex:1;text-align:center;}
   .sig-line{border-bottom:1px solid var(--ink-soft);height:44px;}
   .sig-box p{font-size:11px;color:var(--ink-soft);margin:8px 0 0;}
+  .sig-pad-wrap{position:relative;}
+  #responsable-sig-pad{
+    width:100%;height:90px;border:1px dashed var(--hairline);border-radius:8px;
+    background:#FCFBF8;touch-action:none;cursor:crosshair;display:block;
+  }
+  .sig-clear-btn{
+    position:absolute;top:4px;right:4px;font-size:10px;
+    background:var(--card);border:1px solid var(--hairline);border-radius:6px;
+    padding:3px 7px;cursor:pointer;color:var(--ink-soft);
+  }
+  @media print{ .sig-clear-btn{display:none;} #responsable-sig-pad{border:none;} }
   .fiche-footnote{font-size:11px;color:var(--ink-soft);margin-top:24px;text-align:center;}
 </style>
 </head>
@@ -285,8 +299,8 @@
   <div class="masthead">
     <img class="logo" src="" alt="Logo de l'association" />
     <div>
-      <p class="eyebrow">Association Nasroune minaal laahi</p>
-      <h1>Cotisations pour l'édification de la mosquée<br>Cité ICS Sant Yalla</h1>
+      <h1>Association Nasroune minaal laahi</h1>
+      <p class="eyebrow">Cotisations pour l'édification de la mosquée — Cité ICS Sant Yalla</p>
       <p class="arabic">الحمد لله</p>
     </div>
   </div>
@@ -305,6 +319,10 @@
     <div id="form-card" class="card">
       <p class="doc-title">Versement de la cotisation</p>
       <p class="doc-sub">Merci de renseigner les informations du ménage et le montant versé pour la cotisation en faveur de la construction de la mosquée.</p>
+
+      <div class="info-box">
+        Le projet de construction de la Mosquée des Cités unit les résidents des cités ICS, ADILA, Demba NDIAYE et AGIR IMMO autour de la création d'une mosquée. Pour concrétiser cette noble œuvre, nous faisons appel à la générosité et à la solidarité de chacun à travers des contributions financières mensuelles. Pour effectuer vos dons ou obtenir des détails sur le projet, veuillez contacter directement notre responsable financier, <strong>Mame Gor NDONG</strong>, au <strong>+221 77 514 93 74</strong>.
+      </div>
 
       <label for="chef">Nom du chef de ménage</label>
       <input type="text" id="chef" placeholder="Prénom et nom" autocomplete="name" />
@@ -368,7 +386,6 @@
       <div class="toolbar">
         <button class="btn-primary" id="new-entry-btn" style="background:var(--gold-soft);color:#6B5322;flex:1;">Nouveau versement</button>
         <button class="btn-export" id="print-receipt-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Imprimer</button>
-        <a class="btn-export" id="whatsapp-receipt-btn" href="#" target="_blank" rel="noopener" style="background:#25D366;color:#fff;border-color:#25D366;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">Envoyer par WhatsApp</a>
       </div>
     </div>
   </div>
@@ -388,8 +405,8 @@
 
     <div id="dash-content" style="display:none;">
       <div class="print-title">
-        <p class="eyebrow">Association Nasroune minaal laahi</p>
-        <h2>Cotisations — édification de la mosquée</h2>
+        <h2>Association Nasroune minaal laahi</h2>
+        <p class="print-subtitle">Cotisations — édification de la mosquée</p>
         <p id="print-date"></p>
       </div>
       <div class="stat-row">
@@ -541,20 +558,6 @@ function showConfirmation(record){
     <div><span class="k">Montant</span><span class="v">${record.montant.toLocaleString('fr-FR')} F CFA</span></div>
     <div><span class="k">Date</span><span class="v">${d.toLocaleDateString('fr-FR')} ${d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}</span></div>
   `;
-
-  const digits = normalizePhone(record.telephone);
-  const waBtn = document.getElementById('whatsapp-receipt-btn');
-  if(digits){
-    const waText = encodeURIComponent(
-      `Bonjour ${record.chef}, reçu de votre cotisation à l'Association Nasroune minaal laahi (édification de la mosquée, Cité ICS Sant Yalla).\n` +
-      `Quartier : ${record.quartier}\nMois : ${record.note||'—'}\nMontant : ${record.montant.toLocaleString('fr-FR')} F CFA\n` +
-      `Date : ${d.toLocaleDateString('fr-FR')} ${d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}\nQu'Allah vous récompense.`
-    );
-    waBtn.href = `https://wa.me/221${digits}?text=${waText}`;
-    waBtn.style.display = 'inline-flex';
-  }else{
-    waBtn.style.display = 'none';
-  }
 }
 document.getElementById('print-receipt-btn').addEventListener('click', ()=>{
   document.body.classList.add('printing-receipt');
@@ -696,6 +699,7 @@ function openFiche(g){
   document.getElementById('dash-content').style.display='none';
   document.getElementById('fiche-detail').style.display='block';
   document.getElementById('fiche-printable').innerHTML = buildFicheHtml(g);
+  initSignaturePad();
 
   const digits = normalizePhone(g.telephone);
   const waText = encodeURIComponent(
@@ -709,6 +713,52 @@ function openFiche(g){
     waBtn.style.display = 'inline-flex';
   }else{
     waBtn.style.display = 'none';
+  }
+}
+
+function initSignaturePad(){
+  const canvas = document.getElementById('responsable-sig-pad');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if(!ctx) return;
+  ctx.strokeStyle = '#1E3A2E';
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  let drawing = false;
+  let last = null;
+
+  function pos(e){
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const point = e.touches ? e.touches[0] : e;
+    return { x: (point.clientX - rect.left) * scaleX, y: (point.clientY - rect.top) * scaleY };
+  }
+  function start(e){ drawing = true; last = pos(e); e.preventDefault(); }
+  function move(e){
+    if(!drawing) return;
+    const p = pos(e);
+    ctx.beginPath();
+    ctx.moveTo(last.x, last.y);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    last = p;
+    e.preventDefault();
+  }
+  function end(){ drawing = false; }
+
+  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', end);
+  canvas.addEventListener('touchstart', start, {passive:false});
+  canvas.addEventListener('touchmove', move, {passive:false});
+  canvas.addEventListener('touchend', end);
+
+  const clearBtn = document.getElementById('sig-clear-btn');
+  if(clearBtn){
+    clearBtn.addEventListener('click', ()=>{
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+    });
   }
 }
 
@@ -754,7 +804,13 @@ function buildFicheHtml(g){
       </div>
       <div class="fiche-signatures">
         <div class="sig-box"><div class="sig-line"></div><p>Signature du chef de ménage</p></div>
-        <div class="sig-box"><div class="sig-line"></div><p>Signature du responsable association</p></div>
+        <div class="sig-box">
+          <div class="sig-pad-wrap">
+            <canvas id="responsable-sig-pad" width="300" height="90"></canvas>
+            <button type="button" class="sig-clear-btn" id="sig-clear-btn">Effacer</button>
+          </div>
+          <p>Signature du responsable association</p>
+        </div>
       </div>
       <p class="fiche-footnote">Fiche générée le ${new Date().toLocaleDateString('fr-FR')} — Association Nasroune minaal laahi, Cité ICS Sant Yalla.</p>
     </div>
