@@ -532,6 +532,7 @@
         <button class="btn-export" id="print-all-btn" title="Génère une fiche imprimable pour chaque ligne affichée">Fiches à imprimer</button>
         <button class="btn-export" id="print-cards-btn" title="Génère une carte de membre imprimable pour chaque ligne affichée">Cartes de membre</button>
         <button class="btn-export" id="export-btn">Exporter CSV</button>
+        <button class="btn-export" id="download-cvs-btn" title="Télécharge le CV de chaque adhérent affiché qui en a joint un">Télécharger les CV</button>
         <button class="btn-export" id="refresh-btn" style="background:var(--card);color:var(--ink-soft);border-color:var(--hairline);">Actualiser</button>
       </div>
       <p class="refresh-note">Les signatures ne sont pas incluses dans l'export CSV ; cliquez une vignette pour l'agrandir. « Fiches à imprimer » génère une fiche par membre (respecte les filtres en cours).</p>
@@ -576,7 +577,7 @@
 // 1) Collez ici l'URL de votre déploiement Google Apps Script (voir Code.gs fourni).
 // 2) Le code d'accès n'est plus stocké ici : il est saisi à l'écran et vérifié côté
 //    serveur (voir la constante SECRET dans Code.gs).
-const API_URL = "https://script.google.com/macros/s/AKfycbxqEHpPDQQxB6dyzxbEsXOz0cCJVKd4oHdAxaiG1yV6upNWcA93R_9ANcCilFrby7mzjA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzgG00QWPtRimGTe7IfI61nzB3KchaI-c_Zs_5lV1TRiw5EG2XG6Un9ec4pY0GXf4mjDA/exec";
 let sessionSecret = "ICAM2026";
 
 // ---------- TABS ----------
@@ -1194,6 +1195,27 @@ document.getElementById('export-btn').addEventListener('click', ()=>{
   a.download = 'adhesions_cellule_' + new Date().toISOString().slice(0,10) + '.csv';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
+});
+
+// ---------- TÉLÉCHARGER TOUS LES CV ----------
+document.getElementById('download-cvs-btn').addEventListener('click', ()=>{
+  const withCv = currentRecords.filter(r => r.cv);
+  if(withCv.length === 0){
+    alert("Aucun CV n'a été joint parmi les adhérents actuellement affichés.");
+    return;
+  }
+  withCv.forEach((r, i)=>{
+    setTimeout(()=>{
+      const a = document.createElement('a');
+      a.href = r.cv;
+      a.download = r.cvNom || ('CV_' + r.nom);
+      a.target = '_blank';
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, i * 400); // léger décalage pour éviter que le navigateur bloque les téléchargements groupés
+  });
 });
 </script>
 </body>
