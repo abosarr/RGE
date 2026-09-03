@@ -576,7 +576,7 @@
 // 1) Collez ici l'URL de votre déploiement Google Apps Script (voir Code.gs fourni).
 // 2) Le code d'accès n'est plus stocké ici : il est saisi à l'écran et vérifié côté
 //    serveur (voir la constante SECRET dans Code.gs).
-const API_URL = "https://script.google.com/macros/s/AKfycbz8MQq3yF1Fr1UAYKxNdEQ-40EvjORx9xl23oyfEY4BejH3f3-5wQAVJkX-NxPlyABPbA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxqEHpPDQQxB6dyzxbEsXOz0cCJVKd4oHdAxaiG1yV6upNWcA93R_9ANcCilFrby7mzjA/exec";
 let sessionSecret = "ICAM2026";
 
 // ---------- TABS ----------
@@ -742,11 +742,15 @@ document.getElementById('submit-btn').addEventListener('click', async ()=>{
   };
 
   try{
-    await fetch(API_URL, {
+    const res = await fetch(API_URL, {
       method: 'POST',
       headers: {'Content-Type': 'text/plain;charset=utf-8'},
       body: JSON.stringify(record)
     });
+    const resData = await res.json();
+    if(!resData || !resData.ok){
+      throw new Error(resData && resData.error ? resData.error : 'Réponse invalide du serveur.');
+    }
     document.getElementById('receipt').innerHTML = `
       <div><span class="k">Nom</span><span class="v">${escapeHtml(nom)}</span></div>
       <div><span class="k">CNI</span><span class="v mono">${escapeHtml(cni)}</span></div>
@@ -759,7 +763,7 @@ document.getElementById('submit-btn').addEventListener('click', async ()=>{
     document.getElementById('form-card').style.display='none';
     document.getElementById('confirm-card').style.display='block';
   }catch(e){
-    errorEl.textContent = "Une erreur est survenue lors de l'enregistrement. Réessayez.";
+    errorEl.textContent = "Une erreur est survenue lors de l'enregistrement (" + e.message + "). Réessayez.";
     errorEl.style.display='block';
   }
   btn.disabled = false; btn.textContent = 'Confirmer et envoyer';
