@@ -502,6 +502,10 @@
     </div>
   </div>
 
+  <div style="text-align:center;margin-top:18px;">
+    <button type="button" id="open-workspace-btn" style="background:none;border:none;color:#B7BDC9;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.04em;cursor:pointer;padding:6px;">Espace responsable</button>
+  </div>
+
   <!-- DASHBOARD PANEL -->
   <div class="panel" id="panel-dash">
 
@@ -509,7 +513,7 @@
       <div class="card">
         <p class="doc-title" style="margin-bottom:2px;">Espace responsable</p>
         <p>Entrez le code d'accès pour consulter les confirmations.</p>
-        <input type="text" class="search" id="pin-input" placeholder="Code d'accès" style="margin-top:16px;text-align:center;letter-spacing:.1em;" />
+        <input type="password" class="search" id="pin-input" placeholder="Code d'accès" style="margin-top:16px;text-align:center;letter-spacing:.1em;" />
         <button class="btn-primary" id="pin-submit" style="margin-top:12px;">Accéder</button>
         <p class="error-msg" id="pin-error"></p>
       </div>
@@ -583,13 +587,17 @@ const API_URL = "https://script.google.com/macros/s/AKfycbxITUXPwMmZhZiwVCWO4iGC
 let sessionSecret = "ICAM2026";
 
 // ---------- TABS ----------
-if(window.location.hash.toLowerCase() === '#responsable'){
+function revealWorkspace(){
   document.getElementById('tabs-bar').style.display = 'flex';
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
   document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
   document.querySelector('.tab[data-tab="dash"]').classList.add('active');
   document.getElementById('panel-dash').classList.add('active');
 }
+if(window.location.hash.toLowerCase() === '#responsable'){
+  revealWorkspace();
+}
+document.getElementById('open-workspace-btn').addEventListener('click', revealWorkspace);
 document.querySelectorAll('.tab').forEach(t=>{
   t.addEventListener('click', ()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
