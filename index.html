@@ -735,6 +735,7 @@ document.getElementById('submit-btn').addEventListener('click', async ()=>{
     accord: accordEl.value,
     signature: canvas.toDataURL('image/png'),
     cvNom: cvFile ? cvFile.name : '',
+    cvType: cvFile ? cvFile.type : '',
     cv: cvFile ? cvFile.data : '',
     date: new Date().toISOString(),
     position
@@ -964,7 +965,7 @@ function renderTable(records, offset){
       <td class="mono">${escapeHtml(r.telephone)}</td>
       <td><span class="pill ${r.accord==='Oui'?'oui':'non'}">${r.accord}</span></td>
       <td><img class="sig-thumb" src="${r.signature}" onclick="openLightbox('${r.signature.replace(/'/g,"")}')" /></td>
-      <td>${r.cv ? `<a href="${r.cv}" download="${escapeHtml(r.cvNom||'cv')}" class="btn-row-print">Télécharger</a>` : '—'}</td>
+      <td>${r.cv ? `<a href="${r.cv}" download="${escapeHtml(r.cvNom||'cv')}" class="btn-row-print">Télécharger</a> <button class="btn-row-print" onclick="printCV(currentRecords[${idx}])">Imprimer</button>` : '—'}</td>
       <td class="mono">${d.toLocaleDateString('fr-FR')}</td>
       <td><button class="btn-row-print" onclick="printFiches([currentRecords[${idx}]])">Fiche</button> <button class="btn-row-print" onclick="printCartes([currentRecords[${idx}]])">Carte</button></td>
     </tr>`;
@@ -1065,6 +1066,39 @@ function openPrintWindow(title, bodyHtml){
   }else{
     win.onload = ()=> setTimeout(triggerPrint, 200);
     setTimeout(triggerPrint, 700); // filet de sécurité si onload ne se déclenche pas
+  }
+}
+
+// ---------- IMPRESSION DU CV ----------
+function printCV(record){
+  if(!record || !record.cv){ return; }
+  const win = window.open('', '_blank');
+  if(!win){
+    alert("Le navigateur a bloqué l'ouverture de la fenêtre d'impression. Autorisez les pop-ups pour ce site puis réessayez.");
+    return;
+  }
+  const isImage = (record.cvType||'').startsWith('image/');
+  const isPdf = (record.cvType||'') === 'application/pdf';
+  const title = 'CV — ' + record.nom;
+  let bodyHtml;
+  if(isImage){
+    bodyHtml = `<img src="${record.cv}" style="max-width:100%;display:block;margin:0 auto;" onload="window.focus();window.print();" />`;
+  }else if(isPdf){
+    bodyHtml = `<embed src="${record.cv}" type="application/pdf" style="width:100vw;height:100vh;border:none;" />`;
+  }else{
+    bodyHtml = `<div style="font-family:sans-serif;padding:40px;text-align:center;">
+      <p>Ce format de fichier ne peut pas être prévisualisé directement.</p>
+      <p><a href="${record.cv}" download="${(record.cvNom||'cv').replace(/"/g,'')}">Cliquez ici pour télécharger le CV</a>, puis imprimez-le depuis l'application correspondante.</p>
+    </div>`;
+  }
+  win.document.open();
+  win.document.write(`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><title>${title}</title>
+    <style>*{box-sizing:border-box;}body{margin:0;background:#fff;}@media print{@page{margin:0;}}</style>
+    </head><body>${bodyHtml}</body></html>`);
+  win.document.close();
+  if(isPdf){
+    // Laisse le temps au moteur PDF interne du navigateur de se charger avant d'imprimer.
+    setTimeout(()=>{ try{ win.focus(); win.print(); }catch(e){} }, 800);
   }
 }
 
