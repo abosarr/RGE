@@ -576,7 +576,7 @@
 // 1) Collez ici l'URL de votre déploiement Google Apps Script (voir Code.gs fourni).
 // 2) Le code d'accès n'est plus stocké ici : il est saisi à l'écran et vérifié côté
 //    serveur (voir la constante SECRET dans Code.gs).
-const API_URL = "https://script.google.com/macros/s/AKfycbxITUXPwMmZhZiwVCWO4iGCoO3BTKAjKp0jamaHKHtVASH-9EV_giUmGLLMNDWomvykkw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbz8MQq3yF1Fr1UAYKxNdEQ-40EvjORx9xl23oyfEY4BejH3f3-5wQAVJkX-NxPlyABPbA/exec";
 let sessionSecret = "ICAM2026";
 
 // ---------- TABS ----------
@@ -965,7 +965,7 @@ function renderTable(records, offset){
       <td class="mono">${escapeHtml(r.telephone)}</td>
       <td><span class="pill ${r.accord==='Oui'?'oui':'non'}">${r.accord}</span></td>
       <td><img class="sig-thumb" src="${r.signature}" onclick="openLightbox('${r.signature.replace(/'/g,"")}')" /></td>
-      <td>${r.cv ? `<a href="${r.cv}" download="${escapeHtml(r.cvNom||'cv')}" class="btn-row-print">Télécharger</a> <button class="btn-row-print" onclick="printCV(currentRecords[${idx}])">Imprimer</button>` : '—'}</td>
+      <td>${r.cv ? `<a href="${r.cv}" download="${escapeHtml(r.cvNom||'cv')}" target="_blank" rel="noopener" class="btn-row-print">Télécharger</a> <button class="btn-row-print" onclick="printCV(currentRecords[${idx}])">Imprimer</button>` : '—'}</td>
       <td class="mono">${d.toLocaleDateString('fr-FR')}</td>
       <td><button class="btn-row-print" onclick="printFiches([currentRecords[${idx}]])">Fiche</button> <button class="btn-row-print" onclick="printCartes([currentRecords[${idx}]])">Carte</button></td>
     </tr>`;
