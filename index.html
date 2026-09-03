@@ -475,20 +475,17 @@
           <div class="sig-baseline"></div>
         </div>
         <p class="sig-caption">Signez ci-dessus avec le doigt ou la souris</p>
-        <div class="sig-controls">
+        <div class="sig-controls" style="justify-content:space-between;">
+          <button type="button" id="open-workspace-btn" style="background:none;border:none;color:#B7BDC9;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;cursor:pointer;padding:4px;opacity:.45;transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45">Espace responsable</button>
           <button type="button" class="btn-ghost" id="clear-sig">Effacer la signature</button>
         </div>
       </div>
-
-      <label style="display:flex;align-items:center;gap:8px;margin-top:20px;cursor:pointer;">
-        <input type="checkbox" id="geo-consent" style="width:auto;margin:0;" />
-        <span style="font-weight:400;font-size:12.5px;color:var(--ink-soft);">Partager ma position au moment de la signature (optionnel)</span>
-      </label>
 
       <div class="submit-row">
         <button class="btn-primary" id="submit-btn">Confirmer et envoyer</button>
         <p class="error-msg" id="error-msg"></p>
       </div>
+
     </div>
 
     <!-- CONFIRMATION (hidden until submit) -->
@@ -500,10 +497,6 @@
       <div class="receipt" id="receipt"></div>
       <button class="btn-primary" id="new-entry-btn" style="background:var(--accent-soft);color:#1B3B6B;">Nouvelle confirmation</button>
     </div>
-  </div>
-
-  <div style="text-align:center;margin-top:18px;">
-    <button type="button" id="open-workspace-btn" style="background:none;border:none;color:#B7BDC9;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.04em;cursor:pointer;padding:6px;">Espace responsable</button>
   </div>
 
   <!-- DASHBOARD PANEL -->
@@ -711,16 +704,7 @@ cniInput.addEventListener('input', ()=>{
 
 // ---------- GEOLOCATION ----------
 function getPosition(){
-  return new Promise((resolve)=>{
-    if(!document.getElementById('geo-consent').checked || !navigator.geolocation){
-      resolve(null); return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      pos => resolve({lat: pos.coords.latitude, lng: pos.coords.longitude}),
-      () => resolve(null),
-      {timeout: 4000}
-    );
-  });
+  return Promise.resolve(null);
 }
 
 // ---------- SUBMIT ----------
@@ -790,7 +774,6 @@ document.getElementById('new-entry-btn').addEventListener('click', ()=>{
   document.getElementById('cv-filename').textContent='';
   document.querySelectorAll('.accord-opt').forEach(o=>o.classList.remove('checked'));
   document.querySelectorAll('input[name=accord]').forEach(i=>i.checked=false);
-  document.getElementById('geo-consent').checked=false;
   ctx.clearRect(0,0,canvas.width,canvas.height);
   hasSignature=false;
   document.getElementById('dup-warning').style.display='none';
