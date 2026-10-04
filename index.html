@@ -397,7 +397,7 @@
     .masthead img{height:44px !important;}
     .masthead .eyebrow{font-size:11px !important;}
   }
-  .letterhead .lh-parti,.masthead .eyebrow{color:#00692F !important;}
+  .letterhead .lh-parti,.masthead .eyebrow{color:#005A28 !important;}
   .letterhead .lh-cellule{color:#A5121A !important;}
 </style>
 </head>
@@ -668,8 +668,13 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 // 1) Collez ici l'URL de votre déploiement Google Apps Script (voir Code.gs fourni).
 // 2) Le code d'accès n'est plus stocké ici : il est saisi à l'écran et vérifié côté
 //    serveur (voir la constante SECRET dans Code.gs).
-const API_URL = "https://script.google.com/macros/s/AKfycbwETjzo3pnzZRvNDbGc1HhUza5e65yLesmQ3ecyKygmYB31WwAdNSU7mx9aDpwCXYMq/exec";
-let sessionSecret = "ABC123";
+const API_URL = "https://script.google.com/macros/s/AKfycbw3yzWZLtzSijVQcnGYNNe8JVrT5xLkM3_m85GIJg2L-59hbNuf4WXZ9KGnjCcDpM_bvg/exec";   // ← collez ici l'URL /exec de VOTRE déploiement Google Apps Script (voir Code.gs)
+if(!API_URL){
+  // Aucune requête n'est envoyée tant que le serveur du mouvement n'est pas renseigné.
+  window.fetch = () => Promise.reject(new Error('Plate-forme non configurée : renseignez API_URL.'));
+  document.body.insertAdjacentHTML('afterbegin', '<div id="cfg-banner" style="background:#FDECEC;color:#8A1C1C;border-bottom:2px solid #E31B23;padding:12px 16px;font-size:13.5px;line-height:1.5;text-align:center;"><b>Configuration requise.</b> Cette plate-forme n\'est pas encore reliée à son serveur : déployez <b>Code.gs</b> (Google Apps Script), puis collez l\'URL <b>/exec</b> dans la constante <b>API_URL</b> de ce fichier.</div>');
+}
+let sessionSecret = "";
 const MOUVEMENT = "AND DOLEL KAW";
 const LEADER = "MAMADOU DIOUF dit KAW";
 const LOCALITE = "Koungheul";
@@ -682,7 +687,7 @@ async function loadComites(){
     const data = await res.json();
     comitesList = (data && data.ok && data.comites) || [];
   }catch(e){ comitesList = []; }
-  if(!comitesList.length){ sel.innerHTML = '<option value="">Comités indisponibles — réessayez plus tard</option>'; return; }
+  if(!comitesList.length){ sel.innerHTML = '<option value="">' + (API_URL ? 'Comités indisponibles — réessayez plus tard' : 'Plate-forme non configurée') + '</option>'; return; }
   sel.innerHTML = '<option value="">— Choisir votre comité —</option>' +
     comitesList.map(c=>`<option value="${escapeHtml(c.id)}">${escapeHtml(c.nom)}</option>`).join('');
   const pre = new URLSearchParams(location.search).get('c');
@@ -1090,11 +1095,11 @@ async function checkPin(){
       currentPage = 1;
       applyFiltersAndRender();
     }else{
-      err.textContent = 'Code incorrect.';
+      err.textContent = (data && data.error) ? data.error : 'Code incorrect.';
       err.style.display='block';
     }
   }catch(e){
-    err.textContent = "Impossible de contacter le serveur. Vérifiez la connexion.";
+    err.textContent = API_URL ? "Impossible de contacter le serveur. Vérifiez la connexion." : "Plate-forme non configurée : renseignez API_URL (voir Code.gs).";
     err.style.display='block';
   }
 }
@@ -1354,15 +1359,16 @@ const PRINT_CSS = `
   .fiche .fiche-photo{width:30mm;height:40mm;object-fit:cover;border:1px solid #D8DCE4;border-radius:4px;flex-shrink:0;}
   .carte-membre .cm-photo{position:absolute;right:4.5mm;top:12mm;width:20mm;height:26.6mm;object-fit:cover;border:0.5mm solid #fff;border-radius:1.5mm;background:#fff;}
   .carte-membre.has-photo .cm-nom,.carte-membre.has-photo .cm-cellule,.carte-membre.has-photo .cm-title{max-width:56mm;}
-  .carte-membre.recto{background:linear-gradient(135deg,#C9E2F9 0%,#E2EFFC 55%,#B9D8F4 100%);color:#0F2A44;box-shadow:0 2px 10px rgba(15,42,68,.20);}
+  .carte-membre.recto{background:linear-gradient(90deg,#BFE3CC 0 33.33%,#FFF2A8 33.33% 66.66%,#F7C6C9 66.66% 100%);color:#0F2A44;box-shadow:0 2px 10px rgba(15,42,68,.20);isolation:isolate;}
+  .carte-membre.recto::before{content:'';position:absolute;left:50%;top:56%;width:19mm;height:19mm;transform:translate(-50%,-50%);background:rgba(0,133,63,.18);clip-path:polygon(50% 0%,61.2% 34.5%,97.6% 34.5%,68.2% 55.9%,79.4% 90.5%,50% 69.1%,20.6% 90.5%,31.8% 55.9%,2.4% 34.5%,38.8% 34.5%);z-index:-1;}
   .carte-membre.recto .cm-republique,.carte-membre.recto .cm-title{opacity:1;color:#2B4A6A;}
-  .carte-membre.recto .cm-parti{color:#00692F;}
+  .carte-membre.recto .cm-parti{color:#005A28;}
   .carte-membre.recto .cm-nom,.carte-membre.recto .cm-cellule{opacity:1;color:#0F2A44;}
   .carte-membre.recto .cm-badge{background:rgba(255,255,255,.65);border:1px solid rgba(15,42,68,.35);color:#0F2A44;}
   .carte-membre.recto .cm-pill.oui{background:#fff;color:#00622E;border:0.25mm solid #7CB896;}
-  .carte-membre .cm-bc{border:0.25mm solid #9DBBD9;}
-  .carte-membre .cm-photo{box-shadow:0 0 0 0.2mm #9DBBD9;}
-  .carte-membre.verso{background:#EEF6FD;color:#0F2A44;}
+  .carte-membre .cm-bc{border:0.25mm solid #8FA99A;}
+  .carte-membre .cm-photo{box-shadow:0 0 0 0.2mm #8FA99A;}
+  .carte-membre.verso{background:linear-gradient(90deg,#E6F4EC 0 33.33%,#FFFBDA 33.33% 66.66%,#FCE6E7 66.66% 100%);color:#0F2A44;}
   .carte-membre.verso .cm-v-head,.carte-membre.verso .cm-v-row .k{color:#34506B;}
   .carte-membre.verso .cm-sig-label,.carte-membre.verso .cm-v-foot{color:#5A7592;}
   @media print{ @page{ margin:10mm; } }
@@ -1560,6 +1566,12 @@ function wrapLines(x, t, maxW, maxLines){
 function setFont(x, w, pt, fam){ x.font = `${w} ${Math.round(pt * PT)}px ${fam}`; }
 const F_SER = "Fraunces, Georgia, serif", F_SANS = "Inter, Arial, sans-serif", F_MONO = "'IBM Plex Mono', monospace";
 
+function starPath(x, cx, cy, R){
+  const r = R * 0.382; x.beginPath();
+  for(let i = 0; i < 10; i++){ const a = -Math.PI / 2 + i * Math.PI / 5, d = i % 2 ? r : R; x[i ? 'lineTo' : 'moveTo'](cx + d * Math.cos(a), cy + d * Math.sin(a)); }
+  x.closePath();
+}
+function flagBands(x, cols){ cols.forEach((c, i) => { x.fillStyle = c; x.fillRect(Math.floor(CW / 3 * i), 0, Math.ceil(CW / 3) + 1, CH); }); }
 async function carteCanvas(r){
   try{ await Promise.all([document.fonts.load('600 40px Fraunces'), document.fonts.load('500 40px Inter'), document.fonts.load('500 40px "IBM Plex Mono"'), document.fonts.ready]); }catch(e){}
   const [photo, sig, qrImg] = await Promise.all([
@@ -1573,12 +1585,12 @@ async function carteCanvas(r){
 
   // ----- RECTO -----
   x.save(); x.translate(PAD, PAD); rr(x, 0, 0, CW, CH, R); x.clip();
-  const g = x.createLinearGradient(0, 0, CW, CH); g.addColorStop(0, '#C9E2F9'); g.addColorStop(.55, '#E2EFFC'); g.addColorStop(1, '#B9D8F4');
-  x.fillStyle = g; x.fillRect(0, 0, CW, CH);
+  flagBands(x, ['#BFE3CC', '#FFF2A8', '#F7C6C9']);
+  x.fillStyle = 'rgba(0,133,63,.18)'; starPath(x, CW / 2, CH * 0.56, 9.5 * MM); x.fill();
   const sh = 2.6 * MM; ['#00853F', '#FDEF42', '#E31B23'].forEach((col, i) => { x.fillStyle = col; x.fillRect(CW / 3 * i, 0, CW / 3 + 1, sh); });
   x.textBaseline = 'top'; x.fillStyle = '#2B4A6A';
   x.globalAlpha = 1; setFont(x, 500, 6.2, F_SANS); x.fillText('RÉPUBLIQUE DU SÉNÉGAL', side, 6 * MM); x.globalAlpha = 1;
-  x.fillStyle = '#00692F'; setFont(x, 600, 9, F_SERIF_FIX()); x.fillText('AND DOLEL', side, 9.6 * MM); x.fillText('KAW', side, 13.25 * MM);
+  x.fillStyle = '#005A28'; setFont(x, 600, 9, F_SERIF_FIX()); x.fillText('AND DOLEL', side, 9.6 * MM); x.fillText('KAW', side, 13.25 * MM);
   setFont(x, 500, 6, F_MONO);
   const bt = 'KOUNGHEUL', bw = x.measureText(bt).width + 2.6 * MM, bh = 6 * PT + 1.4 * MM, bx = right - bw, by = 6 * MM;
   x.fillStyle = 'rgba(255,255,255,.65)'; rr(x, bx, by, bw, bh, 3); x.fill();
@@ -1592,7 +1604,7 @@ async function carteCanvas(r){
   x.fillStyle = '#0F2A44'; setFont(x, 500, 7.5, F_SANS); x.fillText(fitText(x, 'Comité : ' + (r.comite || '—'), maxW), side, y + 1 * MM);
   if(photo){
     const pw = 20 * MM, ph = 26.6 * MM, px = right - pw, py = 12 * MM;
-    x.fillStyle = '#fff'; rr(x, px, py, pw, ph, 1.5 * MM); x.fill(); x.strokeStyle = '#9DBBD9'; x.lineWidth = 2; x.stroke();
+    x.fillStyle = '#fff'; rr(x, px, py, pw, ph, 1.5 * MM); x.fill(); x.strokeStyle = '#8FA99A'; x.lineWidth = 2; x.stroke();
     x.save(); rr(x, px + .5 * MM, py + .5 * MM, pw - MM, ph - MM, 1 * MM); x.clip();
     const k = Math.max((pw - MM) / photo.width, (ph - MM) / photo.height), dw = photo.width * k, dh = photo.height * k;
     x.drawImage(photo, px + (pw - dw) / 2, py + (ph - dh) / 2, dw, dh); x.restore();
@@ -1601,7 +1613,7 @@ async function carteCanvas(r){
   const fy = CH - 3 * MM - 6.4 * PT;
   if(r.numero){
     const bxw = 41 * MM, bxh = 9 * MM, bxy = CH - 3 * MM - bxh;
-    x.fillStyle = '#fff'; rr(x, side, bxy, bxw, bxh, 1.2 * MM); x.fill(); x.strokeStyle = '#9DBBD9'; x.lineWidth = 2; x.stroke();
+    x.fillStyle = '#fff'; rr(x, side, bxy, bxw, bxh, 1.2 * MM); x.fill(); x.strokeStyle = '#8FA99A'; x.lineWidth = 2; x.stroke();
     drawBarcode(x, r.numero, side + 1.5 * MM, bxy + 1 * MM, bxw - 3 * MM, 5.6 * MM);
     x.fillStyle = '#1B2B22'; setFont(x, 500, 5.4, F_MONO); x.textAlign = 'center';
     x.fillText(r.numero, side + bxw / 2, bxy + 1 * MM + 5.6 * MM + .5 * MM); x.textAlign = 'left';
@@ -1615,8 +1627,8 @@ async function carteCanvas(r){
 
   // ----- VERSO -----
   x.save(); x.translate(PAD, PAD + CH + GAP); rr(x, 0, 0, CW, CH, R); x.clip();
-  x.fillStyle = '#EEF6FD'; x.fillRect(0, 0, CW, CH);
-  x.strokeStyle = '#B4CFE8'; x.lineWidth = 2; rr(x, 1, 1, CW - 2, CH - 2, R); x.stroke();
+  flagBands(x, ['#E6F4EC', '#FFFBDA', '#FCE6E7']);
+  x.strokeStyle = '#C9D8CE'; x.lineWidth = 2; rr(x, 1, 1, CW - 2, CH - 2, R); x.stroke();
   x.textBaseline = 'top'; x.fillStyle = '#34506B'; setFont(x, 500, 6.5, F_MONO);
   x.fillText('INFORMATIONS DU MEMBRE', side, 6 * MM);
   const vote = [r.centreVote, r.bureauVote].filter(Boolean).join(' · ');
@@ -1628,7 +1640,7 @@ async function carteCanvas(r){
     setFont(x, 500, 7.2, F_SANS); x.fillStyle = '#34506B'; const kw = x.measureText(k).width; x.fillText(k, side, ry + .9 * MM);
     setFont(x, 600, 7.2, F_MONO); x.fillStyle = '#0F2A44';
     const t = fitText(x, v, right - side - kw - 3 * MM); x.fillText(t, right - x.measureText(t).width, ry + .9 * MM);
-    x.strokeStyle = '#9DBBD9'; x.lineWidth = 1; x.setLineDash([3, 4]); x.beginPath(); x.moveTo(side, ry + rh); x.lineTo(right, ry + rh); x.stroke(); x.setLineDash([]);
+    x.strokeStyle = '#8FA99A'; x.lineWidth = 1; x.setLineDash([3, 4]); x.beginPath(); x.moveTo(side, ry + rh); x.lineTo(right, ry + rh); x.stroke(); x.setLineDash([]);
     ry += rh;
   });
   const ft = CH - 3.2 * MM - 2 * 5.6 * PT * 1.35, bottom = ft - 1 * MM;
